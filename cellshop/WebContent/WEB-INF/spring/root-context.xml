@@ -15,14 +15,14 @@
 		http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
    <!-- Le decimos a Spring MVC que detecte automaticamente todos los Beans de tipo @Service -->
-	<context:component-scan base-package="net.itinajero.app.service" />
+	<context:component-scan base-package="unae.lp3.service" />
 
 	<!-- Paquete donde estan los repositorios (interfaces que extienden JpaRepository) -->	
-	<jpa:repositories base-package="net.itinajero.app.repository" />
+	<jpa:repositories base-package="unae.lp3.repository" />
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/cineapp?useSSL=false" />
+		<property name="url" value="jdbc:mysql://localhost:3306/cellshop?useSSL=false" />
 		<property name="username" value="root" />
 		<property name="password" value="" />
 	</bean>
@@ -34,7 +34,7 @@
 	</bean> 
 
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" >
-		<property name="packagesToScan" value="net.itinajero.app.model" />			
+		<property name="packagesToScan" value="unae.lp3.model" />			
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />						
 	</bean>
