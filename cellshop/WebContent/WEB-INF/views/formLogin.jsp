@@ -37,7 +37,7 @@
 				<h4 class="form-signin-heading" style="color:red">Acceso denegado</h4>
 			</c:if>
 	   	       
-			<h3 class="form-signin-heading">CineApp | Administración</h3>        
+			<h3 class="form-signin-heading">CellShop | Administración</h3>        
 			<label for="username" class="sr-only">Usuario</label>
 			<input type="text" id="username" name="username" class="form-control" placeholder="Usuario" required autofocus>
 			<label for="password" class="sr-only">Contraseña</label>

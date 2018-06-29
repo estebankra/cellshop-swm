@@ -17,7 +17,8 @@
           <a class="navbar-brand" href="${urlRoot}">CellShop</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">                                
+          <ul class="nav navbar-nav">
+          	 <li><a href="${urlRoot}usuarios/new">¿Eres nuevo? ¡Registrate!</a></li>                               
             <li><a href="${urlRoot}formLogin">Login</a></li>            
           </ul>
         </div><!--/.nav-collapse -->
@@ -34,8 +35,8 @@
 	          <a class="navbar-brand" href="${urlRoot}admin/index">CellShop | Administración</a>
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav">  
-	            <li><a href="${urlRoot}peliculas/indexPaginate?page=0">Peliculas</a></li>
+	          <ul class="nav navbar-nav">
+	            <li><a href="${urlRoot}peliculas/indexPaginate?page=0">Teléfonos</a></li>
 	            <li><a href="${urlRoot}horarios/indexPaginate?page=0">Horarios</a></li>
 	            <li><a href="${urlRoot}noticias/index">Noticias</a></li>
 	            <li><a href="${urlRoot}admin/logout">Salir</a></li>	           
@@ -56,7 +57,7 @@
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">  
-	            <li><a href="${urlRoot}peliculas/indexPaginate?page=0">Peliculas</a></li>
+	            <li><a href="${urlRoot}peliculas/indexPaginate?page=0">Teléfonos</a></li>
 	            <li><a href="${urlRoot}horarios/indexPaginate?page=0">Horarios</a></li>
 	            <li><a href="${urlRoot}noticias/index">Noticias</a></li>
 	            <li><a href="${urlRoot}banners/index">Banner</a></li>             	           
