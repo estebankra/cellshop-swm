@@ -27,4 +27,9 @@ public class HomeController {
 
 	}
 	
+	@RequestMapping(value = "/formLogin", method=RequestMethod.GET)
+	public String mostrarLogin() {			
+		return "formLogin";
+	}
+	
 }
