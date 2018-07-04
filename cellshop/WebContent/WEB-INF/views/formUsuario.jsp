@@ -55,7 +55,6 @@
 				<div class="col-sm-3">
 					<div class="form-group">
 						<label for="apellidos">Apellidos</label>
-						<form:hidden class="form-control" path="usuario_id" />
 						<form:input type="text" class="form-control" path="apellidos"
 							id="apellidos" required="required" />
 					</div>

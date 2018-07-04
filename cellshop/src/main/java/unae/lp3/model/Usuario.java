@@ -27,24 +27,7 @@ public class Usuario {
 	private String contrasena;
 	
 	public Usuario() {
-
-	}
-
-	public Usuario(int usuario_id, String apellidos, String nombre, Date fechanac, String docunum, String direccion,
-			String ciudad, String pais, String telefono, String email, String usuario, String contrasena) {
-		super();
-		this.usuario_id = usuario_id;
-		this.apellidos = apellidos;
-		this.nombre = nombre;
-		this.fechanac = fechanac;
-		this.docunum = docunum;
-		this.direccion = direccion;
-		this.ciudad = ciudad;
-		this.pais = pais;
-		this.telefono = telefono;
-		this.email = email;
-		this.usuario = usuario;
-		this.contrasena = contrasena;
+		this.fechanac = new Date(); // por default la fecha del sistema
 	}
 
 	public int getUsuario_id() {
