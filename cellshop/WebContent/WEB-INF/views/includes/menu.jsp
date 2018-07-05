@@ -10,10 +10,11 @@
 			<div class="logo tittles-pages">CellShop</div>
 			<ul class="list-unstyled full-reset navigation-list">
 				<li><a href="${urlRoot}">Inicio</a></li>
-				<li><a href="product.html">Productos</a></li>
+				<li><a href="${urlRoot}modelos/stock">Productos</a></li>
 				<li><a href="news.html">Noticias</a></li>
 				<li><a href="services.html">Servicios</a></li>
 				<li><a href="contact.html">Contactenos</a></li>
+				<li><a href="${urlRoot}usuarios/nuevo">Registrate</a></li>
 			</ul>
 			<i class="fa fa-bars visible-xs btn-mobile"></i>
 		</sec:authorize>

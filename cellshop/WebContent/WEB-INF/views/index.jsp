@@ -50,15 +50,14 @@
                             <div class="content-dest">
                                 <p style="font-size: 90px; text-align: center;"><i class="fa fa-apple"></i></p>
                                 <h3 class="text-center">iOS</h3>
-                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe iure ea cum, quos, praesentium porro officia adipisci, deserunt asperiores dignissimos quasi non libero eum voluptate aut cumque nobis fuga. Laudantium!
-                                </p>
+                                <p class="text-justify">iOS es un sistema operativo móvil de la multinacional Apple Inc. Originalmente desarrollado para el iPhone (iPhone OS), después se ha usado en dispositivos como el iPod touch y el iPad. No permite la instalación de iOS en hardware de terceros.<br><br> Actualmente es el segundo sistema operativo móvil más utilizado del mundo, detrás de Android, con una cuota de mercado de entre 10-15% al año 2017. La última versión del sistema operativo es iOS 12 aparecida en junio de 2018 sustituye a iOS 112​ con el objetivo principal de mejorar la experiencia del usuario. Los elementos de control consisten de deslizadores, interruptores y botones. La respuesta a las órdenes del usuario es inmediata y provee una interfaz fluida. La interacción con el sistema operativo incluye gestos como deslices, toques, pellizcos, los cuales tienen definiciones diferentes dependiendo del contexto de la interfaz. 
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4">
                             <div class="content-dest">
                                 <p style="font-size: 90px; text-align: center;"><i class="fa fa-windows"></i></p>
                                 <h3 class="text-center">Windows Phone</h3>
-                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe iure ea cum, quos, praesentium porro officia adipisci, deserunt asperiores dignissimos quasi non libero eum voluptate aut cumque nobis fuga. Laudantium!
+                                <p class="text-justify">Windows Phone (abreviado WP) es un sistema operativo móvil desarrollado por Microsoft, como sucesor de Windows Mobile. A diferencia de su predecesor fue enfocado en el mercado de consumo en lugar del mercado empresarial. Con Windows Phone, Microsoft ofreció una nueva interfaz de usuario que integró varios de sus servicios activos. Compitió directamente contra Android de Google e iOS de Apple. Su última versión fue Windows Phone 8.1, lanzado el 14 de abril de 2014.5​6​ <br><br>Debido a la evidente fragmentación de sus sistemas operativos, Microsoft anunció en enero de 2015 que dará de baja a Windows Phone, para enfocarse en un único sistema más versátil denominado Windows 10 Mobile, disponible para todo tipo de plataformas (teléfonos inteligentes, tabletas y computadoras).
                                 </p>
                             </div>
                         </div>
@@ -66,7 +65,7 @@
                             <div class="content-dest">
                                 <p style="font-size: 90px; text-align: center;"><i class="fa fa-android"></i></p>
                                 <h3 class="text-center">Android</h3>
-                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe iure ea cum, quos, praesentium porro officia adipisci, deserunt asperiores dignissimos quasi non libero eum voluptate aut cumque nobis fuga. Laudantium!
+                                <p class="text-justify">Android es un sistema operativo basado en el núcleo Linux. Fue diseñado principalmente para dispositivos móviles con pantalla táctil, como teléfonos inteligentes, tabletas y también para relojes inteligentes, televisores y automóviles. Inicialmente fue desarrollado por Android Inc., empresa que Google respaldó económicamente y más tarde, en 2005, compró. <br><br> Android fue presentado en 2007 junto la fundación del Open Handset Alliance (un consorcio de compañías de hardware, software y telecomunicaciones) para avanzar en los estándares abiertos de los dispositivos móviles.4​ El primer móvil con el sistema operativo Android fue el HTC Dream y se vendió en octubre de 2008.5​ Android es el sistema operativo móvil más utilizado del mundo, con una cuota de mercado superior al 80% al año 2017, muy por encima de IOS.
                                 </p>
                             </div>
                         </div>

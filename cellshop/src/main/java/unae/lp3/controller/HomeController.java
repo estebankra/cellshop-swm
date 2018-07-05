@@ -18,22 +18,15 @@ import unae.lp3.service.IMarcasService;
 @Controller
 public class HomeController {
 	
-	@Autowired
-	private IMarcasService serviceMarcas;
-	
 	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 	
 	@RequestMapping(value = "/",method = RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {	
-		//List<Marcas> marcas  = serviceMarcas.buscarTodas();
-		//model.addAttribute("marcas", marcas);
-		List<Marca> listaMarcas = serviceMarcas.buscarTodas();
-		model.addAttribute("marcas", listaMarcas);
 		return "index";
 
 	}
 	
-	@RequestMapping(value = "/formLogin", method=RequestMethod.GET)
+	@RequestMapping(value = "/registro", method=RequestMethod.GET)
 	public String mostrarLogin() {			
 		return "formLogin";
 	}

@@ -25,23 +25,23 @@ public class UsuariosController {
 	@Autowired
 	private IUsuariosService serviceUsuarios;
 	
-	@GetMapping(value = "/new")
+	@GetMapping(value = "/nuevo")
 	public String crear(@ModelAttribute Usuario usuario) {		
-		return "formUsuario";
+		return "registro";
 	}
 	
-	@PostMapping(value = "/save")
+	@PostMapping(value = "/guardar")
 	public String guardar(@ModelAttribute Usuario usuario, BindingResult result, Model model, MultipartFile multiPart, HttpServletRequest request, RedirectAttributes attributes) {	
 		
 		if (result.hasErrors()){
 			System.out.println("Existieron errores");
-			return "formUsuario";
+			return "registro";
 		}	
 
 		serviceUsuarios.guardar(usuario);
 		attributes.addFlashAttribute("msg", "Los datos del usuario fueron guardados!");
 			
-		return "redirect:/usuarios/indexPaginate";		
+		return "redirect:/";		
 	}
 	
 	/**

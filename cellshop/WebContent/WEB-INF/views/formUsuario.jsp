@@ -48,8 +48,7 @@
 			</div>
 		</spring:hasBindErrors>
 
-		<form:form action="${urlForm}" method="POST"
-			enctype="multipart/form-data" modelAttribute="usuario">
+		<form:form action="${urlForm}" method="POST" enctype="multipart/form-data" modelAttribute="usuario">
 			<!-- Inician los inputs del form -->
 			<div class="row">
 				<div class="col-sm-3">
