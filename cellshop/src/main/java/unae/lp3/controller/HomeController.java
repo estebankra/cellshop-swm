@@ -29,7 +29,7 @@ public class HomeController {
 		//model.addAttribute("marcas", marcas);
 		List<Marca> listaMarcas = serviceMarcas.buscarTodas();
 		model.addAttribute("marcas", listaMarcas);
-		return "home";
+		return "index";
 
 	}
 	

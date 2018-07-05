@@ -1,70 +1,45 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
+<%@taglib uri="http://www.springframework.org/security/tags"
+	prefix="sec"%>
 <spring:url value="/" var="urlRoot" />
 <!-- Fixed navbar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container">
-	
-	 <sec:authorize access="isAnonymous()">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="${urlRoot}">CellShop</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-          	 <li><a href="${urlRoot}usuarios/new">¿Eres nuevo? ¡Registrate!</a></li>                               
-            <li><a href="${urlRoot}formLogin">Login</a></li>            
-          </ul>
-        </div><!--/.nav-collapse -->
-      </sec:authorize>  
-        
-      <sec:authorize access="hasAnyAuthority('EDITOR')">  
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <a class="navbar-brand" href="${urlRoot}admin/index">CellShop | Administración</a>
-	        </div>
-	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav">
-	            <li><a href="${urlRoot}peliculas/indexPaginate?page=0">Teléfonos</a></li>
-	            <li><a href="${urlRoot}horarios/indexPaginate?page=0">Horarios</a></li>
-	            <li><a href="${urlRoot}noticias/index">Noticias</a></li>
-	            <li><a href="${urlRoot}admin/logout">Salir</a></li>	           
-	          </ul>
-	        </div><!--/.nav-collapse -->
-        </sec:authorize>
-        
-        <sec:authorize access="hasAnyAuthority('GERENTE')">
-        
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <a class="navbar-brand" href="${urlRoot}admin/index">CellShop | Administración</a>
-	        </div>
-	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav">  
-	            <li><a href="${urlRoot}peliculas/indexPaginate?page=0">Teléfonos</a></li>
-	            <li><a href="${urlRoot}horarios/indexPaginate?page=0">Horarios</a></li>
-	            <li><a href="${urlRoot}noticias/index">Noticias</a></li>
-	            <li><a href="${urlRoot}banners/index">Banner</a></li>             	           
-	            <li><a href="${urlRoot}admin/logout">Salir</a></li>	                      
-	          </ul>
-	        </div><!--/.nav-collapse -->
-        </sec:authorize>
-        
-      </div>
-</nav>
+<div class="page-container">
+	<nav class="full-reset nav-phonestore">
+		<sec:authorize access="isAnonymous()">
+			<div class="logo tittles-pages">CellShop</div>
+			<ul class="list-unstyled full-reset navigation-list">
+				<li><a href="${urlRoot}">Inicio</a></li>
+				<li><a href="product.html">Productos</a></li>
+				<li><a href="news.html">Noticias</a></li>
+				<li><a href="services.html">Servicios</a></li>
+				<li><a href="contact.html">Contactenos</a></li>
+			</ul>
+			<i class="fa fa-bars visible-xs btn-mobile"></i>
+		</sec:authorize>
+
+		<sec:authorize access="hasAnyAuthority('EDITOR')">
+			<div class="logo tittles-pages">PhoneStore</div>
+			<ul class="list-unstyled full-reset navigation-list">
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="product.html">Productos</a></li>
+				<li><a href="news.html">Noticias</a></li>
+				<li><a href="services.html">Servicios</a></li>
+				<li><a href="contact.html">Contactenos</a></li>
+			</ul>
+			<i class="fa fa-bars visible-xs btn-mobile"></i>
+		</sec:authorize>
+
+		<sec:authorize access="hasAnyAuthority('GERENTE')">
+			<div class="logo tittles-pages">PhoneStore</div>
+			<ul class="list-unstyled full-reset navigation-list">
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="product.html">Productos</a></li>
+				<li><a href="news.html">Noticias</a></li>
+				<li><a href="services.html">Servicios</a></li>
+				<li><a href="contact.html">Contactenos</a></li>
+			</ul>
+			<i class="fa fa-bars visible-xs btn-mobile"></i>
+		</sec:authorize>
+	</nav>
+</div>

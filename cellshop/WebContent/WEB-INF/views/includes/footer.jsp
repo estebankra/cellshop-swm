@@ -1,10 +1,22 @@
-<!-- FOOTER -->
-<footer>
-	<p class="pull-right">
-		<a href="#">Volver arriba</a>
-	</p>
-	<p>
-		&copy; 2018 LP3 UNAE. &middot; <a href="#">Privacy</a>
-		&middot; <a href="#">Terms</a>
-	</p>
+<footer class="footer">
+	<div class="container-fluid">
+		<div class="col-xs-12 text-center">
+			<h3>Siguenos en</h3>
+			<ul class="list-unstyled list-social-icons">
+				<li><a href="#!"> <i class="fa fa-facebook"
+						style="background-color: #3B5998;"></i>
+				</a></li>
+				<li><a href="#!"> <i class="fa fa-google-plus"
+						style="background-color: #DD4B39;"></i>
+				</a></li>
+				<li><a href="#!"> <i class="fa fa-twitter"
+						style="background-color: #56A3D9;"></i>
+				</a></li>
+				<li><a href="#!"> <i class="fa fa-youtube"
+						style="background-color: #BF221F;"></i>
+				</a></li>
+			</ul>
+			<h4>CellShop &copy; 2018</h4>
+		</div>
+	</div>
 </footer>
