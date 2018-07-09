@@ -10,5 +10,5 @@ public interface IModelosService {
 	List<Modelo> buscarTodas();
 	void guardar(Modelo marcas);
 	Modelo buscarPorId(int idModelo);
-
+	List<Modelo> buscarPorIdMarca(int idMarca);
 }

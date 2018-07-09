@@ -11,20 +11,19 @@ import org.springframework.stereotype.Service;
 
 // Registramos esta clase como un Bean en nuestro Root ApplicationContext.
 @Service
-public class ModelosServiceJPA implements IModelosService{
-	
-	// Inyectamos una instancia desde nuestro Root ApplicationContext.
-    @Autowired
-	private ModelosRepository modelosRepo;
+public class ModelosServiceJPA implements IModelosService {
 
+	// Inyectamos una instancia desde nuestro Root ApplicationContext.
+	@Autowired
+	private ModelosRepository modelosRepo;
 
 	@Override
 	public void guardar(Modelo marcas) {
-		modelosRepo.save(marcas);		
+		modelosRepo.save(marcas);
 	}
 
 	@Override
-	public List<Modelo> buscarTodas() {		
+	public List<Modelo> buscarTodas() {
 		return modelosRepo.findAll();
 	}
 
@@ -32,7 +31,13 @@ public class ModelosServiceJPA implements IModelosService{
 	public void eliminar(int idModelo) {
 		modelosRepo.deleteById(idModelo);
 	}
-	
+
+	@Override
+	public List<Modelo> buscarPorIdMarca(int idMarca) {	
+		List<Modelo> modelos = modelosRepo.findByIdMarca(idMarca);
+		return modelos;
+	}
+
 	@Override
 	public Modelo buscarPorId(int idModelo) {
 		Optional<Modelo> optional = modelosRepo.findById(idModelo);

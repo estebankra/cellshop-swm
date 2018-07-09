@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import unae.lp3.model.Marca;
+import unae.lp3.model.Modelo;
 import unae.lp3.model.Producto;
 import unae.lp3.service.IMarcasService;
+import unae.lp3.service.IModelosService;
 import unae.lp3.service.IProductosService;
 
 @Controller
@@ -23,6 +25,9 @@ public class ProductosController {
 	
 	@Autowired
 	private IProductosService serviceProductos;
+	
+	@Autowired
+	private IModelosService serviceModelos;
 	
 	@RequestMapping(value = "/lists", method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {	
@@ -40,8 +45,10 @@ public class ProductosController {
 		model.addAttribute("marcas", listaMarcas);
 		Marca marcaSelec = serviceMarcas.buscarPorId(idMarca);
 		model.addAttribute("marcaSele", marcaSelec);
-		List<Producto> listaProductos = serviceProductos.buscarTodas();
-		model.addAttribute("productos", listaProductos);
+		
+		List<Modelo> listaModelos = serviceModelos.buscarTodas();
+		model.addAttribute("modelos", listaModelos);
+		
 		// TODO - Buscar en la base de datos los horarios.		
 		/*List<Horario> horarios= serviceHorarios.buscarPorIdPelicula(idPelicula, fecha);
 		model.addAttribute("horarios", horarios);
