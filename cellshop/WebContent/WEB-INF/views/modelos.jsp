@@ -37,7 +37,7 @@
 	<jsp:include page="includes/menu.jsp"></jsp:include>
 	
 	<div class="content-page">
-		<div class="hidden-xs content-carousel">
+		<!-- <div class="hidden-xs content-carousel">
 			<div id="carousel-phonestore" class="carousel slide"
 				data-ride="carousel" style="margin-top: 0;">
 				<ol class="carousel-indicators">
@@ -78,12 +78,12 @@
 		<div class="visible-xs static-image-carousel">
 			<img src="${urlPublic}/assets/img/image-carousel.jpg" alt=""
 				class="img-responsive">
-		</div>
+		</div>-->
 		<section id="prod-container section">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12 text-center">
-					<p class="tittles-pages">Tablets y Teléfonos</p>
+					<p class="tittles-pages">Teléfonos</p>
 				</div>
 				<div class="col-xs-12">
 					<div class="container">
@@ -176,22 +176,6 @@
 												</p>
 											</div>
 										</div>
-									</div>
-								</div>
-								<div class="row">
-									<!-- Paginacion productos -->
-									<div class="col-xs-12 text-center">
-										<ul class="pagination">
-											<li><a href="#">&laquo;</a></li>
-											<li class="active"><a href="#">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">5</a></li>
-											<li><a href="#">6</a></li>
-											<li><a href="#">7</a></li>
-											<li><a href="#">&raquo;</a></li>
-										</ul>
 									</div>
 								</div>
 							</div>

@@ -10,38 +10,25 @@
 			<div class="logo tittles-pages">CellShop</div>
 			<ul class="list-unstyled full-reset navigation-list">
 				<li><a href="${urlRoot}">Inicio</a></li>
-				<li><a href="${urlRoot}modelos/stock">Productos</a></li>
+				<li><a href="${urlRoot}modelos/stock">Telefónos</a></li>
 				<!--<li><a href="news.html">Noticias</a></li>
 				<li><a href="services.html">Servicios</a></li>
 				<li><a href="contact.html">Contactenos</a></li> -->
-				<li><a href="${urlRoot}marcas/nuevo">Marcas</a></li>
-				<li><a href="${urlRoot}usuarios/nuevo">Registrate</a></li>
+				<li><a href="${urlRoot}usuarios/nuevo"><b>Registrate</b></a></li>
+				<li><a href="${urlRoot}usuarios/nuevo"><b>Inicia Sesión</b></a></li>
 			</ul>
 			<i class="fa fa-bars visible-xs btn-mobile"></i>
 		</sec:authorize>
 
-		<sec:authorize access="hasAnyAuthority('EDITOR')">
+		<sec:authorize access="hasAnyAuthority('ADMIN')">
 			<div class="logo tittles-pages">PhoneStore</div>
 			<ul class="list-unstyled full-reset navigation-list">
 				<li><a href="${urlRoot}">Inicio</a></li>
-				<li><a href="${urlRoot}modelos/stock">Productos</a></li>
+				<li><a href="${urlRoot}modelos/stock">Telefónos</a></li>
 				<!--<li><a href="news.html">Noticias</a></li>
 				<li><a href="services.html">Servicios</a></li>
 				<li><a href="contact.html">Contactenos</a></li> -->
 				<li><a href="${urlRoot}marcas/nuevo">Marcas</a></li>
-				<li><a href="${urlRoot}usuarios/nuevo">Registrate</a></li>
-			</ul>
-			<i class="fa fa-bars visible-xs btn-mobile"></i>
-		</sec:authorize>
-
-		<sec:authorize access="hasAnyAuthority('GERENTE')">
-			<div class="logo tittles-pages">PhoneStore</div>
-			<ul class="list-unstyled full-reset navigation-list">
-				<li><a href="${urlRoot}">Inicio</a></li>
-				<li><a href="${urlRoot}modelos/stock">Productos</a></li>
-				<!--<li><a href="news.html">Noticias</a></li>
-				<li><a href="services.html">Servicios</a></li>
-				<li><a href="contact.html">Contactenos</a></li> -->
 				<li><a href="${urlRoot}usuarios/nuevo">Registrate</a></li>
 			</ul>
 			<i class="fa fa-bars visible-xs btn-mobile"></i>

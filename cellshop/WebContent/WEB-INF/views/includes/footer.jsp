@@ -1,7 +1,6 @@
 <footer class="footer">
 	<div class="container-fluid">
 		<div class="col-xs-12 text-center">
-			<h3>Siguenos en</h3>
 			<ul class="list-unstyled list-social-icons">
 				<li><a href="#!"> <i class="fa fa-facebook"
 						style="background-color: #3B5998;"></i>
@@ -16,7 +15,7 @@
 						style="background-color: #BF221F;"></i>
 				</a></li>
 			</ul>
-			<h4>CellShop &copy; 2018</h4>
+			CellShop &copy; 2018
 		</div>
 	</div>
 </footer>

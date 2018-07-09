@@ -41,7 +41,9 @@
         <div class="content-page cover-background font-content-index">
             <div class="jumbotron">
               <h1 class="tittles-pages">Bienvenido a CellShop</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam quod dignissimos rerum veniam rem architecto voluptas quos facere voluptatibus molestiae odit, suscipit atque id, voluptate culpa assumenda a repellendus.
+              <p> Compra el smartphone que más te guste en CellShop tienda en línea. Contamos con diversos tipos de celulares y modelos como un celular Samsung, iPhone,Xperia, Moto G o LG Nexus y más.<br>
+				Compra un celular que cubra tus necesidades ya sea un samsung galaxy s7, un iPhone 7, o un celular desbloqueado, el que desees se encuentra aquí. Adquiere el teléfono móvil de tu preferencia a precio bajo, seguro encontrarás celulares baratos o con la mejor tecnología. Aprovecha los beneficios que tenemos en nuestra tienda de celulares en línea.
+
               </p>
             </div>
             <section class="OS-phones section">
@@ -96,7 +98,7 @@
                                 <hr class="visible-xs">
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-6 text-center">
+                        <!-- <div class="col-xs-12 col-sm-6 text-center">
                             <div class="content-dest">
                                 <img src="${urlPublic}/assets/img/home-promo.png" alt="promo-icon" class="img-responsive center-box-content">
                                 <h3>Promociones</h3>
@@ -105,7 +107,7 @@
                                 <a href="#" class="btn btn-success">Más información</a>
                                 <hr class="visible-xs">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-xs-12 col-sm-6 text-center">
                             <div class="content-dest">
                                 <img src="${urlPublic}/assets/img/home-phones.png" alt="phone-icon" class="img-responsive center-box-content">
@@ -116,7 +118,7 @@
                                 <hr class="visible-xs">
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-6 text-center">
+                        <!--<div class="col-xs-12 col-sm-6 text-center">
                             <div class="content-dest">
                                 <img src="${urlPublic}/assets/img/home-plans.png" alt="plans-icon" class="img-responsive center-box-content">
                                 <h3>Planes y precios</h3>
@@ -124,7 +126,7 @@
                                 </p>
                                 <a href="#" class="btn btn-success">Más información</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </section> 

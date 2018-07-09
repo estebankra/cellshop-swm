@@ -31,17 +31,18 @@ html, body {
     position: relative;
 }
 .content-page{
-    padding-bottom: 200px; /*Si modifica esta propiedad, tambien hacerlo en height de la clase .footer*/
+    padding-bottom: 100px; /*Si modifica esta propiedad, tambien hacerlo en height de la clase .footer*/
 }
 .footer{
 	background-color: #000;
 	bottom: 0 !important;
     bottom: -1px;
 	color: #9f9f9f;
-	height: 200px; /*Si modifica esta propiedad, tambien hacerlo en padding-botton de la clase .content-page*/ 
+	height: 100px; /*Si modifica esta propiedad, tambien hacerlo en padding-botton de la clase .content-page*/ 
 	overflow: hidden;
     position: absolute;
 	width: 100%;
+	padding: 20px;
 }
 .section{
 	margin: 0;
