@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Usuarios")
 public class Usuario {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment MySQL
 	private int usuario_id;

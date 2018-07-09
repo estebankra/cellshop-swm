@@ -3,8 +3,6 @@ package unae.lp3.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -12,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import unae.lp3.model.Usuario;
@@ -27,22 +24,18 @@ public class UsuariosController {
 	
 	@GetMapping(value = "/nuevo")
 	public String crear(@ModelAttribute Usuario usuario) {		
-		return "registro";
+		return "usuarios/formUsuario";
 	}
 	
+	
 	@PostMapping(value = "/guardar")
-	public String guardar(@ModelAttribute Usuario usuario, BindingResult result, Model model, MultipartFile multiPart, HttpServletRequest request, RedirectAttributes attributes) {	
-		
-		if (result.hasErrors()){
-			System.out.println("Existieron errores");
-			return "registro";
-		}	
-
+	public String guardar(@ModelAttribute Usuario usuario, BindingResult result, Model model,
+			RedirectAttributes attributes) {
+		// Insertamos el usuario
 		serviceUsuarios.guardar(usuario);
-		attributes.addFlashAttribute("msg", "Los datos del usuario fueron guardados!");
-			
-		return "redirect:/";		
-	}
+		attributes.addFlashAttribute("msg", "Los datos de la marca fueron guardados!");
+		return "redirect:/";
+	}	
 	
 	/**
 	 * Personalizamos el Data Binding para todas las propiedades de tipo Date

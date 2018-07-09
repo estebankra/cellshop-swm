@@ -19,8 +19,8 @@ public class UsuariosServiceJPA implements IUsuariosService{
 
 
 	@Override
-	public void guardar(Usuario usuarios) {
-		usuariosRepo.save(usuarios);		
+	public void guardar(Usuario usuario) {
+		usuariosRepo.save(usuario);		
 	}
 
 	@Override
