@@ -79,6 +79,7 @@
 			<img src="${urlPublic}/assets/img/image-carousel.jpg" alt=""
 				class="img-responsive">
 		</div>-->
+		
 		<section id="prod-container section">
 		<div class="container-fluid">
 			<div class="row">
@@ -87,52 +88,48 @@
 				</div>
 				<div class="col-xs-12">
 					<div class="container">
-						<ul class="nav nav-tabs" role="tablist" id="TabProducts">
-							<li class="active"><a href="#all-categories" role="tab"
-								data-toggle="tab"><i class="fa fa-th"></i>&nbsp; Todo</a></li>
-							<li><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown"><i class="fa fa-hdd-o"></i>&nbsp;
-									Buscar por marca <span class="caret"></span></a>
-									
-							<ul class="dropdown-menu" role="menu" id="marca" name="marca" aria-labelledby="myTabDrop1">
-								<c:forEach var="marca" items="${marcas}">							
-									<c:choose>
-									     <c:when test="${marcaSelecc eq marca}" >
-									         <li><a value="${marca.descripcion}" selected>${marca.descripcion}></a></li>	
-									     </c:when>
-									     <c:otherwise>
-									        <li><a value="${marca.descripcion}">${marca.descripcion}</a></li>
-									     </c:otherwise>
-									</c:choose>																
-								</c:forEach>
-							</ul>								
+						
+						<ul class="nav nav-tabs">
+						  <li class="nav-item">
+						    <a class="nav-link active" href="${urlRoot}modelos/lists">Todos</a>
+						  </li>
+						  <c:forEach var="marca" items="${marcas}">
+							  <li class="nav-item">
+							    <a class="nav-link" href="${urlRoot}modelos/lists/${marca.marca_id}">${marca.descripcion}</a>
+							  </li>
+						  </c:forEach>
 						</ul>
-					
+
+												
 						<div class="tab-content">
 							<!-- ===================================== Todas las categorias ============================================= -->
 							<div class="tab-pane active" id="all-categories">
-								<p class="tittles-pages">Todos los productos</p>
-								<div class="row">
-									<div class="col-xs-12 col-sm-6 col-md-3">
-										<div class="thumbnail thumbnail-content-phones">
-											<img src="${urlPublic}/assets/img/product.png" alt="prod-icon"
-												class="img-responsive">
-											<div class="caption" role="menu" id="producto" name="producto">
-											
-											<c:forEach var="producto" items="${productos}">
-												<h3 class=" text-center">${producto.modelo.nombre}</h3>
-												<p class="text-justify">Lorem ipsum dolor sit amet,
-													consectetur adipisicing elit. Excepturi ratione ad
-													consectetur facere, alias deserunt consequatur.</p>
-												<p class="text-center">
-													<a href="#" class="btn btn-danger" role="button">Ver
-														más</a>
-												</p>																			
-											</c:forEach>
+								<p class="tittles-pages">Todos los productos ${marcaSele.descripcion}</p>
+								
+								<c:forEach var="producto" items="${productos}">
+								
+										<div class="col-xs-12 col-sm-6 col-md-3">
+											<div class="thumbnail thumbnail-content-phones">
+												<div class="img-products">
+													<img src="${urlPublic}/assets/img/celulares/${producto.imagen}" alt="prod-icon" class="img-responsive">
+												</div>
+												<div class="caption" role="menu" id="producto" name="producto">			
+													<h3 class=" text-center">${producto.modelo.nombre}</h3>
+													<p class="text-justify">${producto.descripcion}</p>
+													<p class="text-justify"><b>Memoria Ram:</b> ${producto.memoria.descripcion}</p>
+													<p class="text-justify"><b>Almacenamiento:</b> ${producto.almacenamiento.descripcion}</p>
+													<p class="text-justify"><b>Color:</b> ${producto.color.nombre}</p>
+													<p class="text-justify"><b>Precio:</b> ${producto.precio}gs</p>
+													<p class="text-center">
+														<a href="#" class="btn btn-danger" role="button">Ver más</a>
+													</p>																			
+												
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
+								
+								</c:forEach>
+								
 							</div>
 							<!-- ===================================== SmartPhones ============================================= -->	
 						</div>
@@ -147,14 +144,5 @@
 	
 	</footer>
 </div>
-<script>
-	$(function() {
-		$('#TabProducts a:first').tab('show')
-	});
-	$('#TabProducts a').click(function(e) {
-		e.preventDefault()
-		$(this).tab('show')
-	});
-</script>
 </body>
 </html>

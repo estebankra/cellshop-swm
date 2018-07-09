@@ -16,8 +16,6 @@ public class Producto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment MySQL
 	private int prod_id;
-	private int color_id;
-	private int mem_id;
 	private String descripcion;
 	private String imagen;
 	private int stock;
@@ -30,6 +28,14 @@ public class Producto {
 	@OneToOne
 	@JoinColumn(name = "model_id")
 	private Modelo modelo;
+	
+	@OneToOne
+	@JoinColumn(name = "mem_id")
+	private Memoria memoria;
+	
+	@OneToOne
+	@JoinColumn(name = "color_id")
+	private Color color;
 	
 	public Producto() {
 		super();
@@ -53,17 +59,18 @@ public class Producto {
 	public void setModelo(Modelo modelo) {
 		this.modelo = modelo;
 	}
-	public int getColor_id() {
-		return color_id;
+
+	public Memoria getMemoria() {
+		return memoria;
 	}
-	public void setColor_id(int color_id) {
-		this.color_id = color_id;
+	public void setMemoria(Memoria memoria) {
+		this.memoria = memoria;
 	}
-	public int getMem_id() {
-		return mem_id;
+	public Color getColor() {
+		return color;
 	}
-	public void setMem_id(int mem_id) {
-		this.mem_id = mem_id;
+	public void setColor(Color color) {
+		this.color = color;
 	}
 	public String getDescripcion() {
 		return descripcion;
@@ -92,8 +99,7 @@ public class Producto {
 	
 	@Override
 	public String toString() {
-		return "Producto [prod_id=" + prod_id +  ", color_id=" + color_id + ", mem_id="
-				+ mem_id + ", model_id=" + ", descripcion=" + descripcion + ", imagen=" + imagen + ", stock="
+		return "Producto [prod_id=" + prod_id  + ", model_id=" + ", descripcion=" + descripcion + ", imagen=" + imagen + ", stock="
 				+ stock + ", precio=" + precio + "]";
 	}
 }

@@ -23,6 +23,13 @@ html, body {
 	padding:0;
 	width: 100%;
 }
+
+.img-products{
+	width:45%;
+	padding-left: 10%;
+	margin-left: 50px
+	
+}
 .page-container{
 	background-color: transparent;
     height: 100%; 

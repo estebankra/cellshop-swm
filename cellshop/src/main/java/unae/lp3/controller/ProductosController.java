@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,7 +24,7 @@ public class ProductosController {
 	@Autowired
 	private IProductosService serviceProductos;
 	
-	@RequestMapping(value = "/stock", method=RequestMethod.GET)
+	@RequestMapping(value = "/lists", method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {	
 		List<Marca> listaMarcas = serviceMarcas.buscarTodas();
 		model.addAttribute("marcas", listaMarcas);
@@ -32,5 +33,21 @@ public class ProductosController {
 		return "productos";
 
 	}
+	
+	@RequestMapping(value = "/lists/{marca_id}")
+	public String filtrarPorMarca(@PathVariable("marca_id") int idMarca, Model model) {
+		List<Marca> listaMarcas = serviceMarcas.buscarTodas();
+		model.addAttribute("marcas", listaMarcas);
+		Marca marcaSelec = serviceMarcas.buscarPorId(idMarca);
+		model.addAttribute("marcaSele", marcaSelec);
+		List<Producto> listaProductos = serviceProductos.buscarTodas();
+		model.addAttribute("productos", listaProductos);
+		// TODO - Buscar en la base de datos los horarios.		
+		/*List<Horario> horarios= serviceHorarios.buscarPorIdPelicula(idPelicula, fecha);
+		model.addAttribute("horarios", horarios);
+		model.addAttribute("pelicula", servicePeliculas.buscarPorId(idPelicula));	*/	
+		return "productos";
+	}
+
 	
 }

@@ -10,7 +10,7 @@
 			<div class="logo tittles-pages">CellShop</div>
 			<ul class="list-unstyled full-reset navigation-list">
 				<li><a href="${urlRoot}">Inicio</a></li>
-				<li><a href="${urlRoot}modelos/stock">Telefónos</a></li>
+				<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>
 				<!--<li><a href="news.html">Noticias</a></li>
 				<li><a href="services.html">Servicios</a></li>
 				<li><a href="contact.html">Contactenos</a></li> -->
@@ -24,7 +24,7 @@
 			<div class="logo tittles-pages">PhoneStore</div>
 			<ul class="list-unstyled full-reset navigation-list">
 				<li><a href="${urlRoot}">Inicio</a></li>
-				<li><a href="${urlRoot}modelos/stock">Telefónos</a></li>
+				<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>
 				<!--<li><a href="news.html">Noticias</a></li>
 				<li><a href="services.html">Servicios</a></li>
 				<li><a href="contact.html">Contactenos</a></li> -->
