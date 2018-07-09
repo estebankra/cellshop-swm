@@ -107,7 +107,7 @@
 								</c:forEach>
 							</ul>								
 						</ul>
-						
+					
 						<div class="tab-content">
 							<!-- ===================================== Todas las categorias ============================================= -->
 							<div class="tab-pane active" id="all-categories">
@@ -117,63 +117,18 @@
 										<div class="thumbnail thumbnail-content-phones">
 											<img src="${urlPublic}/assets/img/product.png" alt="prod-icon"
 												class="img-responsive">
-											<div class="caption">
-												<h3 class=" text-center">Producto</h3>
+											<div class="caption" role="menu" id="producto" name="producto">
+											
+											<c:forEach var="producto" items="${productos}">
+												<h3 class=" text-center">${producto.modelo.nombre}</h3>
 												<p class="text-justify">Lorem ipsum dolor sit amet,
 													consectetur adipisicing elit. Excepturi ratione ad
 													consectetur facere, alias deserunt consequatur.</p>
 												<p class="text-center">
 													<a href="#" class="btn btn-danger" role="button">Ver
 														más</a>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-3">
-										<div class="thumbnail thumbnail-content-phones">
-											<img src="${urlPublic}/assets/img/product.png" alt="prod-icon"
-												class="img-responsive">
-											<div class="caption">
-												<h3 class=" text-center">Producto</h3>
-												<p class="text-justify">Lorem ipsum dolor sit amet,
-													consectetur adipisicing elit. Excepturi ratione ad
-													consectetur facere, alias deserunt consequatur.</p>
-												<p class="text-center">
-													<a href="#" class="btn btn-danger" role="button">Ver
-														más</a>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-3">
-										<div class="thumbnail thumbnail-content-phones">
-											<img src="${urlPublic}/assets/img/product.png" alt="prod-icon"
-												class="img-responsive">
-											<div class="caption">
-												<h3 class=" text-center">Producto</h3>
-												<p class="text-justify">Lorem ipsum dolor sit amet,
-													consectetur adipisicing elit. Excepturi ratione ad
-													consectetur facere, alias deserunt consequatur.</p>
-												<p class="text-center">
-													<a href="#" class="btn btn-danger" role="button">Ver
-														más</a>
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-6 col-md-3">
-										<div class="thumbnail thumbnail-content-phones">
-											<img src="${urlPublic}/assets/img/product.png" alt="prod-icon"
-												class="img-responsive">
-											<div class="caption">
-												<h3 class=" text-center">Producto</h3>
-												<p class="text-justify">Lorem ipsum dolor sit amet,
-													consectetur adipisicing elit. Excepturi ratione ad
-													consectetur facere, alias deserunt consequatur.</p>
-												<p class="text-center">
-													<a href="#" class="btn btn-danger" role="button">Ver
-														más</a>
-												</p>
+												</p>																			
+											</c:forEach>
 											</div>
 										</div>
 									</div>
