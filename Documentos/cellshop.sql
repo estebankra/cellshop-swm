@@ -2,10 +2,10 @@
 -- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 29-06-2018 a las 16:17:25
--- Versión del servidor: 10.1.33-MariaDB
--- Versión de PHP: 7.2.6
+-- Host: localhost
+-- Generation Time: Jul 10, 2018 at 09:55 PM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `cellshop`
+-- Database: `cellshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Almacenamiento`
+-- Table structure for table `Almacenamiento`
 --
 
 CREATE TABLE `Almacenamiento` (
@@ -33,10 +33,18 @@ CREATE TABLE `Almacenamiento` (
   `descripcion` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `Almacenamiento`
+--
+
+INSERT INTO `Almacenamiento` (`almacen_id`, `descripcion`) VALUES
+(2, '256gb'),
+(1, '64gb');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Carrito`
+-- Table structure for table `Carrito`
 --
 
 CREATE TABLE `Carrito` (
@@ -50,7 +58,7 @@ CREATE TABLE `Carrito` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Colores`
+-- Table structure for table `Colores`
 --
 
 CREATE TABLE `Colores` (
@@ -58,10 +66,20 @@ CREATE TABLE `Colores` (
   `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `Colores`
+--
+
+INSERT INTO `Colores` (`color_id`, `nombre`) VALUES
+(2, 'Azul'),
+(4, 'Gris'),
+(1, 'Negro'),
+(3, 'Purpura');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Marcas`
+-- Table structure for table `Marcas`
 --
 
 CREATE TABLE `Marcas` (
@@ -70,7 +88,7 @@ CREATE TABLE `Marcas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Volcado de datos para la tabla `Marcas`
+-- Dumping data for table `Marcas`
 --
 
 INSERT INTO `Marcas` (`marca_id`, `descripcion`) VALUES
@@ -78,12 +96,12 @@ INSERT INTO `Marcas` (`marca_id`, `descripcion`) VALUES
 (6, 'Huawei'),
 (7, 'LG'),
 (1, 'Samsung'),
-(8, 'Sony');
+(11, 'Tu hermana');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Memram`
+-- Table structure for table `Memram`
 --
 
 CREATE TABLE `Memram` (
@@ -91,10 +109,18 @@ CREATE TABLE `Memram` (
   `descripcion` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `Memram`
+--
+
+INSERT INTO `Memram` (`mem_id`, `descripcion`) VALUES
+(2, '3gb'),
+(1, '4gb');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Modelo`
+-- Table structure for table `Modelo`
 --
 
 CREATE TABLE `Modelo` (
@@ -108,10 +134,18 @@ CREATE TABLE `Modelo` (
   `bateria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `Modelo`
+--
+
+INSERT INTO `Modelo` (`model_id`, `marca_id`, `nombre`, `resolucion`, `pantalla`, `peso`, `dimensiones`, `bateria`) VALUES
+(1, 1, 'Samsung Galaxy S9+', '2960 x 1440 (Quad HD+)', '146.5mm / 143.3 mm', '163g', '147.7 x 68.7 x 8.5 mm', '3000 (mAh)'),
+(2, 2, 'Apple iPhone X', '2436x1125', '5.8', '174g', '143.6 x 70.9 x 7.7 mm', '2716 (mAh)');
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Pedidos`
+-- Table structure for table `Pedidos`
 --
 
 CREATE TABLE `Pedidos` (
@@ -124,7 +158,7 @@ CREATE TABLE `Pedidos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Pedidos_Detalle`
+-- Table structure for table `Pedidos_Detalle`
 --
 
 CREATE TABLE `Pedidos_Detalle` (
@@ -137,7 +171,7 @@ CREATE TABLE `Pedidos_Detalle` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Productos`
+-- Table structure for table `Productos`
 --
 
 CREATE TABLE `Productos` (
@@ -152,10 +186,18 @@ CREATE TABLE `Productos` (
   `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `Productos`
+--
+
+INSERT INTO `Productos` (`prod_id`, `almacen_id`, `color_id`, `mem_id`, `model_id`, `descripcion`, `imagen`, `stock`, `precio`) VALUES
+(2, 1, 1, 1, 1, '<b>Velocidad CPU:</b> 2.7GHz, 1.7GHz.<br>\r\n<b>Tipo CPU:</b> Octa-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> Android', 'samsungs9plus.jpg', 1, 4800000),
+(3, 1, 4, 2, 2, '<b>Velocidad CPU:</b> 2.1 GHZ.<br>\r\n<b>Tipo CPU:</b> Six-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> iOS 11', 'iphonex.png', 1, 6900000);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Usuarios`
+-- Table structure for table `Usuarios`
 --
 
 CREATE TABLE `Usuarios` (
@@ -174,18 +216,29 @@ CREATE TABLE `Usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Índices para tablas volcadas
+-- Dumping data for table `Usuarios`
+--
+
+INSERT INTO `Usuarios` (`usuario_id`, `apellidos`, `nombre`, `fechanac`, `docunum`, `direccion`, `ciudad`, `pais`, `telefono`, `email`, `usuario`, `contrasena`) VALUES
+(1, 'fesfse', 'fsefse', '0015-10-09', '435453', 'fsfes', 'esfesf', 'sefsef', '3245235', 'e564ro@gmail.com', 'afwf', 'fawf'),
+(2, 'Krauwezuk Powszuk}', 'Esteban', '0011-05-21', '4364888', 'CapitÃ¡n Miranda Calle \"C\" 12', 'CapitÃ¡n Miranda', 'Paraguay', '0983813404', 'esteban98alejandro@gmail.com', 'estebank98', 'eakp.eakp'),
+(3, 'Rodriguez', 'Fernando', '0008-12-08', '3214341', 'Encarnacion', 'Encarnacion', 'Paraguay', '0987685766', 'rodri45@gmail.com', 'rodri12', 'rodri123'),
+(4, 'htrh', 'hrthrt', '0010-12-15', '354534', 'grg', 'gdrg', 'drgrdg', '3545', 'fesfsef@gmail.com', 'awfdwaf', 'waf324'),
+(5, 'grgreg', 'rgergre', '2016-12-09', '354543', 'fesrfe', 'esfgsef', 'esff', '3255', 'daeda@gmail.com', 'eaff', 'fef342');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `Almacenamiento`
+-- Indexes for table `Almacenamiento`
 --
 ALTER TABLE `Almacenamiento`
   ADD PRIMARY KEY (`almacen_id`),
   ADD KEY `ALMA_IDX` (`descripcion`);
 
 --
--- Indices de la tabla `Carrito`
+-- Indexes for table `Carrito`
 --
 ALTER TABLE `Carrito`
   ADD PRIMARY KEY (`carrito_id`),
@@ -193,28 +246,28 @@ ALTER TABLE `Carrito`
   ADD KEY `FK_REFERENCE_7` (`prod_id`);
 
 --
--- Indices de la tabla `Colores`
+-- Indexes for table `Colores`
 --
 ALTER TABLE `Colores`
   ADD PRIMARY KEY (`color_id`),
   ADD UNIQUE KEY `COLOR_IDX` (`nombre`);
 
 --
--- Indices de la tabla `Marcas`
+-- Indexes for table `Marcas`
 --
 ALTER TABLE `Marcas`
   ADD PRIMARY KEY (`marca_id`),
   ADD UNIQUE KEY `MARCA_IDX` (`descripcion`);
 
 --
--- Indices de la tabla `Memram`
+-- Indexes for table `Memram`
 --
 ALTER TABLE `Memram`
   ADD PRIMARY KEY (`mem_id`),
   ADD UNIQUE KEY `MED_IDX` (`descripcion`);
 
 --
--- Indices de la tabla `Modelo`
+-- Indexes for table `Modelo`
 --
 ALTER TABLE `Modelo`
   ADD PRIMARY KEY (`model_id`),
@@ -222,14 +275,14 @@ ALTER TABLE `Modelo`
   ADD KEY `FK_REFERENCE_15` (`marca_id`);
 
 --
--- Indices de la tabla `Pedidos`
+-- Indexes for table `Pedidos`
 --
 ALTER TABLE `Pedidos`
   ADD PRIMARY KEY (`pedido_id`),
   ADD KEY `PEDI_IDX` (`usuario_id`);
 
 --
--- Indices de la tabla `Pedidos_Detalle`
+-- Indexes for table `Pedidos_Detalle`
 --
 ALTER TABLE `Pedidos_Detalle`
   ADD PRIMARY KEY (`peddet_id`),
@@ -237,7 +290,7 @@ ALTER TABLE `Pedidos_Detalle`
   ADD KEY `FK_REFERENCE_9` (`pedido_id`);
 
 --
--- Indices de la tabla `Productos`
+-- Indexes for table `Productos`
 --
 ALTER TABLE `Productos`
   ADD PRIMARY KEY (`prod_id`),
@@ -248,7 +301,7 @@ ALTER TABLE `Productos`
   ADD KEY `FK_REFERENCE_14` (`model_id`);
 
 --
--- Indices de la tabla `Usuarios`
+-- Indexes for table `Usuarios`
 --
 ALTER TABLE `Usuarios`
   ADD PRIMARY KEY (`usuario_id`),
@@ -256,107 +309,107 @@ ALTER TABLE `Usuarios`
   ADD UNIQUE KEY `EMAIL_IDX` (`email`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `Almacenamiento`
+-- AUTO_INCREMENT for table `Almacenamiento`
 --
 ALTER TABLE `Almacenamiento`
-  MODIFY `almacen_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `almacen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `Carrito`
+-- AUTO_INCREMENT for table `Carrito`
 --
 ALTER TABLE `Carrito`
   MODIFY `carrito_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Colores`
+-- AUTO_INCREMENT for table `Colores`
 --
 ALTER TABLE `Colores`
-  MODIFY `color_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `color_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de la tabla `Marcas`
+-- AUTO_INCREMENT for table `Marcas`
 --
 ALTER TABLE `Marcas`
-  MODIFY `marca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `marca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de la tabla `Memram`
+-- AUTO_INCREMENT for table `Memram`
 --
 ALTER TABLE `Memram`
-  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `mem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `Modelo`
+-- AUTO_INCREMENT for table `Modelo`
 --
 ALTER TABLE `Modelo`
-  MODIFY `model_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `model_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `Pedidos`
+-- AUTO_INCREMENT for table `Pedidos`
 --
 ALTER TABLE `Pedidos`
   MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Pedidos_Detalle`
+-- AUTO_INCREMENT for table `Pedidos_Detalle`
 --
 ALTER TABLE `Pedidos_Detalle`
   MODIFY `peddet_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `Productos`
+-- AUTO_INCREMENT for table `Productos`
 --
 ALTER TABLE `Productos`
-  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `prod_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `Usuarios`
+-- AUTO_INCREMENT for table `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `Carrito`
+-- Constraints for table `Carrito`
 --
 ALTER TABLE `Carrito`
-  ADD CONSTRAINT `FK_REFERENCE_6` FOREIGN KEY (`USUARIO_ID`) REFERENCES `Usuarios` (`USUARIO_ID`),
-  ADD CONSTRAINT `FK_REFERENCE_7` FOREIGN KEY (`PROD_ID`) REFERENCES `Productos` (`PROD_ID`);
+  ADD CONSTRAINT `FK_REFERENCE_6` FOREIGN KEY (`usuario_id`) REFERENCES `Usuarios` (`usuario_id`),
+  ADD CONSTRAINT `FK_REFERENCE_7` FOREIGN KEY (`prod_id`) REFERENCES `Productos` (`prod_id`);
 
 --
--- Filtros para la tabla `Modelo`
+-- Constraints for table `Modelo`
 --
 ALTER TABLE `Modelo`
-  ADD CONSTRAINT `FK_REFERENCE_15` FOREIGN KEY (`MARCA_ID`) REFERENCES `Marcas` (`MARCA_ID`);
+  ADD CONSTRAINT `FK_REFERENCE_15` FOREIGN KEY (`marca_id`) REFERENCES `Marcas` (`marca_id`);
 
 --
--- Filtros para la tabla `Pedidos`
+-- Constraints for table `Pedidos`
 --
 ALTER TABLE `Pedidos`
-  ADD CONSTRAINT `FK_REFERENCE_8` FOREIGN KEY (`USUARIO_ID`) REFERENCES `Usuarios` (`USUARIO_ID`);
+  ADD CONSTRAINT `FK_REFERENCE_8` FOREIGN KEY (`usuario_id`) REFERENCES `Usuarios` (`usuario_id`);
 
 --
--- Filtros para la tabla `Pedidos_Detalle`
+-- Constraints for table `Pedidos_Detalle`
 --
 ALTER TABLE `Pedidos_Detalle`
-  ADD CONSTRAINT `FK_REFERENCE_10` FOREIGN KEY (`PROD_ID`) REFERENCES `Productos` (`PROD_ID`),
-  ADD CONSTRAINT `FK_REFERENCE_9` FOREIGN KEY (`PEDIDO_ID`) REFERENCES `Pedidos` (`PEDIDO_ID`);
+  ADD CONSTRAINT `FK_REFERENCE_10` FOREIGN KEY (`prod_id`) REFERENCES `Productos` (`prod_id`),
+  ADD CONSTRAINT `FK_REFERENCE_9` FOREIGN KEY (`pedido_id`) REFERENCES `Pedidos` (`pedido_id`);
 
 --
--- Filtros para la tabla `Productos`
+-- Constraints for table `Productos`
 --
 ALTER TABLE `Productos`
   ADD CONSTRAINT `FK_REFERENCE_11` FOREIGN KEY (`almacen_id`) REFERENCES `Almacenamiento` (`almacen_id`),
-  ADD CONSTRAINT `FK_REFERENCE_12` FOREIGN KEY (`COLOR_ID`) REFERENCES `Colores` (`COLOR_ID`),
-  ADD CONSTRAINT `FK_REFERENCE_13` FOREIGN KEY (`MEM_ID`) REFERENCES `Memram` (`MEM_ID`),
-  ADD CONSTRAINT `FK_REFERENCE_14` FOREIGN KEY (`MODEL_ID`) REFERENCES `Modelo` (`MODEL_ID`);
+  ADD CONSTRAINT `FK_REFERENCE_12` FOREIGN KEY (`color_id`) REFERENCES `Colores` (`color_id`),
+  ADD CONSTRAINT `FK_REFERENCE_13` FOREIGN KEY (`mem_id`) REFERENCES `Memram` (`mem_id`),
+  ADD CONSTRAINT `FK_REFERENCE_14` FOREIGN KEY (`model_id`) REFERENCES `Modelo` (`model_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

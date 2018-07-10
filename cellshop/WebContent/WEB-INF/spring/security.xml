@@ -19,7 +19,7 @@
 		<intercept-url pattern="/banners/*"
 			access="hasAnyAuthority('ADMIN')" />
 			
-		<form-login login-page="/formLogin" />
+		<form-login login-page="/formLogin" default-target-url="/admin/index"/>
 	</http>
 
 	<authentication-manager>

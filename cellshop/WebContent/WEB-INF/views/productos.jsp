@@ -32,12 +32,13 @@
 <script src="${urlPublic}/js/main.js"></script>
 <script src="${urlPublic}/js/bootstrap.min.js"></script>
 </head>
-<div class="page-container">
-	
-	<jsp:include page="includes/menu.jsp"></jsp:include>
-	
-	<div class="content-page">
-		<!-- <div class="hidden-xs content-carousel">
+<body>
+	<div class="page-container">
+
+		<jsp:include page="includes/menu.jsp"></jsp:include>
+
+		<div class="content-page">
+			<!-- <div class="hidden-xs content-carousel">
 			<div id="carousel-phonestore" class="carousel slide"
 				data-ride="carousel" style="margin-top: 0;">
 				<ol class="carousel-indicators">
@@ -79,71 +80,83 @@
 			<img src="${urlPublic}/assets/img/image-carousel.jpg" alt=""
 				class="img-responsive">
 		</div>-->
-		
-		<section id="prod-container section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<p class="tittles-pages">Teléfonos</p>
-				</div>
-		
-				<div class="col-xs-12">
-					<div class="container">
-						
-						<ul class="nav nav-tabs">
-						  <li class="nav-item">
-						    <a class="nav-link active" href="${urlRoot}modelos/lists">Todos</a>
-						  </li>
-						  <c:forEach var="marca" items="${marcas}">
-							  <li class="nav-item">
-							    <a class="nav-link" href="${urlRoot}modelos/lists/${marca.marca_id}">${marca.descripcion}</a>
-							  </li>
-						  </c:forEach>
-						</ul>
 
-												
-						<div class="tab-content">
-							<!-- ===================================== Todas las categorias ============================================= -->
-							<div class="tab-pane active" id="all-categories">
-								<p class="tittles-pages">Todos los productos ${marcaSele.descripcion}</p>
-								
-								<c:forEach var="producto" items="${productos}">
-								
+			<section id="prod-container section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 text-center">
+						<p class="tittles-pages">Teléfonos</p>
+					</div>
+
+					<div class="col-xs-12">
+						<div class="container">
+
+							<ul class="nav nav-tabs">
+								<li class="nav-item"><a class="nav-link active"
+									href="${urlRoot}modelos/lists">Todos</a></li>
+								<c:forEach var="marca" items="${marcas}">
+									<li class="nav-item"><a class="nav-link"
+										href="${urlRoot}modelos/lists/${marca.marca_id}">${marca.descripcion}</a>
+									</li>
+								</c:forEach>
+							</ul>
+
+
+							<div class="tab-content">
+								<!-- ===================================== Todas las categorias ============================================= -->
+								<div class="tab-pane active" id="all-categories">
+									<p class="tittles-pages">Todos los productos
+										${marcaSele.descripcion}</p>
+
+									<c:forEach var="producto" items="${productos}">
+
 										<div class="col-xs-12 col-sm-6 col-md-3">
 											<div class="thumbnail thumbnail-content-phones">
 												<div class="img-products">
-													<img src="${urlPublic}/assets/img/celulares/${producto.imagen}" alt="prod-icon" class="img-responsive">
+													<img
+														src="${urlPublic}/assets/img/celulares/${producto.imagen}"
+														alt="prod-icon" class="img-responsive">
 												</div>
-												<div class="caption" role="menu" id="producto" name="producto">			
+												<div class="caption" role="menu" id="producto"
+													name="producto">
 													<h3 class=" text-center">${producto.modelo.nombre}</h3>
 													<p class="text-justify">${producto.descripcion}</p>
-													<p class="text-justify"><b>Memoria Ram:</b> ${producto.memoria.descripcion}</p>
-													<p class="text-justify"><b>Almacenamiento:</b> ${producto.almacenamiento.descripcion}</p>
-													<p class="text-justify"><b>Color:</b> ${producto.color.nombre}</p>
-													<p class="text-justify"><b>Precio:</b> ${producto.precio}gs</p>
+													<p class="text-justify">
+														<b>Memoria Ram:</b> ${producto.memoria.descripcion}
+													</p>
+													<p class="text-justify">
+														<b>Almacenamiento:</b>
+														${producto.almacenamiento.descripcion}
+													</p>
+													<p class="text-justify">
+														<b>Color:</b> ${producto.color.nombre}
+													</p>
+													<p class="text-justify">
+														<b>Precio:</b> ${producto.precio}gs
+													</p>
 													<p class="text-center">
-														<a href="#" class="btn btn-danger" role="button">Ver más</a>
-													</p>																			
-												
+														<a href="#" class="btn btn-danger" role="button">Ver
+															más</a>
+													</p>
+
 												</div>
 											</div>
 										</div>
-								
-								</c:forEach>
-								
+
+									</c:forEach>
+
+								</div>
+								<!-- ===================================== SmartPhones ============================================= -->
 							</div>
-							<!-- ===================================== SmartPhones ============================================= -->	
 						</div>
 					</div>
 				</div>
 			</div>
+			</section>
 		</div>
-		</section>
+
+		<jsp:include page="includes/footer.jsp"></jsp:include>
+
 	</div>
-	
-	<jsp:include page="includes/footer.jsp"></jsp:include>
-	
-	</footer>
-</div>
 </body>
 </html>

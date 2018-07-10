@@ -24,6 +24,22 @@ html, body {
 	width: 100%;
 }
 
+.text-center, th{
+	text-align: center;
+}
+
+.jumbotron{
+	height: 200px;
+}
+
+.center{
+	margin-left: 37%;
+}
+
+.admin{
+	width: 500px;
+}
+
 .img-products{
 	width:45%;
 	padding-left: 10%;
