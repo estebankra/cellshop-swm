@@ -10,5 +10,6 @@ public interface IProductosService {
 	List<Producto> buscarTodas();
 	Producto buscarPorId(int idProducto);
 	void eliminar(int idProducto);
+	List<Producto> buscarPorIdMarca(int idMarca);
 
 }

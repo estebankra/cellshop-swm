@@ -26,9 +26,6 @@ public class ProductosController {
 	@Autowired
 	private IProductosService serviceProductos;
 	
-	@Autowired
-	private IModelosService serviceModelos;
-	
 	@RequestMapping(value = "/lists", method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {	
 		List<Marca> listaMarcas = serviceMarcas.buscarTodas();
@@ -46,13 +43,9 @@ public class ProductosController {
 		Marca marcaSelec = serviceMarcas.buscarPorId(idMarca);
 		model.addAttribute("marcaSele", marcaSelec);
 		
-		List<Modelo> listaModelos = serviceModelos.buscarTodas();
-		model.addAttribute("modelos", listaModelos);
+		List<Producto> listaProductos = serviceProductos.buscarPorIdMarca(idMarca);
+		model.addAttribute("productos", listaProductos);
 		
-		// TODO - Buscar en la base de datos los horarios.		
-		/*List<Horario> horarios= serviceHorarios.buscarPorIdPelicula(idPelicula, fecha);
-		model.addAttribute("horarios", horarios);
-		model.addAttribute("pelicula", servicePeliculas.buscarPorId(idPelicula));	*/	
 		return "productos";
 	}
 

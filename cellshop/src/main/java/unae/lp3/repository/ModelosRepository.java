@@ -18,7 +18,7 @@ import unae.lp3.model.Modelo;
 @Repository
 public interface ModelosRepository extends JpaRepository<Modelo, Integer> {
 
-	@Query(value = "SELECT * FROM `Modelo` WHERE 1", nativeQuery = true)
-	public List<Modelo> findByIdMarca(@Param("marca_id") int idMarca);
+	@Query(value = "SELECT * FROM `Modelo` WHERE marca_id = ?1", nativeQuery = true)
+	public List<Modelo> findByIdMarca(@Param("marca_id") int marca_id);
 
 }

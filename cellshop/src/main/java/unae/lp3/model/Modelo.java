@@ -20,6 +20,7 @@ public class Modelo {
 	private String dimensiones;
 	private String bateria;
 	
+	
 	public Modelo() {
 
 	}
@@ -60,6 +61,7 @@ public class Modelo {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 
 	public String getResolucion() {
 		return resolucion;

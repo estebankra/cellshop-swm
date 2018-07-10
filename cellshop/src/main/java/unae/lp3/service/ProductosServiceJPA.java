@@ -1,9 +1,13 @@
 package unae.lp3.service;
 
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
+import unae.lp3.model.Modelo;
 import unae.lp3.model.Producto;
+import unae.lp3.repository.ModelosRepository;
 import unae.lp3.repository.ProductosRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +20,9 @@ public class ProductosServiceJPA implements IProductosService{
 	// Inyectamos una instancia desde nuestro Root ApplicationContext.
     @Autowired
 	private ProductosRepository productosRepo;
+    
+    @Autowired
+	private ModelosRepository serviceModelos;
 
 
 	@Override
@@ -31,6 +38,26 @@ public class ProductosServiceJPA implements IProductosService{
 	@Override
 	public void eliminar(int idProducto) {
 		productosRepo.deleteById(idProducto);
+	}
+	
+	@Override
+	public List<Producto> buscarPorIdMarca(int idMarca) {		
+		List<Producto> productos = null;
+		// Buscamos en la tabla de horarios, [agrupando por idPelicula]
+		List<Modelo> listaModelos = serviceModelos.findByIdMarca(idMarca);
+		productos = new LinkedList<>();
+		
+		List<Producto> listaProductos = productosRepo.findAll();
+
+		// Formamos la lista final de Peliculas que regresaremos.
+		for (Modelo h : listaModelos) {
+			for(Producto p : listaProductos) {
+				if(h.getModel_id() == p.getModelo().getModel_id()) {
+					productos.add(p);
+				}
+			}
+		}		
+		return productos;
 	}
 	
 	@Override
