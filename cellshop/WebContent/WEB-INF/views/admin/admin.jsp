@@ -46,8 +46,7 @@
 				<br>
 				<h3>Administración del Sistema</h3>
 				<p>
-					<br> Bienvenido(a)
-					<sec:authentication property="principal.username" />
+					<br> Bienvenido(a)${usuario}
 				</p>
 			</div>
 

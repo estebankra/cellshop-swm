@@ -31,7 +31,7 @@ public class HomeController {
 		return "formLogin";
 	}
 	
-	@RequestMapping(value="/adminLogin", method=RequestMethod.GET)
+	@RequestMapping(value="/admin", method=RequestMethod.GET)
 	public String mostrarLoginAdmin() {
 		return "admin/formLogin";
 	}

@@ -68,8 +68,10 @@
 					name="${_csrf.parameterName}" value="${_csrf.token}" /><br><br>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 			</form>-->
-			
+
 			<form class="form-signin" action="j_security_check" method="post">
+				<h4 class="form-signin-heading" style="color: red">Acceso
+					denegado</h4>
 				<h3 class="form-signin-heading">CineSite | Administracion</h3>
 				<label for="j_username" class="sr-only">Usuario</label> <input
 					type="text" id="j_username" name="j_username" class="form-control"

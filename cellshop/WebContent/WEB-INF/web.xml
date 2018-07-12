@@ -27,24 +27,13 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- Spring Security Filter -->
-	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring/root-context.xml,
-					/WEB-INF/spring/security.xml
+		<param-value>/WEB-INF/spring/root-context.xml
 		</param-value>
 	</context-param>
 
@@ -90,5 +79,37 @@
 		<error-code>500</error-code>
 		<location>/WEB-INF/views/error/500.jsp</location>
 	</error-page>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>URLs protegidas solo para el rol Admin</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected -->
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Anyone with this role may access this area -->
+			<role-name>admin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>URLs protegidas solo para el rol Cliente</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected -->
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Anyone with this role may access this area -->
+			<role-name>cliente</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/WEB-INF/views/admin/formLogin.jsp</form-login-page>
+			<form-error-page>/WEB-INF/views/admin/formError.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
 
 </web-app>

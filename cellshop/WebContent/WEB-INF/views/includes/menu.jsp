@@ -16,7 +16,7 @@
 				<li><a href="contact.html">Contactenos</a></li> -->
 				<li><a href="${urlRoot}usuarios/nuevo"><b>Registrate</b></a></li>
 				<li><a href="${urlRoot}usuarios/nuevo"><b>Inicia Sesión</b></a></li>
-				<li><a href="${urlRoot}adminLogin"><b>Admin</b></a></li>
+				<li><a href="${urlRoot}admin/index"><b>Admin</b></a></li>
 				<li><i class="fas fa-cog"></i></li>
 			</ul>
 			<i class="fa fa-bars visible-xs btn-mobile"></i>
