@@ -42,27 +42,25 @@
 
 			<hr class="featurette-divider">
 
-				<div class="jumbotron"><br>
-					<h3>Administración del Sistema</h3>
-					<p><br>
-						Bienvenido(a)
-						<sec:authentication property="principal.username" />
-					</p>
-				</div>
-				
-				<h2>¿Qué quieres hacer?</h2>
-				<a href="${urlRoot}marcas/index"><h3>Administrar marcas</h3></a>
-
+			<div class="jumbotron">
+				<br>
+				<h3>Administración del Sistema</h3>
+				<p>
+					<br> Bienvenido(a)
+					<sec:authentication property="principal.username" />
+				</p>
 			</div>
-			<!-- /container -->
 
-			<hr class="featurette-divider">
+			<h2>¿Qué quieres hacer?</h2>
+			<a href="${urlRoot}marcas/index"><h3>Administrar marcas</h3></a>
+			<a href="${urlRoot}almacenamientos/index"><h3>Administrar almacenamientos</h3></a>
 
 		</div>
+		<!-- /container -->
 
-	</div>
+		<hr class="featurette-divider">
 
-	<jsp:include page="../includes/footer.jsp"></jsp:include>
+		<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 	</div>
 

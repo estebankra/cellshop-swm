@@ -58,6 +58,10 @@
 					</div>
 				</spring:hasBindErrors>
 
+				<c:if test="${msg !=null }">
+					<div class='alert alert-warning' role='alert'>${msg}</div>
+				</c:if>
+
 				<form:form action="${urlForm}" method="POST"
 					modelAttribute="usuario">
 					<div class="row">
@@ -187,11 +191,12 @@
 		<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 	</div>
-	
-		<!-- Bootstrap core JavaScript
+
+	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 

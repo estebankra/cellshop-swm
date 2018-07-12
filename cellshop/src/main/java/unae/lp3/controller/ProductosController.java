@@ -30,7 +30,7 @@ public class ProductosController {
 	public String mostrarPrincipal(Model model) {	
 		List<Marca> listaMarcas = serviceMarcas.buscarTodas();
 		model.addAttribute("marcas", listaMarcas);
-		List<Producto> listaProductos = serviceProductos.buscarTodas();
+		List<Producto> listaProductos = serviceProductos.buscarPorStock();
 		model.addAttribute("productos", listaProductos);
 		return "productos";
 

@@ -37,7 +37,7 @@
     <div class="page-container">
     
     	<jsp:include page="includes/menu.jsp"></jsp:include>
-    
+    	
         <div class="content-page cover-background font-content-index">
             <div class="jumbotron">
               <h1 class="tittles-pages">Bienvenido a CellShop</h1>

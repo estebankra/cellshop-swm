@@ -13,7 +13,6 @@
 <meta name="author" content="">
 <title>CellShop | Bienvenido</title>
 <spring:url value="/resources" var="urlPublic" />
-<spring:url value="/marcas/guardar" var="urlForm" />
 <link rel="stylesheet" href="${urlPublic}/css/normalize.css">
 <link rel="stylesheet" href="${urlPublic}/css/bootstrap.min.css">
 <link rel="stylesheet" href="${urlPublic}/css/font-awesome.min.css">
@@ -43,16 +42,16 @@
 		<div class="container theme-showcase" role="main">
 
 			<div class="col-xs-12">
-				<p class="tittles-pages">Listado de marcas</p>
+				<p class="tittles-pages">Listado de almacenamientos</p>
 			</div>
 
 			<c:if test="${msg !=null }">
 				<div class='alert alert-success' role='alert'>${msg}</div>
 			</c:if>
 
-			<spring:url value="/admin/marcas/editar" var="urlEdit" />
-			<spring:url value="/admin/marcas/eliminar" var="urlDelete" />
-			<spring:url value="/admin/marcas/nuevo" var="urlCreate" />
+			<spring:url value="/admin/almacenamientos/editar" var="urlEdit" />
+			<spring:url value="/admin/almacenamientos/eliminar" var="urlDelete" />
+			<spring:url value="/admin/almacenamientos/nuevo" var="urlCreate" />
 
 			<a href="${urlCreate}" class="btn btn-success" role="button"
 				title="Nueva marca">Nueva</a><br> <br>
@@ -60,17 +59,17 @@
 			<div class="table-responsive text-center">
 				<table class="table table-hover table-striped table-bordered">
 					<tr>
-						<th>Marcas</th>
+						<th>Almacenamientos</th>
 						<th>Acciones</th>
 					</tr>
 
-					<c:forEach var="marca" items="${marcas}">
+					<c:forEach var="almacenamiento" items="${almacenamientos}">
 						<tr>
-							<td>${marca.descripcion}</td>
-							<td><a href="${urlEdit}/${marca.marca_id}"
+							<td>${almacenamiento.descripcion}</td>
+							<td><a href="${urlEdit}/${almacenamiento.almacen_id}"
 								class="btn btn-success btn-sm" role="button" title="Edit"><span
 									class="glyphicon glyphicon-pencil"></span></a> <a
-								href="${urlDelete}/${marca.marca_id}"
+								href="${urlDelete}/${almacenamiento.almacen_id}"
 								onclick='return confirm("¿Estas seguro?")'
 								class="btn btn-danger btn-sm" role="button" title="Eliminar"><span
 									class="glyphicon glyphicon-trash"></span></a></td>

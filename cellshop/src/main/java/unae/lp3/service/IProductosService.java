@@ -11,5 +11,6 @@ public interface IProductosService {
 	Producto buscarPorId(int idProducto);
 	void eliminar(int idProducto);
 	List<Producto> buscarPorIdMarca(int idMarca);
+	List<Producto> buscarPorStock();
 
 }

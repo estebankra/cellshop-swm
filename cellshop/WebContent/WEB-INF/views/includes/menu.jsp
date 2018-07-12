@@ -27,8 +27,8 @@
 			<ul class="list-unstyled full-reset navigation-list">
 				<li><a href="${urlRoot}admin/index">Inicio</a></li>
 				<li><a href="${urlRoot}admin/marcas/index">Marcas</a></li>
+				<li><a href="${urlRoot}admin/almacenamientos/index">Almacenamiento</a></li>
 				<li><a href="${urlRoot}admin/logout">Salir</a></li>	
-				<li><a href="${urlRoot}admin/almacenamiento/index">Almacenamiento</a></li>
 			</ul>
 			<i class="fa fa-bars visible-xs btn-mobile"></i>
 		</sec:authorize>
