@@ -47,28 +47,24 @@
 						datos</p>
 				</div>
 
-				<spring:hasBindErrors name="usuario">
-					<div class='alert alert-danger' role='alert'>
-						Por favor corrija los siguientes errores:
-						<ul>
-							<c:forEach var="error" items="${errors.allErrors}">
-								<li><spring:message message="${error}" /></li>
-							</c:forEach>
-						</ul>
-					</div>
-				</spring:hasBindErrors>
-
-				<c:if test="${msg !=null }">
-					<div class='alert alert-warning' role='alert'>${msg}</div>
-				</c:if>
-
 				<form:form action="${urlForm}" method="POST"
 					modelAttribute="usuario">
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="row">
-								<label for="apellidos">Apellidos</label>
+								<label for="perfil">Perfil</label>
 								<form:hidden path="usuario_id" />
+								<form:input type="text" class="form-control" path="perfil"
+									id="perfil" required="required" />
+
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="row">
+								<label for="apellidos">Apellidos</label>
 								<form:input type="text" class="form-control" path="apellidos"
 									id="apellidos" required="required" />
 							</div>

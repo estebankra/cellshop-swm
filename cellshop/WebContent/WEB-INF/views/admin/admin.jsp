@@ -46,7 +46,7 @@
 				<br>
 				<h3>Administración del Sistema</h3>
 				<p>
-					<br> Bienvenido(a)${usuario}
+					<br> Bienvenido(a)
 				</p>
 			</div>
 

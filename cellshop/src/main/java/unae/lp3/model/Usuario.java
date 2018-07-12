@@ -15,6 +15,7 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment MySQL
 	private int usuario_id;
+	private String perfil;
 	private String apellidos;
 	private String nombre;
 	private Date fechanac;
@@ -37,6 +38,14 @@ public class Usuario {
 
 	public void setUsuario_id(int usuario_id) {
 		this.usuario_id = usuario_id;
+	}
+	
+	public String getPerfil() {
+		return perfil;
+	}
+
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
 	}
 
 	public String getApellidos() {
@@ -129,10 +138,10 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [usuario_id=" + usuario_id + ", apellidos=" + apellidos + ", nombre=" + nombre + ", fechanac="
-				+ fechanac + ", docunum=" + docunum + ", direccion=" + direccion + ", ciudad=" + ciudad + ", pais="
-				+ pais + ", telefono=" + telefono + ", email=" + email + ", usuario=" + usuario + ", contrasena="
-				+ contrasena + "]";
+		return "Usuario [usuario_id=" + usuario_id + ", perfil=" + perfil + ", apellidos=" + apellidos + ", nombre="
+				+ nombre + ", fechanac=" + fechanac + ", docunum=" + docunum + ", direccion=" + direccion + ", ciudad="
+				+ ciudad + ", pais=" + pais + ", telefono=" + telefono + ", email=" + email + ", usuario=" + usuario
+				+ ", contrasena=" + contrasena + "]";
 	}
 	
 }

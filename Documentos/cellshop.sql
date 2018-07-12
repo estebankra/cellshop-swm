@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 10, 2018 at 09:55 PM
+-- Generation Time: Jul 12, 2018 at 10:18 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -39,6 +39,7 @@ CREATE TABLE `Almacenamiento` (
 
 INSERT INTO `Almacenamiento` (`almacen_id`, `descripcion`) VALUES
 (2, '256gb'),
+(4, '32gb'),
 (1, '64gb');
 
 -- --------------------------------------------------------
@@ -95,8 +96,7 @@ INSERT INTO `Marcas` (`marca_id`, `descripcion`) VALUES
 (2, 'Apple'),
 (6, 'Huawei'),
 (7, 'LG'),
-(1, 'Samsung'),
-(11, 'Tu hermana');
+(1, 'Samsung');
 
 -- --------------------------------------------------------
 
@@ -191,7 +191,7 @@ CREATE TABLE `Productos` (
 --
 
 INSERT INTO `Productos` (`prod_id`, `almacen_id`, `color_id`, `mem_id`, `model_id`, `descripcion`, `imagen`, `stock`, `precio`) VALUES
-(2, 1, 1, 1, 1, '<b>Velocidad CPU:</b> 2.7GHz, 1.7GHz.<br>\r\n<b>Tipo CPU:</b> Octa-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> Android', 'samsungs9plus.jpg', 1, 4800000),
+(2, 1, 1, 1, 1, '<b>Velocidad CPU:</b> 2.7GHz, 1.7GHz.<br>\r\n<b>Tipo CPU:</b> Octa-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> Android', 'samsungs9plus.jpg', 6, 4800000),
 (3, 1, 4, 2, 2, '<b>Velocidad CPU:</b> 2.1 GHZ.<br>\r\n<b>Tipo CPU:</b> Six-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> iOS 11', 'iphonex.png', 1, 6900000);
 
 -- --------------------------------------------------------
@@ -202,6 +202,7 @@ INSERT INTO `Productos` (`prod_id`, `almacen_id`, `color_id`, `mem_id`, `model_i
 
 CREATE TABLE `Usuarios` (
   `usuario_id` int(11) NOT NULL,
+  `perfil` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `apellidos` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `fechanac` date NOT NULL,
@@ -219,12 +220,15 @@ CREATE TABLE `Usuarios` (
 -- Dumping data for table `Usuarios`
 --
 
-INSERT INTO `Usuarios` (`usuario_id`, `apellidos`, `nombre`, `fechanac`, `docunum`, `direccion`, `ciudad`, `pais`, `telefono`, `email`, `usuario`, `contrasena`) VALUES
-(1, 'fesfse', 'fsefse', '0015-10-09', '435453', 'fsfes', 'esfesf', 'sefsef', '3245235', 'e564ro@gmail.com', 'afwf', 'fawf'),
-(2, 'Krauwezuk Powszuk}', 'Esteban', '0011-05-21', '4364888', 'CapitÃ¡n Miranda Calle \"C\" 12', 'CapitÃ¡n Miranda', 'Paraguay', '0983813404', 'esteban98alejandro@gmail.com', 'estebank98', 'eakp.eakp'),
-(3, 'Rodriguez', 'Fernando', '0008-12-08', '3214341', 'Encarnacion', 'Encarnacion', 'Paraguay', '0987685766', 'rodri45@gmail.com', 'rodri12', 'rodri123'),
-(4, 'htrh', 'hrthrt', '0010-12-15', '354534', 'grg', 'gdrg', 'drgrdg', '3545', 'fesfsef@gmail.com', 'awfdwaf', 'waf324'),
-(5, 'grgreg', 'rgergre', '2016-12-09', '354543', 'fesrfe', 'esfgsef', 'esff', '3255', 'daeda@gmail.com', 'eaff', 'fef342');
+INSERT INTO `Usuarios` (`usuario_id`, `perfil`, `apellidos`, `nombre`, `fechanac`, `docunum`, `direccion`, `ciudad`, `pais`, `telefono`, `email`, `usuario`, `contrasena`) VALUES
+(1, 'cliente', 'fesfse', 'fsefse', '0015-10-09', '435453', 'fsfes', 'esfesf', 'sefsef', '3245235', 'e564ro@gmail.com', 'afwf', '827ccb0eea8a706c4c34a16891f84e7b'),
+(2, 'cliente', 'Krauwezuk Powszuk}', 'Esteban', '0011-05-21', '4364888', 'CapitÃ¡n Miranda Calle \"C\" 12', 'CapitÃ¡n Miranda', 'Paraguay', '0983813404', 'esteban98alejandro@gmail.com', 'estebank98', '827ccb0eea8a706c4c34a16891f84e7b'),
+(3, 'cliente', 'Rodriguez', 'Fernando', '0008-12-08', '3214341', 'Encarnacion', 'Encarnacion', 'Paraguay', '0987685766', 'rodri45@gmail.com', 'rodri12', '827ccb0eea8a706c4c34a16891f84e7b'),
+(4, 'cliente', 'htrh', 'hrthrt', '0010-12-15', '354534', 'grg', 'gdrg', 'drgrdg', '3545', 'fesfsef@gmail.com', 'awfdwaf', '827ccb0eea8a706c4c34a16891f84e7b'),
+(5, 'cliente', 'grgreg', 'rgergre', '2016-12-09', '354543', 'fesrfe', 'esfgsef', 'esff', '3255', 'daeda@gmail.com', 'eaff', '827ccb0eea8a706c4c34a16891f84e7b'),
+(6, 'cliente', 'dawdwa', 'wawdad', '2018-07-03', '2352', 'adwd', 'dawd', 'dwad', '3243423', 'e56o@gmail.com', 'e56o@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(7, 'cliente', 'regr', 'ergerg', '2018-07-03', '4354', 'rgr', 'srgr', 'sgrsg', '654645', 'esto@gmail.com', 'esto@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(8, 'cliente', 'qrr', 'qrqwr', '2018-06-25', '234523', 'wdada', 'wadwad', 'dwada', '4324', 'es@gmail.com', 'awd', '827ccb0eea8a706c4c34a16891f84e7b');
 
 --
 -- Indexes for dumped tables
@@ -316,7 +320,7 @@ ALTER TABLE `Usuarios`
 -- AUTO_INCREMENT for table `Almacenamiento`
 --
 ALTER TABLE `Almacenamiento`
-  MODIFY `almacen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `almacen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `Carrito`
@@ -334,7 +338,7 @@ ALTER TABLE `Colores`
 -- AUTO_INCREMENT for table `Marcas`
 --
 ALTER TABLE `Marcas`
-  MODIFY `marca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `marca_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `Memram`
@@ -370,7 +374,7 @@ ALTER TABLE `Productos`
 -- AUTO_INCREMENT for table `Usuarios`
 --
 ALTER TABLE `Usuarios`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

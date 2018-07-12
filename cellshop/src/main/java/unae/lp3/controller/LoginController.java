@@ -17,8 +17,6 @@ public class LoginController {
 	
 	@GetMapping(value="/index")
 	public String mostrarPrincipalAdmin(HttpSession session, Principal principal){		
-		String usuario = principal.getName();
-		session.setAttribute("usuario", usuario);
 		return "admin/admin";		
 	}
 
