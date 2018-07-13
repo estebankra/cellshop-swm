@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/cellshop">
+<Realm className="org.apache.catalina.realm.JDBCRealm"
+connectionName="root" connectionPassword=""
+connectionURL="jdbc:mysql://localhost:3306/cellshop?useSSL=false"
+driverName="com.mysql.jdbc.Driver"
+roleNameCol="perfil" userCredCol="contrasena" userNameCol="usuario"
+userRoleTable="Usuarios" userTable="Usuarios">
+<CredentialHandler
+className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+algorithm="MD5" iterations="1" saltLength="0" encoding="ISO-8859-1" />
+</Realm>
+</Context>
