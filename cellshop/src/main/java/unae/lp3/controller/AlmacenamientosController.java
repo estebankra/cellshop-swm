@@ -13,7 +13,7 @@ import unae.lp3.model.Almacenamiento;
 import unae.lp3.service.IAlmacenamientosService;
 
 @Controller
-@RequestMapping(value = "/admin/almacenamientos")
+@RequestMapping(value = "/almacenamientos")
 public class AlmacenamientosController {
 	
 	@Autowired

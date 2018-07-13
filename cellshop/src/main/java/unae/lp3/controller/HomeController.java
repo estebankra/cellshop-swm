@@ -31,11 +31,6 @@ public class HomeController {
 		return "formLogin";
 	}
 	
-	@RequestMapping(value="/admin", method=RequestMethod.GET)
-	public String mostrarLoginAdmin() {
-		return "admin/formLogin";
-	}
-	
 	/**
 	 * Metodo para personalizar el Data Binding para los atributos de tipo Date
 	 * @param webDataBinder

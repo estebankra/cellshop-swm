@@ -46,7 +46,7 @@
 				class="center">
 
 			<div class="col-xs-12">
-				<p class="tittles-pages">Inicia sesión como administrador</p>
+				<p class="tittles-pages">Inicia sesión en nuestra web</p>
 			</div>
 
 			<!--<form class="form-signin" action="${urlRoot}login" method="post">
@@ -70,9 +70,8 @@
 			</form>-->
 
 			<form class="form-signin" action="j_security_check" method="post">
-				<h4 class="form-signin-heading" style="color: red">Acceso
-					denegado</h4>
-				<h3 class="form-signin-heading">CineSite | Administracion</h3>
+				<h4 class="form-signin-heading" style="color: red">La cuenta con la que intentas acceder no existe</h4>
+				<h3 class="form-signin-heading">CellShop</h3>
 				<label for="j_username" class="sr-only">Usuario</label> <input
 					type="text" id="j_username" name="j_username" class="form-control"
 					placeholder="Usuario" required autofocus> <label

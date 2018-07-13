@@ -114,7 +114,7 @@
                                 <h3>Teléfonos</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus deserunt eveniet beatae repudiandae asperiores! Et facere beatae ea inventore similique molestiae fugiat ad, quos, tenetur natus est libero ducimus.
                                 </p>
-                                <a href="#" class="btn btn-success">Más información</a>
+                                <a href="${urlRoot}modelos/lists" class="btn btn-success">Más información</a>
                                 <hr class="visible-xs">
                             </div>
                         </div>

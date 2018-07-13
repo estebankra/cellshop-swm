@@ -13,7 +13,7 @@ import unae.lp3.model.Marca;
 import unae.lp3.service.IMarcasService;
 
 @Controller
-@RequestMapping(value = "/admin/marcas")
+@RequestMapping(value = "/marcas")
 public class MarcasController {
 	
 	@Autowired

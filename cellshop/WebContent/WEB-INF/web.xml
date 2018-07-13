@@ -84,7 +84,7 @@
 		<web-resource-collection>
 			<web-resource-name>URLs protegidas solo para el rol Admin</web-resource-name>
 			<!-- Define the context-relative URL(s) to be protected -->
-			<url-pattern>/admin/*</url-pattern>
+			<url-pattern>/login/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<!-- Anyone with this role may access this area -->
@@ -96,7 +96,7 @@
 		<web-resource-collection>
 			<web-resource-name>URLs protegidas solo para el rol Cliente</web-resource-name>
 			<!-- Define the context-relative URL(s) to be protected -->
-			<url-pattern>/admin/*</url-pattern>
+			<url-pattern>/login/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<!-- Anyone with this role may access this area -->
@@ -107,8 +107,8 @@
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>
-			<form-login-page>/WEB-INF/views/admin/formLogin.jsp</form-login-page>
-			<form-error-page>/WEB-INF/views/admin/formError.jsp</form-error-page>
+			<form-login-page>/WEB-INF/views/login/formLogin.jsp</form-login-page>
+			<form-error-page>/WEB-INF/views/login/formError.jsp</form-error-page>
 		</form-login-config>
 	</login-config>
 
