@@ -13,7 +13,7 @@
 <meta name="author" content="">
 <title>CellShop | Bienvenido</title>
 <spring:url value="/resources" var="urlPublic" />
-<spring:url value="/admin/marcas/guardar" var="urlForm" />
+<spring:url value="/marcas/guardar" var="urlForm" />
 <link rel="stylesheet" href="${urlPublic}/css/normalize.css">
 <link rel="stylesheet" href="${urlPublic}/css/bootstrap.min.css">
 <link rel="stylesheet" href="${urlPublic}/css/font-awesome.min.css">

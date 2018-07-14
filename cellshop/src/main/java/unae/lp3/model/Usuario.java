@@ -29,7 +29,25 @@ public class Usuario {
 	private String contrasena;
 	
 	public Usuario() {
-		this.fechanac = new Date(); // por default la fecha del sistema
+	}
+
+	public Usuario(int usuario_id, String perfil, String apellidos, String nombre, Date fechanac, String docunum,
+			String direccion, String ciudad, String pais, String telefono, String email, String usuario,
+			String contrasena) {
+		super();
+		this.usuario_id = usuario_id;
+		this.perfil = perfil;
+		this.apellidos = apellidos;
+		this.nombre = nombre;
+		this.fechanac = fechanac;
+		this.docunum = docunum;
+		this.direccion = direccion;
+		this.ciudad = ciudad;
+		this.pais = pais;
+		this.telefono = telefono;
+		this.email = email;
+		this.usuario = usuario;
+		this.contrasena = contrasena;
 	}
 
 	public int getUsuario_id() {

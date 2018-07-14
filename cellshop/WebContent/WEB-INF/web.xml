@@ -85,6 +85,9 @@
 			<web-resource-name>URLs protegidas solo para el rol Admin</web-resource-name>
 			<!-- Define the context-relative URL(s) to be protected -->
 			<url-pattern>/login/*</url-pattern>
+			<url-pattern>/cuentas/*</url-pattern>
+			<url-pattern>/marcas/*</url-pattern>
+			<url-pattern>/almacenamientos/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<!-- Anyone with this role may access this area -->

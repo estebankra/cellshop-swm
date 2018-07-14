@@ -49,9 +49,9 @@
 				<div class='alert alert-success' role='alert'>${msg}</div>
 			</c:if>
 
-			<spring:url value="/admin/almacenamientos/editar" var="urlEdit" />
-			<spring:url value="/admin/almacenamientos/eliminar" var="urlDelete" />
-			<spring:url value="/admin/almacenamientos/nuevo" var="urlCreate" />
+			<spring:url value="/almacenamientos/editar" var="urlEdit" />
+			<spring:url value="/almacenamientos/eliminar" var="urlDelete" />
+			<spring:url value="/almacenamientos/nuevo" var="urlCreate" />
 
 			<a href="${urlCreate}" class="btn btn-success" role="button"
 				title="Nueva marca">Nueva</a><br> <br>

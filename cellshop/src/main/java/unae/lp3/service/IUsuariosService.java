@@ -10,5 +10,6 @@ public interface IUsuariosService {
 	List<Usuario> buscarTodas();
 	void eliminar(int idUsuario);
 	Usuario buscarPorId(int idUsuario);
+	List<Usuario> buscarTodosLosClientes();
 
 }

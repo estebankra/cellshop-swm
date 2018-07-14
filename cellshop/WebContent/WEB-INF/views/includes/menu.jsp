@@ -12,12 +12,13 @@
 				<div class="logo tittles-pages">CellShop | Administración</div>
 				<ul class="list-unstyled full-reset navigation-list">
 					<li><a href="${urlRoot}login/index">Inicio</a></li>
+					<li><a href="${urlRoot}usuarios/cuentas">Usuarios</a></li>
 					<li><a href="${urlRoot}login/index">Productos</a></li>
 					<li><a href="${urlRoot}login/index">Colores</a></li>
 					<li><a href="${urlRoot}login/index">Ram</a></li>
-					<li><a href="${urlRoot}/marcas/index">Marcas</a></li>
-					<li><a href="${urlRoot}/almacenamientos/index">Almacenamiento</a></li>
-					<li><a href="${urlRoot}login/logout">Salir</a></li>
+					<li><a href="${urlRoot}marcas/index">Marcas</a></li>
+					<li><a href="${urlRoot}almacenamientos/index">Almacenamiento</a></li>
+					<li><a href="${urlRoot}logout">Salir</a></li>
 				</ul>
 				<i class="fa fa-bars visible-xs btn-mobile"></i>
 			</c:when>
@@ -31,7 +32,7 @@
 					<li><a href="${urlRoot}login/index">Perfil</a></li>
 					<li><a href="${urlRoot}login/index">Carrito de compra</a></li>
 					<li><a href="${urlRoot}login/index">Historial de compras</a></li>
-					<li><a href="${urlRoot}login/logout">Salir</a></li>
+					<li><a href="${urlRoot}logout">Salir</a></li>
 				</ul>
 				<i class="fa fa-bars visible-xs btn-mobile"></i>
 			</c:when>

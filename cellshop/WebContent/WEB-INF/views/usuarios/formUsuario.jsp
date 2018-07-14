@@ -13,6 +13,7 @@
 <meta name="author" content="">
 <title>CellShop | Bienvenido</title>
 <spring:url value="/resources" var="urlPublic" />
+<spring:url value="/" var="urlRoot" />
 <spring:url value="/usuarios/guardar" var="urlForm" />
 <link rel="stylesheet" href="${urlPublic}/css/normalize.css">
 <link rel="stylesheet" href="${urlPublic}/css/bootstrap.min.css">
@@ -37,7 +38,22 @@
 
 	<div class="page-container">
 
-		<jsp:include page="../includes/menu.jsp"></jsp:include>
+		<nav class="full-reset nav-phonestore">
+			<div class="page-container">
+				<div class="logo tittles-pages">CellShop</div>
+				<ul class="list-unstyled full-reset navigation-list">
+					<li><a href="${urlRoot}">Inicio</a></li>
+					<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>
+					<!--<li><a href="news.html">Noticias</a></li>
+					<li><a href="services.html">Servicios</a></li>
+					<li><a href="contact.html">Contactenos</a></li> -->
+					<li><a href="${urlRoot}usuarios/nuevo"><b>Registrate</b></a></li>
+					<li><a href="${urlRoot}login/index"><b>Inicia Sesión</b></a></li>
+					<li><i class="fas fa-cog"></i></li>
+				</ul>
+				<i class="fa fa-bars visible-xs btn-mobile"></i>
+			</div>
+		</nav>
 
 		<div class="container theme-showcase" role="main">
 
@@ -47,24 +63,26 @@
 						datos</p>
 				</div>
 
+				<spring:hasBindErrors name="usuario">
+					<div class='alert alert-danger' role='alert'>
+						Por favor corrija los siguientes errores:
+						<ul>
+							<c:forEach var="error" items="${errors.allErrors}">
+								<li><spring:message message="${error}" /></li>
+							</c:forEach>
+						</ul>
+					</div>
+				</spring:hasBindErrors>
+
 				<form:form action="${urlForm}" method="POST"
 					modelAttribute="usuario">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="row">
-								<label for="perfil">Perfil</label>
-								<form:hidden path="usuario_id" />
-								<form:input type="text" class="form-control" path="perfil"
-									id="perfil" required="required" />
-
-							</div>
-						</div>
-					</div>
 
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="row">
 								<label for="apellidos">Apellidos</label>
+								<form:hidden path="usuario_id" />
+								<form:hidden path="perfil" />
 								<form:input type="text" class="form-control" path="apellidos"
 									id="apellidos" required="required" />
 							</div>
@@ -187,14 +205,6 @@
 		<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 	</div>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </body>
 </html>

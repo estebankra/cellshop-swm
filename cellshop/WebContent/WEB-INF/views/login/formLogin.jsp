@@ -42,6 +42,10 @@
 
 			<hr class="featurette-divider">
 
+			<c:if test="${msg !=null }">
+				<div class='alert alert-success' role='alert'>${msg}</div>
+			</c:if>
+
 			<img src="${urlPublic}/assets/img/login.png" width="136" height="136"
 				class="center">
 
@@ -68,7 +72,7 @@
 					name="${_csrf.parameterName}" value="${_csrf.token}" /><br><br>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
 			</form>-->
-			
+
 			<form class="form-signin" action="j_security_check" method="post">
 				<h3 class="form-signin-heading">CellShop</h3>
 				<label for="j_username" class="sr-only">Usuario</label> <input

@@ -27,12 +27,4 @@ public class LoginController {
 		return "/login/index";		
 	}
 
-	
-	@GetMapping(value = "/logout")
-	public String logout(HttpServletRequest request) {
-		HttpSession sesion = request.getSession();
-		sesion.invalidate();
-		return "redirect:/";
-	}
-
 }
