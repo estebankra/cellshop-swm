@@ -1,33 +1,36 @@
 package unae.lp3.controller;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import unae.lp3.model.Usuario;
+import unae.lp3.model.Pedido;
+import unae.lp3.service.IPedidosService;
 import unae.lp3.service.IUsuariosService;
 
 @Controller
-@RequestMapping(value = "/perfil")
-public class PerfilController {
+@RequestMapping(value = "/pedidos")
+public class PedidosController {
+
+	@Autowired
+	private IPedidosService servicePedidos;
 	
 	@Autowired
 	private IUsuariosService serviceUsuarios;
-	
-	@RequestMapping(value = "/{username}")
-	public String obtenerUsuarioLogeado( @PathVariable("username") String UserLog, Model model) {
-		Usuario usuarioLog = (Usuario) serviceUsuarios.buscarPorUsuario(UserLog);
-		model.addAttribute("usuarioLogueado", usuarioLog);
-		return "perfil/mostrarPerfil";
+
+	@RequestMapping(value = "/{usu_name}")
+	public String obtenerPedidosPorUsuario(@PathVariable("usu_name") String Usu_Name, Model model) {
+		int idUsuarioLog = serviceUsuarios.ObtenerIdPorNombre(Usu_Name);
+		List<Pedido> listaPedidos = servicePedidos.buscarPorIdUsuario(idUsuarioLog);
+		model.addAttribute("pedidos", listaPedidos);
+		return "pedidos/listPedidos";
 	}
 	
 	@InitBinder
@@ -36,5 +39,4 @@ public class PerfilController {
 		webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	}
 
-	
 }

@@ -31,7 +31,7 @@
 					<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>
 					<li><a href="${urlRoot}perfil/${usuario.name}">Perfil</a></li>
 					<li><a href="${urlRoot}login/index">Carrito de compra</a></li>
-					<li><a href="${urlRoot}login/index">Historial de compras</a></li>
+					<li><a href="${urlRoot}pedidos/${usuario.name}">Historial de compras</a></li>
 					<li><a href="${urlRoot}logout">Salir</a></li>
 				</ul>
 				<i class="fa fa-bars visible-xs btn-mobile"></i>

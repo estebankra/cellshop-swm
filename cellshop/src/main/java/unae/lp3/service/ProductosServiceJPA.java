@@ -60,7 +60,7 @@ public class ProductosServiceJPA implements IProductosService {
 
 		List<Producto> listaProductos = productosRepo.findAll();
 
-		// Formamos la lista final de Peliculas que regresaremos.
+		// Formamos la lista final de Modelos que regresaremos.
 		for (Modelo h : listaModelos) {
 			for (Producto p : listaProductos) {
 				if (h.getModel_id() == p.getModelo().getModel_id()) {
