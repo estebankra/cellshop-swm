@@ -42,6 +42,19 @@ public class UsuariosServiceJPA implements IUsuariosService{
 		}
 		return usuarios;
 	}
+	
+	@Override
+	public Object buscarPorUsuario(String username) {
+		Object usuarioLog = null;
+		List<Usuario> listaUsuarios = usuariosRepo.findAll();
+		for (Usuario p : listaUsuarios) {
+			if (p.getUsuario().equals(username)) {
+				usuarioLog = p;
+				break;
+			}
+		}
+		return usuarioLog;
+	}
 
 	@Override
 	public void eliminar(int idUsuario) {

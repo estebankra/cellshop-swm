@@ -23,14 +23,14 @@ public class UsuariosController {
 
 	@Autowired
 	private IUsuariosService serviceUsuarios;
-	
+
 	@GetMapping(value = "/cuentas")
 	public String mostrarIndex(Model model) {
 		List<Usuario> listaClientes = serviceUsuarios.buscarTodosLosClientes();
 		model.addAttribute("clientes", listaClientes);
 		return "clientes/listClientes";
 	}
-	
+
 	@GetMapping(value = "/nuevo")
 	public String crear(@ModelAttribute Usuario usuario) {
 		return "usuarios/formUsuario";
@@ -39,21 +39,46 @@ public class UsuariosController {
 	@PostMapping(value = "/guardar")
 	public String guardar(@ModelAttribute Usuario usuario, BindingResult result, Model model,
 			RedirectAttributes attributes) {
-		
-		usuario.setPerfil("cliente");
-		usuario.setContrasena(Utileria.getMD5(usuario.getContrasena()));
 
-		if (usuario.getEmail().equals(usuario.getUsuario())) {
-			attributes.addFlashAttribute("msg", "El nombre de usuario y correo electrónico no pueden repetirse!");
+		if (!usuario.getContrasena().equals(usuario.getPerfil())) {
+			attributes.addFlashAttribute("msg", "Los campos de contraseña no coinciden!");
 			return "redirect:/usuarios/nuevo";
 		} else {
-			// Insertamos el usuario
-			serviceUsuarios.guardar(usuario);
-			attributes.addFlashAttribute("msg", "Has creado tu cuenta con éxito. ¡Inicia sesión!");
-			return "redirect:/login/index";
+			usuario.setContrasena(Utileria.getMD5(usuario.getContrasena()));
+			if (usuario.getEmail().equals(usuario.getUsuario())) {
+				attributes.addFlashAttribute("msg", "El nombre de usuario y correo electrónico no pueden repetirse!");
+				return "redirect:/usuarios/nuevo";
+			} else {
+				usuario.setPerfil("cliente");
+				// Insertamos el usuario
+				serviceUsuarios.guardar(usuario);
+				attributes.addFlashAttribute("msg", "Has creado tu cuenta con éxito. ¡Inicia sesión!");
+				return "redirect:/login/index";
+			}
 		}
 	}
 	
+	@PostMapping(value = "/editar/{username}")
+	public String editar(@ModelAttribute Usuario usuario, BindingResult result, Model model,
+			RedirectAttributes attributes) {
+		if (!usuario.getContrasena().equals(usuario.getPerfil())) {
+			attributes.addFlashAttribute("msg", "Los campos de contraseña no coinciden!");
+			return "redirect:/perfil/{username}";
+		} else {
+			usuario.setContrasena(Utileria.getMD5(usuario.getContrasena()));
+			if (usuario.getEmail().equals(usuario.getUsuario())) {
+				attributes.addFlashAttribute("msg", "El nombre de usuario y correo electrónico no pueden repetirse!");
+				return "redirect:/perfil/{username}";
+			} else {
+				usuario.setPerfil("cliente");
+				// Insertamos el usuario
+				serviceUsuarios.guardar(usuario);
+				attributes.addFlashAttribute("msg", "Has creado tu cuenta con éxito. ¡Inicia sesión!");
+				return "redirect:/login/index";
+			}
+		}
+	}
+
 	@GetMapping(value = "/eliminar/{id}")
 	public String eliminar(@PathVariable("id") int idUsuario, RedirectAttributes attributes) {
 		serviceUsuarios.eliminar(idUsuario);

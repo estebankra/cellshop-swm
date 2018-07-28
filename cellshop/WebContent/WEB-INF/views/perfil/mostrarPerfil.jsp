@@ -11,10 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
+<spring:url value="/usuarios/editar/${usuarioLogueado.usuario}" var="urlForm" />
 <title>CellShop | Bienvenido</title>
 <spring:url value="/resources" var="urlPublic" />
-<spring:url value="/" var="urlRoot" />
-<spring:url value="/usuarios/guardar" var="urlForm" />
 <link rel="stylesheet" href="${urlPublic}/css/normalize.css">
 <link rel="stylesheet" href="${urlPublic}/css/bootstrap.min.css">
 <link rel="stylesheet" href="${urlPublic}/css/font-awesome.min.css">
@@ -38,54 +37,28 @@
 
 	<div class="page-container">
 
-		<nav class="full-reset nav-phonestore">
-		<div class="page-container">
-			<div class="logo tittles-pages">CellShop</div>
-			<ul class="list-unstyled full-reset navigation-list">
-				<li><a href="${urlRoot}">Inicio</a></li>
-				<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>
-				<!--<li><a href="news.html">Noticias</a></li>
-					<li><a href="services.html">Servicios</a></li>
-					<li><a href="contact.html">Contactenos</a></li> -->
-				<li><a href="${urlRoot}usuarios/nuevo"><b>Registrate</b></a></li>
-				<li><a href="${urlRoot}login/index"><b>Inicia Sesión</b></a></li>
-				<li><i class="fas fa-cog"></i></li>
-			</ul>
-			<i class="fa fa-bars visible-xs btn-mobile"></i>
-		</div>
-		</nav>
+		<jsp:include page="../includes/menu.jsp"></jsp:include>
 
 		<div class="container theme-showcase" role="main">
 
 			<div class="content-page">
-				<div class="col-xs-12">
-					<p class="tittles-pages">Registrate completando los siguientes
-						datos</p>
-				</div>
+					<p class="tittles-pages">Editar datos de su cuenta</p>
 
 				<c:if test="${msg !=null }">
 					<div class='alert alert-warning' role='alert'>${msg}</div>
 				</c:if>
 
-				<spring:hasBindErrors name="usuario">
-					<div class='alert alert-danger' role='alert'>
-						Por favor corrija los siguientes errores:
-						<ul>
-							<c:forEach var="error" items="${errors.allErrors}">
-								<li><spring:message message="${error}" /></li>
-							</c:forEach>
-						</ul>
-					</div>
-				</spring:hasBindErrors>
+				<h1>Usuario: ${usuarioLogueado.usuario}</h1>
 
 				<form:form action="${urlForm}" method="POST"
-					modelAttribute="usuario">
+					modelAttribute="usuarioLogueado">
 
 					<h3>Apellidos</h3>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="row">
 								<form:hidden path="usuario_id" />
+								<form:hidden path="usuario" />
 								<form:input type="text" class="form-control" path="apellidos"
 									id="apellidos" required="required" />
 							</div>
@@ -174,17 +147,7 @@
 
 					<hr class="featurette-divider">
 
-					<h3>Usuario</h3>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="row">
-								<form:input type="text" class="form-control" path="usuario"
-									id="usuario" required="required" />
-							</div>
-						</div>
-					</div>
-
-					<h3>Contraseña</h3>
+					<h3>Nueva contraseña</h3>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="row">
@@ -193,25 +156,25 @@
 							</div>
 						</div>
 					</div>
-
+					
 					<h3>Confirmar contraseña</h3>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="row">
-								<form:input type="password" class="form-control" path="perfil"
-									id="perfil" required="required" />
+								<form:input type="password" class="form-control"
+									path="perfil" id="perfil" required="required" />
 							</div>
 						</div>
 					</div>
-					<br />
 
-					<button type="submit" class="btn btn-danger">Registrarse</button>
-				</form:form>
+					<hr class="featurette-divider">
 
-				<hr class="featurette-divider">
+					<button type="submit" class="btn btn-danger">Guardar
+						cambios</button>
+				</form:form><br /><br />
+
 
 			</div>
-
 		</div>
 
 		<jsp:include page="../includes/footer.jsp"></jsp:include>

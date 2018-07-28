@@ -29,7 +29,7 @@
 				<ul class="list-unstyled full-reset navigation-list">
 					<li><a href="${urlRoot}">Inicio</a></li>
 					<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>
-					<li><a href="${urlRoot}login/index">Perfil</a></li>
+					<li><a href="${urlRoot}perfil/${usuario.name}">Perfil</a></li>
 					<li><a href="${urlRoot}login/index">Carrito de compra</a></li>
 					<li><a href="${urlRoot}login/index">Historial de compras</a></li>
 					<li><a href="${urlRoot}logout">Salir</a></li>

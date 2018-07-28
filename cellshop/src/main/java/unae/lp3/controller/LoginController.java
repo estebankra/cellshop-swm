@@ -3,7 +3,6 @@ package unae.lp3.controller;
 
 import java.security.Principal;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
