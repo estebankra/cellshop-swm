@@ -42,34 +42,32 @@
 		<div class="container theme-showcase" role="main">
 
 			<div class="col-xs-12">
-				<p class="tittles-pages">Listado de pedidos</p>
+				<p class="tittles-pages">Detalles del pedido</p>
 			</div>
 
 			<c:if test="${msg !=null }">
 				<div class='alert alert-success' role='alert'>${msg}</div>
 			</c:if>
 			
-			<spring:url value="/pedidos/${usuario.name}/detalles" var="urlDetails" />
-
 			<div class="table-responsive text-center">
 				<table class="table table-hover table-striped table-bordered">
 					<tr>
-						<th>Fecha</th>
-						<th>Monto</th>
-						<th>Detalles</th>
+						<th>Modelo</th>
+						<th>Descripción</th>
+						<th>Precio</th>
 					</tr>
 
-					<c:forEach var="pedido" items="${pedidos}">
+					<c:forEach var="pedidoDetalle" items="${pedidoDetalles}">
 						<tr>
-							<td><fmt:formatDate pattern="yyyy-MM-dd" value="${pedido.fecha}" /></td>
-							<td>${pedido.monto}</td>
-							<td><a href="${urlDetails}/${pedido.pedido_id}"
-								class="btn btn-success" role="button" title="Ver"><span
-									class="glyphicon glyphicon-info-sign"></span></a></td>
+							<td>${pedidoDetalle.producto.modelo.nombre}</td>
+							<td>${pedidoDetalle.producto.descripcion}</td>
+							<td>${pedidoDetalle.precio}</td>
+						
 						</tr>
 					</c:forEach>
 				</table>
 			</div>
+		
 		</div>
 
 		<jsp:include page="../includes/footer.jsp"></jsp:include>

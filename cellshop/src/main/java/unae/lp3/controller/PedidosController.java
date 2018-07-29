@@ -12,6 +12,8 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import unae.lp3.model.Pedido;
+import unae.lp3.model.Pedido_Detalle;
+import unae.lp3.service.IPedidosDetalleService;
 import unae.lp3.service.IPedidosService;
 import unae.lp3.service.IUsuariosService;
 
@@ -24,6 +26,9 @@ public class PedidosController {
 	
 	@Autowired
 	private IUsuariosService serviceUsuarios;
+	
+	@Autowired
+	private IPedidosDetalleService servicePedidosDetalle;
 
 	@RequestMapping(value = "/{usu_name}")
 	public String obtenerPedidosPorUsuario(@PathVariable("usu_name") String Usu_Name, Model model) {
@@ -31,6 +36,13 @@ public class PedidosController {
 		List<Pedido> listaPedidos = servicePedidos.buscarPorIdUsuario(idUsuarioLog);
 		model.addAttribute("pedidos", listaPedidos);
 		return "pedidos/listPedidos";
+	}
+	
+	@RequestMapping(value = "/{usu_name}/detalles/{peddet_id}")
+	public String obtenerDetallesdePedido(@PathVariable("peddet_id") int IdPedido, Model model) {
+		List<Pedido_Detalle> listaDetallesPedido = servicePedidosDetalle.buscarPorIdPedido(IdPedido);
+		model.addAttribute("pedidoDetalles", listaDetallesPedido);
+		return "pedidos/listDetallesPed";
 	}
 	
 	@InitBinder
