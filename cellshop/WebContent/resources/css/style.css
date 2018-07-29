@@ -13,6 +13,15 @@ html, body {
 	width: 100%;
 	box-sizing: border-box;
 }
+
+.left{
+    float: left;
+}
+
+.right{
+	float: right;
+    position: relative;
+}
 .cover-background{
 	background-attachment: fixed;
 	background-color: #fff;
@@ -23,6 +32,11 @@ html, body {
 	padding:0;
 	width: 100%;
 }
+
+.text-align-center {
+    text-align: center;
+}
+
 
 .panel-danger{
 	margin-top: 100px;

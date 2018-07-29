@@ -13,6 +13,7 @@
 <meta name="author" content="">
 <title>CellShop | Bienvenido</title>
 <spring:url value="/resources" var="urlPublic" />
+<spring:url value="/" var="urlRoot" />
 <link rel="stylesheet" href="${urlPublic}/css/normalize.css">
 <link rel="stylesheet" href="${urlPublic}/css/bootstrap.min.css">
 <link rel="stylesheet" href="${urlPublic}/css/font-awesome.min.css">
@@ -85,6 +86,8 @@
 			</form>
 
 			<hr class="featurette-divider">
+			
+			¿No tienes cuenta?, <a href="${urlRoot}usuarios/nuevo">Registrate</a>
 
 		</div>
 

@@ -82,7 +82,7 @@
 							<td><a href="${urlDelete}/${cliente.usuario_id}"
 								onclick='return confirm("¿Estas seguro?")'
 								class="btn btn-danger btn-sm" role="button" title="Eliminar"><span
-									class="glyphicon glyphicon-trash"></span></a></td>
+									class="glyphicon glyphicon-ban-circle"></span></a></td>
 						</tr>
 					</c:forEach>
 				</table>

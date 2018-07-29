@@ -32,7 +32,7 @@ public class ProductosController {
 		model.addAttribute("marcas", listaMarcas);
 		List<Producto> listaProductos = serviceProductos.buscarPorStock();
 		model.addAttribute("productos", listaProductos);
-		return "productos";
+		return "productos/listProductos";
 
 	}
 	
@@ -46,7 +46,15 @@ public class ProductosController {
 		List<Producto> listaProductos = serviceProductos.buscarPorIdMarca(idMarca);
 		model.addAttribute("productos", listaProductos);
 		
-		return "productos";
+		return "productos/listProductos";
+	}
+	
+	@RequestMapping(value = "/detalle/{prod_id}")
+	public String detallesProducto(@PathVariable("prod_id") int idProducto, Model model) {
+		Producto productoSelecc = serviceProductos.buscarPorId(idProducto);
+		model.addAttribute("produSele", productoSelecc);
+		
+		return "productos/detProducto";
 	}
 
 	

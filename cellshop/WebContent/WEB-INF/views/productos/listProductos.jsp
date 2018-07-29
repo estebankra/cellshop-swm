@@ -35,7 +35,7 @@
 <body>
 	<div class="page-container">
 
-		<jsp:include page="includes/menu.jsp"></jsp:include>
+		<jsp:include page="../includes/menu.jsp"></jsp:include>
 
 		<div class="content-page">
 			<!-- <div class="hidden-xs content-carousel">
@@ -135,9 +135,14 @@
 														<b>Precio:</b> ${producto.precio}gs
 													</p>
 													<p class="text-center">
-														<a href="#" class="btn btn-danger" role="button">Ver
+														<a href="${urlRoot}modelos/detalle/${producto.prod_id}" class="btn btn-danger" role="button">Ver
 															más</a>
 													</p>
+													<p class="text-center">
+														<a href="${urlDetails}/${pedido.pedido_id}"
+															class="btn btn-success" role="button" title="Ver"><span
+															class="glyphicon glyphicon-shopping-cart"></span></a>
+													</p>	
 
 												</div>
 											</div>
@@ -155,7 +160,7 @@
 			</section>
 		</div>
 
-		<jsp:include page="includes/footer.jsp"></jsp:include>
+		<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 	</div>
 </body>
