@@ -155,8 +155,8 @@
 									<b>Agregar al carrito</b>
 								</p>
 								<p class="text-align-center">
-									<a href="${urlDetails}/${pedido.pedido_id}"
-										class="btn btn-success" role="button" title="Ver"> <span
+									<a href="${urlRoot}carrito/${usuario.name}/agregar/${produSele.prod_id}"
+										class="btn btn-success" role="button" title="Agregar al carrito"> <span
 										class="glyphicon glyphicon-shopping-cart"></span>
 									</a>
 								</p>

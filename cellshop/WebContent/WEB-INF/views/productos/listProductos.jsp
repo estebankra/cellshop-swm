@@ -139,8 +139,8 @@
 															más</a>
 													</p>
 													<p class="text-center">
-														<a href="${urlDetails}/${pedido.pedido_id}"
-															class="btn btn-success" role="button" title="Ver"><span
+														<a href="${urlRoot}carrito/${usuario.name}/agregar/${producto.prod_id}"
+															class="btn btn-success" role="button" title="Agregar al carrito"><span
 															class="glyphicon glyphicon-shopping-cart"></span></a>
 													</p>	
 

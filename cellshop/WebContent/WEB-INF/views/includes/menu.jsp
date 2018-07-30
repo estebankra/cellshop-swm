@@ -30,7 +30,7 @@
 					<li><a href="${urlRoot}">Inicio</a></li>
 					<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>
 					<li><a href="${urlRoot}perfil/${usuario.name}">Perfil</a></li>
-					<li><a href="${urlRoot}login/index">Carrito de compra</a></li>
+					<li><a href="${urlRoot}carrito/${usuario.name}/list">Carrito de compra</a></li>
 					<li><a href="${urlRoot}pedidos/${usuario.name}">Historial de compras</a></li>
 					<li><a href="${urlRoot}logout">Salir</a></li>
 				</ul>
