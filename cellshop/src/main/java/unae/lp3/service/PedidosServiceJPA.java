@@ -50,7 +50,7 @@ public class PedidosServiceJPA implements IPedidosService {
 		List<Pedido> listaPedidos = pedidosRepo.findAll();
 		pedidosUsu = new LinkedList<>();
 			for (Pedido p : listaPedidos) {
-				if (p.getUsuario_id() == (usuarioId)) {
+				if (p.getUsuario().getUsuario_id() == (usuarioId)) {
 					pedidosUsu.add(p);
 				}
 			}

@@ -49,7 +49,8 @@
 			<c:if test="${msg !=null }">
 				<div class='alert alert-success' role='alert'>${msg}</div>
 			</c:if>
-
+			
+			<spring:url value="pedidos/completar" var="urlBuy" />
 			<spring:url value="carrito/${usuario.name}/eliminar" var="urlDelete" />
 
 			<a href="${urlRoot}modelos/lists" class="btn btn-success" role="button"
@@ -61,7 +62,7 @@
 						<th>Producto</th>
 						<th>Fecha</th>
 						<th>Precio</th>
-						<th>Descartar</th>
+						<th>Acciones</th>
 					</tr>
 
 					<c:forEach var="prodCarrito" items="${carritoUsu}">
@@ -69,15 +70,18 @@
 							<td>${prodCarrito.producto.modelo.nombre}</td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd" value="${prodCarrito.fecha}" /></td>
 							<td>${prodCarrito.precio}</td>
-							<td><a href="${urlRoot}${urlDelete}/${prodCarrito.carrito_id}"
+							<td><a href="${urlRoot}modelos/detalle/${prodCarrito.producto.prod_id}" class="btn btn-success btn-sm" role="button" title="Detalles"><span
+									class="glyphicon glyphicon-info-sign"></span></a>
+								<a href="${urlRoot}${urlDelete}/${prodCarrito.carrito_id}"
 								onclick='return confirm("¿Estas seguro?")'
 								class="btn btn-danger btn-sm" role="button" title="Eliminar"><span
 									class="glyphicon glyphicon-trash"></span></a></td>
 						</tr>
 					</c:forEach>
 				</table>
-					
-				<a href="${urlCreate}" class="btn btn-success" role="button">Finalizar compra</a><br> <br>
+				
+				<h4><b>Suma total:</b> ${sumaTotal}</h4>
+				<a href="${urlBuy}${prodCarrito.usuario_id}" class="btn btn-success" role="button">Finalizar compra</a><br> <br>
 			</div>
 		</div>
 

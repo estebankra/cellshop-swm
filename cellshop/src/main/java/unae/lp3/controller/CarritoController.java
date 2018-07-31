@@ -1,5 +1,7 @@
 package unae.lp3.controller;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +38,13 @@ public class CarritoController {
 	@RequestMapping(value = "{username}/list")
 	public String listarCarrito( @PathVariable("username") String Username, Model model, RedirectAttributes attributes) {
 		List<Carrito> listaProdCarrito = serviceCarritos.buscarCarritoPorUsuario(Username);
+		float sumaTotalCarrito = serviceCarritos.obtenerSumaTotal(Username);
+		
+		DecimalFormatSymbols separadoresPersonalizados = new DecimalFormatSymbols();
+		separadoresPersonalizados.setDecimalSeparator('.');
+		DecimalFormat formato2 = new DecimalFormat("#.##", separadoresPersonalizados);
+				
+		model.addAttribute("sumaTotal", formato2.format(sumaTotalCarrito));
 		model.addAttribute("carritoUsu", listaProdCarrito);
 		return "carrito/listCarrito";
 	}

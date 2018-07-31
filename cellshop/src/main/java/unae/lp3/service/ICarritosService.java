@@ -11,5 +11,6 @@ public interface ICarritosService {
 	void eliminar(int idCarrito);
 	Carrito buscarPorId(int idCarrito);
 	List<Carrito> buscarCarritoPorUsuario(String username);
+	float obtenerSumaTotal(String username);
 
 }

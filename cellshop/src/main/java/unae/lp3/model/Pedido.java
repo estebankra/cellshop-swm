@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,9 +16,12 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment MySQL
 	private int pedido_id;
-	private int usuario_id;
 	private Date fecha;
 	private float monto;
+	
+	@OneToOne
+	@JoinColumn(name = "usuario_id")
+	private Usuario usuario;
 	
 	public Pedido() {
 
@@ -28,14 +33,6 @@ public class Pedido {
 
 	public void setPedido_id(int pedido_id) {
 		this.pedido_id = pedido_id;
-	}
-
-	public int getUsuario_id() {
-		return usuario_id;
-	}
-
-	public void setUsuario_id(int usuario_id) {
-		this.usuario_id = usuario_id;
 	}
 
 	public Date getFecha() {
@@ -54,9 +51,17 @@ public class Pedido {
 		this.monto = monto;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	@Override
 	public String toString() {
-		return "Pedido [pedido_id=" + pedido_id + ", usuario_id=" + usuario_id + ", fecha=" + fecha + ", monto=" + monto
+		return "Pedido [pedido_id=" + pedido_id + ", fecha=" + fecha + ", monto=" + monto + ", usuario=" + usuario
 				+ "]";
 	}
 	

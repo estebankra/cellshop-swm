@@ -1,5 +1,7 @@
 package unae.lp3.controller;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -11,8 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
+import unae.lp3.model.Carrito;
 import unae.lp3.model.Pedido;
 import unae.lp3.model.Pedido_Detalle;
+import unae.lp3.model.Usuario;
+import unae.lp3.service.ICarritosService;
 import unae.lp3.service.IPedidosDetalleService;
 import unae.lp3.service.IPedidosService;
 import unae.lp3.service.IUsuariosService;
@@ -29,6 +34,9 @@ public class PedidosController {
 	
 	@Autowired
 	private IPedidosDetalleService servicePedidosDetalle;
+	
+	@Autowired
+	private ICarritosService serviceCarritos;
 
 	@RequestMapping(value = "/{usu_name}")
 	public String obtenerPedidosPorUsuario(@PathVariable("usu_name") String Usu_Name, Model model) {
@@ -42,6 +50,29 @@ public class PedidosController {
 	public String obtenerDetallesdePedido(@PathVariable("peddet_id") int IdPedido, Model model) {
 		List<Pedido_Detalle> listaDetallesPedido = servicePedidosDetalle.buscarPorIdPedido(IdPedido);
 		model.addAttribute("pedidoDetalles", listaDetallesPedido);
+		return "pedidos/listDetallesPed";
+	}
+	
+	@RequestMapping(value = "/carrito/{username}/pedidos/completar/{id_usuario}")
+	public String completarPedido(@ModelAttribute Pedido pedido, @ModelAttribute Pedido_Detalle peddet, @PathVariable("id_usuario") int IdUsuario, Model model) {
+		
+		pedido.setFecha(new Date());
+		
+		Usuario usuario = serviceUsuarios.buscarPorId(IdUsuario);
+		pedido.setUsuario(usuario);
+		
+		float sumaTotalCarrito = serviceCarritos.obtenerSumaTotal(usuario.getUsuario());
+		
+		/*DecimalFormatSymbols separadoresPersonalizados = new DecimalFormatSymbols();
+		separadoresPersonalizados.setDecimalSeparator('.');
+		DecimalFormat formato2 = new DecimalFormat("#.##", separadoresPersonalizados);*/
+		
+		pedido.setMonto(sumaTotalCarrito);
+		
+		/*peddet.setPedido(pedido);
+		peddet.setPrecio(precio);*/
+	
+		servicePedidos.guardar(pedido);
 		return "pedidos/listDetallesPed";
 	}
 	

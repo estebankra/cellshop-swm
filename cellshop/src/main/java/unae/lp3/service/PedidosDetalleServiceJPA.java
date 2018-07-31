@@ -51,7 +51,7 @@ public class PedidosDetalleServiceJPA implements IPedidosDetalleService {
 
 		// Formamos la lista final de Modelos que regresaremos.
 		for (Pedido_Detalle h : listaPedidosDetalle) {
-			if (h.getPedido_id() == idPedido) {
+			if (h.getPedido().getPedido_id() == idPedido) {
 				listaPedDetPorId.add(h);
 			}
 		}

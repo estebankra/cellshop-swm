@@ -59,4 +59,16 @@ public class CarritosServiceJPA implements ICarritosService{
 		}
 		return listaCarritoUsu;
 	}
+
+	@Override
+	public float obtenerSumaTotal(String Username) {
+		float sumaTotal = 0;
+		List<Carrito> listaCarritos = carritosRepo.findAll();
+		for (Carrito p : listaCarritos) {
+			if (p.getUsuario().getUsuario().equals(Username)) {
+				sumaTotal += p.getPrecio();
+			}
+		}
+		return sumaTotal;
+	}
 }

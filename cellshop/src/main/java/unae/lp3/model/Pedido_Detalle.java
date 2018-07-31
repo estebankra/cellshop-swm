@@ -14,12 +14,15 @@ public class Pedido_Detalle {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment MySQL
 	private int peddet_id;
-	private int pedido_id;
 	private float precio;
 
 	@OneToOne
 	@JoinColumn(name = "prod_id")
 	private Producto producto;
+	
+	@OneToOne
+	@JoinColumn(name = "pedido_id")
+	private Pedido pedido;
 
 	public Pedido_Detalle() {
 
@@ -31,14 +34,6 @@ public class Pedido_Detalle {
 
 	public void setPeddet_id(int peddet_id) {
 		this.peddet_id = peddet_id;
-	}
-
-	public int getPedido_id() {
-		return pedido_id;
-	}
-
-	public void setPedido_id(int pedido_id) {
-		this.pedido_id = pedido_id;
 	}
 
 	public float getPrecio() {
@@ -57,10 +52,18 @@ public class Pedido_Detalle {
 		this.producto = producto;
 	}
 
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+
 	@Override
 	public String toString() {
-		return "Pedido_Detalle [peddet_id=" + peddet_id + ", pedido_id=" + pedido_id + ", precio=" + precio
-				+ ", producto=" + producto + "]";
+		return "Pedido_Detalle [peddet_id=" + peddet_id + ", precio=" + precio + ", producto=" + producto + ", pedido="
+				+ pedido + "]";
 	}
 
 }
