@@ -61,7 +61,7 @@
 						<tr>
 							<td>${pedidoDetalle.producto.modelo.nombre}</td>
 							<td>${pedidoDetalle.producto.descripcion}</td>
-							<td>${pedidoDetalle.precio}</td>
+							<td><fmt:formatNumber value="${pedidoDetalle.precio}" minFractionDigits="0" maxFractionDigits="0"/>gs</td>
 						
 						</tr>
 					</c:forEach>

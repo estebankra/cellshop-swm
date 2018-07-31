@@ -67,7 +67,7 @@
 							<div class="col-xs-12 col-sm-6 col-md-3 left">
 								<div class="thumbnail thumbnail-content-phones">
 									<p class="text-align-center">
-										<b>Precio<br></b> ${produSele.precio}gs
+										<b>Precio<br></b> <fmt:formatNumber value="${produSele.precio}" minFractionDigits="0" maxFractionDigits="0"/>gs
 									</p>
 								</div>
 							</div>

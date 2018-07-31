@@ -20,6 +20,7 @@ import unae.lp3.model.Usuario;
 import unae.lp3.service.ICarritosService;
 import unae.lp3.service.IPedidosDetalleService;
 import unae.lp3.service.IPedidosService;
+import unae.lp3.service.IProductosService;
 import unae.lp3.service.IUsuariosService;
 
 @Controller
@@ -53,26 +54,29 @@ public class PedidosController {
 		return "pedidos/listDetallesPed";
 	}
 	
-	@RequestMapping(value = "/carrito/{username}/pedidos/completar/{id_usuario}")
+	@RequestMapping(value = "/carrito/{username}/completar/{id_usuario}")
 	public String completarPedido(@ModelAttribute Pedido pedido, @ModelAttribute Pedido_Detalle peddet, @PathVariable("id_usuario") int IdUsuario, Model model) {
 		
 		pedido.setFecha(new Date());
-		
 		Usuario usuario = serviceUsuarios.buscarPorId(IdUsuario);
 		pedido.setUsuario(usuario);
-		
 		float sumaTotalCarrito = serviceCarritos.obtenerSumaTotal(usuario.getUsuario());
 		
-		/*DecimalFormatSymbols separadoresPersonalizados = new DecimalFormatSymbols();
-		separadoresPersonalizados.setDecimalSeparator('.');
-		DecimalFormat formato2 = new DecimalFormat("#.##", separadoresPersonalizados);*/
-		
 		pedido.setMonto(sumaTotalCarrito);
-		
-		/*peddet.setPedido(pedido);
-		peddet.setPrecio(precio);*/
-	
 		servicePedidos.guardar(pedido);
+
+		
+		List<Carrito> listaProdCarrito = serviceCarritos.buscarCarritoPorUsuario(usuario.getUsuario());
+		int id_peddet = peddet.getPeddet_id();
+
+		for (Carrito p : listaProdCarrito) {
+			peddet.setPeddet_id(id_peddet + 1);
+			peddet.setPedido(pedido);
+			peddet.setPrecio(p.getPrecio());
+			peddet.setProducto(p.getProducto());
+			servicePedidosDetalle.guardar(peddet);
+		}
+
 		return "pedidos/listDetallesPed";
 	}
 	

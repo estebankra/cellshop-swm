@@ -62,12 +62,6 @@ public class UsuariosServiceJPA implements IUsuariosService{
 	}
 
 	@Override
-	public Usuario buscarPorId(int idUsuario) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public int ObtenerIdPorNombre(String userLog) {
 		int idUsuario = 0;
 		List<Usuario> listaUsuarios = usuariosRepo.findAll();
@@ -80,12 +74,12 @@ public class UsuariosServiceJPA implements IUsuariosService{
 		return idUsuario;
 	}
 	
-	/*@Override
+	@Override
 	public Usuario buscarPorId(int idUsuario) {
 		Optional<Usuario> optional = usuariosRepo.findById(idUsuario);
 		if (optional.isPresent()) {
 			return optional.get();
 		}
 		return null;
-	}*/
+	}
 }

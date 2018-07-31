@@ -50,7 +50,6 @@
 				<div class='alert alert-success' role='alert'>${msg}</div>
 			</c:if>
 			
-			<spring:url value="pedidos/completar" var="urlBuy" />
 			<spring:url value="carrito/${usuario.name}/eliminar" var="urlDelete" />
 
 			<a href="${urlRoot}modelos/lists" class="btn btn-success" role="button"
@@ -63,13 +62,14 @@
 						<th>Fecha</th>
 						<th>Precio</th>
 						<th>Acciones</th>
+
 					</tr>
 
 					<c:forEach var="prodCarrito" items="${carritoUsu}">
 						<tr>
 							<td>${prodCarrito.producto.modelo.nombre}</td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd" value="${prodCarrito.fecha}" /></td>
-							<td>${prodCarrito.precio}</td>
+							<td><fmt:formatNumber value="${prodCarrito.precio}" minFractionDigits="0" maxFractionDigits="0"/>gs</td>
 							<td><a href="${urlRoot}modelos/detalle/${prodCarrito.producto.prod_id}" class="btn btn-success btn-sm" role="button" title="Detalles"><span
 									class="glyphicon glyphicon-info-sign"></span></a>
 								<a href="${urlRoot}${urlDelete}/${prodCarrito.carrito_id}"
@@ -80,8 +80,8 @@
 					</c:forEach>
 				</table>
 				
-				<h4><b>Suma total:</b> ${sumaTotal}</h4>
-				<a href="${urlBuy}${prodCarrito.usuario_id}" class="btn btn-success" role="button">Finalizar compra</a><br> <br>
+				<h4><b>Suma total:</b> <fmt:formatNumber value="${sumaTotal}" minFractionDigits="0" maxFractionDigits="0"/></h4>
+				<a href="${urlRoot}pedidos/carrito/${usuario.name}/completar/${prodCarrito.usuario.usuario_id}" class="btn btn-success" role="button">Finalizar compra</a><br> <br>
 			</div>
 		</div>
 

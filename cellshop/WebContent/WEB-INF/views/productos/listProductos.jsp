@@ -132,7 +132,7 @@
 														<b>Color:</b> ${producto.color.nombre}
 													</p>
 													<p class="text-justify">
-														<b>Precio:</b> ${producto.precio}gs
+														<b>Precio:</b> <fmt:formatNumber value="${producto.precio}" minFractionDigits="0" maxFractionDigits="0"/>gs
 													</p>
 													<p class="text-center">
 														<a href="${urlRoot}modelos/detalle/${producto.prod_id}" class="btn btn-danger" role="button">Ver

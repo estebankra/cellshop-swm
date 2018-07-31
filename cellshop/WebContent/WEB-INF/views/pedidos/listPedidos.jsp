@@ -62,7 +62,7 @@
 					<c:forEach var="pedido" items="${pedidos}">
 						<tr>
 							<td><fmt:formatDate pattern="yyyy-MM-dd" value="${pedido.fecha}" /></td>
-							<td>${pedido.monto}</td>
+							<td><fmt:formatNumber value="${pedido.monto}" minFractionDigits="0" maxFractionDigits="0"/>gs</td>					
 							<td><a href="${urlDetails}/${pedido.pedido_id}"
 								class="btn btn-success" role="button" title="Ver"><span
 									class="glyphicon glyphicon-info-sign"></span></a></td>
