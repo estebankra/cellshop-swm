@@ -100,6 +100,7 @@
 			<web-resource-name>URLs protegidas solo para el rol Cliente</web-resource-name>
 			<!-- Define the context-relative URL(s) to be protected -->
 			<url-pattern>/login/*</url-pattern>
+			<url-pattern>/carrito/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<!-- Anyone with this role may access this area -->

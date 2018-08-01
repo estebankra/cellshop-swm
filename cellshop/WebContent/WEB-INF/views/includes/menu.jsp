@@ -18,7 +18,7 @@
 					<li><a href="${urlRoot}login/index">Ram</a></li>
 					<li><a href="${urlRoot}marcas/index">Marcas</a></li>
 					<li><a href="${urlRoot}almacenamientos/index">Almacenamiento</a></li>
-					<li><a href="${urlRoot}logout">Salir</a></li>
+					<li><a href="${urlRoot}logout/${usuario.name}">Salir</a></li>
 				</ul>
 				<i class="fa fa-bars visible-xs btn-mobile"></i>
 			</c:when>
@@ -32,7 +32,7 @@
 					<li><a href="${urlRoot}perfil/${usuario.name}">Perfil</a></li>
 					<li><a href="${urlRoot}carrito/${usuario.name}/list">Carrito de compra</a></li>
 					<li><a href="${urlRoot}pedidos/${usuario.name}">Historial de compras</a></li>
-					<li><a href="${urlRoot}logout">Salir</a></li>
+					<li><a href="${urlRoot}logout/${usuario.name}">Salir</a></li>
 				</ul>
 				<i class="fa fa-bars visible-xs btn-mobile"></i>
 			</c:when>

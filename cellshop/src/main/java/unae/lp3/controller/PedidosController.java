@@ -1,7 +1,5 @@
 package unae.lp3.controller;
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -20,7 +18,6 @@ import unae.lp3.model.Usuario;
 import unae.lp3.service.ICarritosService;
 import unae.lp3.service.IPedidosDetalleService;
 import unae.lp3.service.IPedidosService;
-import unae.lp3.service.IProductosService;
 import unae.lp3.service.IUsuariosService;
 
 @Controller
@@ -75,7 +72,10 @@ public class PedidosController {
 			peddet.setPrecio(p.getPrecio());
 			peddet.setProducto(p.getProducto());
 			servicePedidosDetalle.guardar(peddet);
+			serviceCarritos.eliminar(p.getCarrito_id());
 		}
+		
+		
 
 		return "pedidos/listDetallesPed";
 	}
