@@ -25,7 +25,7 @@
 
 
 			<c:when test="${usuario.hasRole('cliente')}">
-				<div class="logo tittles-pages">CellShop</div>
+				<div class="logo tittles-pages">CellShop </div>
 				<ul class="list-unstyled full-reset navigation-list">
 					<li><a href="${urlRoot}">Inicio</a></li>
 					<li><a href="${urlRoot}modelos/lists">Telefónos</a></li>

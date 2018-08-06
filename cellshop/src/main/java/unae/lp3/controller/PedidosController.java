@@ -51,11 +51,10 @@ public class PedidosController {
 		return "pedidos/listDetallesPed";
 	}
 	
-	@RequestMapping(value = "/carrito/{username}/completar/{id_usuario}")
-	public String completarPedido(@ModelAttribute Pedido pedido, @ModelAttribute Pedido_Detalle peddet, @PathVariable("id_usuario") int IdUsuario, Model model) {
-		
+	@RequestMapping(value = "/carrito/{username}/completar")
+	public String completarPedido(@ModelAttribute Pedido pedido, @PathVariable("username") String Usu_Name, @ModelAttribute Pedido_Detalle peddet, Model model) {
 		pedido.setFecha(new Date());
-		Usuario usuario = serviceUsuarios.buscarPorId(IdUsuario);
+		Usuario usuario = serviceUsuarios.buscarPorUsuario(Usu_Name);
 		pedido.setUsuario(usuario);
 		float sumaTotalCarrito = serviceCarritos.obtenerSumaTotal(usuario.getUsuario());
 		
@@ -75,9 +74,7 @@ public class PedidosController {
 			serviceCarritos.eliminar(p.getCarrito_id());
 		}
 		
-		
-
-		return "pedidos/listDetallesPed";
+		return "redirect:/pedidos/{username}";
 	}
 	
 	@InitBinder

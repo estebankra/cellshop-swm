@@ -67,7 +67,10 @@
 							<div class="col-xs-12 col-sm-6 col-md-3 left">
 								<div class="thumbnail thumbnail-content-phones">
 									<p class="text-align-center">
-										<b>Precio<br></b> <fmt:formatNumber value="${produSele.precio}" minFractionDigits="0" maxFractionDigits="0"/>gs
+										<b>Precio<br></b>
+										<fmt:formatNumber value="${produSele.precio}"
+											minFractionDigits="0" maxFractionDigits="0" />
+										gs
 									</p>
 								</div>
 							</div>
@@ -155,10 +158,20 @@
 									<b>Agregar al carrito</b>
 								</p>
 								<p class="text-align-center">
-									<a href="${urlRoot}carrito/${usuario.name}/agregar/${produSele.prod_id}"
-										class="btn btn-success" role="button" title="Agregar al carrito"> <span
-										class="glyphicon glyphicon-shopping-cart"></span>
-									</a>
+									<c:if test="${usuario != null }">
+										<a
+											href="${urlRoot}carrito/${usuario.name}/agregar/${produSele.prod_id}"
+											class="btn btn-success" role="button"
+											title="Agregar al carrito"> <span
+											class="glyphicon glyphicon-shopping-cart"></span>
+										</a>
+									</c:if>
+									<c:if test="${usuario == null }">
+										<a href="${urlRoot}login/index" class="btn btn-success"
+											role="button" title="Agregar al carrito"> <span
+											class="glyphicon glyphicon-shopping-cart"></span>
+										</a>
+									</c:if>
 								</p>
 							</div>
 						</div>

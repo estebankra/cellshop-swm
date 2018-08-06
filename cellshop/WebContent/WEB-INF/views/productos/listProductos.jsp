@@ -132,17 +132,34 @@
 														<b>Color:</b> ${producto.color.nombre}
 													</p>
 													<p class="text-justify">
-														<b>Precio:</b> <fmt:formatNumber value="${producto.precio}" minFractionDigits="0" maxFractionDigits="0"/>gs
+														<b>Precio:</b>
+														<fmt:formatNumber value="${producto.precio}"
+															minFractionDigits="0" maxFractionDigits="0" />
+														gs
 													</p>
 													<p class="text-center">
-														<a href="${urlRoot}modelos/detalle/${producto.prod_id}" class="btn btn-danger" role="button">Ver
-															más</a>
+														<a href="${urlRoot}modelos/detalle/${producto.prod_id}"
+															class="btn btn-danger" role="button">Ver más</a>
 													</p>
-													<p class="text-center">
-														<a href="${urlRoot}carrito/${usuario.name}/agregar/${producto.prod_id}"
-															class="btn btn-success" role="button" title="Agregar al carrito"><span
-															class="glyphicon glyphicon-shopping-cart"></span></a>
-													</p>	
+													
+													<c:if test="${usuario == null }">
+														<p class="text-center">
+															<a href="${urlRoot}login/index"
+																class="btn btn-success" role="button"
+																title="Agregar al carrito"><span
+																class="glyphicon glyphicon-shopping-cart"></span></a>
+														</p>
+													</c:if>
+													
+													<c:if test="${usuario != null }">
+														<p class="text-center">
+															<a href="${urlRoot}carrito/${usuario.name}/agregar/${producto.prod_id}"
+																class="btn btn-success" role="button"
+																title="Agregar al carrito"><span
+																class="glyphicon glyphicon-shopping-cart"></span></a>
+														</p>
+													</c:if>
+
 
 												</div>
 											</div>
