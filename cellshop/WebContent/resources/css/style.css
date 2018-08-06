@@ -18,6 +18,10 @@ html, body {
     float: left;
 }
 
+.table{
+	text-align: center;
+}
+
 .right{
 	float: right;
     position: relative;
@@ -31,10 +35,6 @@ html, body {
     margin: 0;
 	padding:0;
 	width: 100%;
-}
-
-.text-align-center {
-    text-align: center;
 }
 
 

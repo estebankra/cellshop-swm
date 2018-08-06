@@ -4,35 +4,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+	
 <spring:url value="/usuarios/editar/${usuarioLogueado.usuario}" var="urlForm" />
-<title>CellShop | Bienvenido</title>
 <spring:url value="/resources" var="urlPublic" />
-<link rel="stylesheet" href="${urlPublic}/css/normalize.css">
-<link rel="stylesheet" href="${urlPublic}/css/bootstrap.min.css">
-<link rel="stylesheet" href="${urlPublic}/css/font-awesome.min.css">
-<link rel="stylesheet" href="${urlPublic}/css/style.css">
-<link rel="Shortcut Icon" type="image/x-icon"
-	href="${urlPublic}/assets/icons/shortcut-icon.ico" />
-<link href="https://fonts.googleapis.com/css?family=Dosis"
-	rel="stylesheet">
-<script
-	src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
-	window.jQuery
-			|| document
-					.write('<script src="js/jquery-1.11.2.min.js"><\/script>')
-</script>
-<script src="${urlPublic}/js/modernizr.js"></script>
-<script src="${urlPublic}/js/main.js"></script>
-<script src="${urlPublic}/js/bootstrap.min.js"></script>
-</head>
+<spring:url value="/" var="urlRoot" />
+
 <body>
 
 	<div class="page-container">
@@ -59,6 +35,8 @@
 							<div class="row">
 								<form:hidden path="usuario_id" />
 								<form:hidden path="usuario" />
+								<form:hidden path="contrasena" />
+								<form:hidden path="perfil" />
 								<form:input type="text" class="form-control" path="apellidos"
 									id="apellidos" required="required" />
 							</div>
@@ -147,7 +125,7 @@
 
 					<hr class="featurette-divider">
 
-					<h3>Nueva contraseña</h3>
+					<!-- <h3>Nueva contraseña</h3>
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="row">
@@ -167,7 +145,7 @@
 						</div>
 					</div>
 
-					<hr class="featurette-divider">
+					<hr class="featurette-divider"> -->
 
 					<button type="submit" class="btn btn-danger">Guardar
 						cambios</button>

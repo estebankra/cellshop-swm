@@ -37,14 +37,14 @@ public class AlmacenamientosController {
 		// Insertamos el almacenamiento
 		serviceAlmacenamientos.guardar(almacenamiento);
 		attributes.addFlashAttribute("msg", "Los datos del almacenamiento fueron guardados!");
-		return "redirect:/admin/almacenamientos/index";
+		return "redirect:/almacenamientos/index";
 	}
 	
 	@GetMapping(value = "/eliminar/{id}")
 	public String eliminar(@PathVariable("id") int idAlmacenamiento, RedirectAttributes attributes) {
 		serviceAlmacenamientos.eliminar(idAlmacenamiento);
 		attributes.addFlashAttribute("msg", "El almacenamiento fue eliminada!.");
-		return "redirect:/admin/almacenamientos/index";
+		return "redirect:/almacenamientos/index";
 	}
 
 	@GetMapping(value = "/editar/{id}")

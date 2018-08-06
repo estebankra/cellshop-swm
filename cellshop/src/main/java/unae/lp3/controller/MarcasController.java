@@ -37,14 +37,14 @@ public class MarcasController {
 		// Insertamos la marca
 		serviceMarcas.guardar(marca);
 		attributes.addFlashAttribute("msg", "Los datos de la marca fueron guardados!");
-		return "redirect:/admin/marcas/index";
+		return "redirect:/marcas/index";
 	}
 	
 	@GetMapping(value = "/eliminar/{id}")
 	public String eliminar(@PathVariable("id") int idMarca, RedirectAttributes attributes) {
 		serviceMarcas.eliminar(idMarca);
 		attributes.addFlashAttribute("msg", "La marca fue eliminada!.");
-		return "redirect:/admin/marcas/index";
+		return "redirect:/marcas/index";
 	}
 
 	@GetMapping(value = "/editar/{id}")
