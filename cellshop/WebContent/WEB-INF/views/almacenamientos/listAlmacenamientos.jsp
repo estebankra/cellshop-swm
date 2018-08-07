@@ -17,10 +17,12 @@
 			<div class="col-xs-12">
 				<p class="tittles-pages">Listado de almacenamientos</p>
 			</div>
-
-			<c:if test="${msg !=null }">
-				<div class='alert alert-success' role='alert'>${msg}</div>
-			</c:if>
+			
+			<div class="col-xs-12">
+				<c:if test="${msg !=null }">
+					<div class='alert alert-success' role='alert'>${msg}</div>
+				</c:if>
+			</div>
 
 			<spring:url value="/almacenamientos/editar" var="urlEdit" />
 			<spring:url value="/almacenamientos/eliminar" var="urlDelete" />
@@ -56,4 +58,7 @@
 
 
 	</div>
+	
+		<!-- JavaScript -->
+	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 </body>

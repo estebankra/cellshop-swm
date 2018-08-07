@@ -19,9 +19,11 @@
 				<p class="tittles-pages">Listado de productos en su carrito</p>
 			</div>
 
-			<c:if test="${msg !=null }">
-				<div class='alert alert-success' role='alert'>${msg}</div>
-			</c:if>
+			<div class="col-xs-12">
+				<c:if test="${msg !=null }">
+					<div class='alert alert-success' role='alert'>${msg}</div>
+				</c:if>
+			</div>
 
 			<spring:url value="carrito/${usuario.name}/eliminar" var="urlDelete" />
 
@@ -76,4 +78,7 @@
 
 
 	</div>
+	
+	<!-- JavaScript -->
+	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 </body>

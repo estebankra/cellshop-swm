@@ -1,7 +1,7 @@
 /* ================================General====================================*/
 html, body {
     height: 100%;
-    margin: 0;
+    margin: 0px;
     padding: 0;
     width: 100%;
     font-size: 16px;
@@ -22,6 +22,15 @@ html, body {
 	text-align: center;
 }
 
+.navbar{
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+
+.form-control{
+	margin-left: 2.6%;
+}
+
 .right{
 	float: right;
     position: relative;
@@ -35,6 +44,15 @@ html, body {
     margin: 0;
 	padding:0;
 	width: 100%;
+}
+
+#navbarDropdown{
+	margin-left: 55px;	
+}
+
+.dropdown-menu{
+    min-width: 1rem;
+    top: 90%;
 }
 
 

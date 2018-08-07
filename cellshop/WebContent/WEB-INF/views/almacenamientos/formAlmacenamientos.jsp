@@ -11,43 +11,44 @@
 
 <body>
 	<div class="page-container">
-
-		<jsp:include page="../includes/menu.jsp"></jsp:include>
-
-		<div class="container theme-showcase" role="main">
-
-			<div class="col-xs-12">
-				<p class="tittles-pages">Agregar almacenamientos</p>
-			</div>
-
-			<div class="page-container-form">
-				<spring:hasBindErrors name="marca">
-					<div class='alert alert-danger' role='alert'>
-						Por favor corrija los siguientes errores:
-						<ul>
-							<c:forEach var="error" items="${errors.allErrors}">
-								<li><spring:message message="${error}" /></li>
-							</c:forEach>
-						</ul>
+		
+			<jsp:include page="../includes/menu.jsp"></jsp:include>
+	
+			<div class="container theme-showcase" role="main">
+	
+				<div class="content-page">
+					<div class="col-xs-12">
+						<p class="tittles-pages">Registrate completando los siguientes
+							datos</p>
 					</div>
-				</spring:hasBindErrors>
-
-				<form:form action="${urlForm}" method="POST" modelAttribute="almacenamiento">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="descripcion">Descripción</label>
-								<form:hidden path="almacen_id" />
-								<form:input type="text" class="form-control" path="descripcion"
-									id="descripcion" required="required" />
+	
+					<form:form action="${urlForm}" method="POST" modelAttribute="almacenamiento">
+	
+						<h3>Descripción</h3>
+						<div class="row">
+							<div class="col-sm-6">
+								<div class="row">
+									<form:hidden path="almacen_id" />
+									<form:input type="text" class="form-control" path="descripcion"
+										id="descripcion" required="required" />
+								</div>
 							</div>
 						</div>
-					</div>
-					<button type="submit" class="btn btn-danger">Guardar</button>
-				</form:form>
+						<br>
+	
+						<button type="submit" class="btn btn-danger">Guardar</button>
+					</form:form>
+	
+					<hr class="featurette-divider">
+	
+				</div>
+	
 			</div>
-		</div>
-
+	
 		<jsp:include page="../includes/footer.jsp"></jsp:include>
+	
 	</div>
+	
+		<!-- JavaScript -->
+	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 </body>

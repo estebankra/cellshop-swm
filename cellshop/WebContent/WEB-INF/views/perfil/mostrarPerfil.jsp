@@ -20,9 +20,12 @@
 			<div class="content-page">
 					<p class="tittles-pages">Editar datos de su cuenta</p>
 
-				<c:if test="${msg !=null }">
-					<div class='alert alert-warning' role='alert'>${msg}</div>
-				</c:if>
+				<div class="col-xs-12">
+					<c:if test="${msg !=null }">
+						<div class='alert alert-warning' role='alert'>${msg}</div>
+					</c:if>
+				</div>
+		
 
 				<h1>Usuario: ${usuarioLogueado.usuario}</h1>
 
@@ -158,6 +161,6 @@
 		<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 	</div>
-
+		<!-- JavaScript -->
+	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 </body>
-</html>

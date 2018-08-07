@@ -19,7 +19,7 @@
 						<p class="tittles-pages">Detalles del producto</p>
 					</div>
 
-					<div class="col-xs-12">
+					<div class="col-xs-12 text-center">
 						<div class="container">
 							<div class="col-xs-12 col-sm-6 col-md-3 center">
 								<div class="thumbnail thumbnail-content-phones">
@@ -33,13 +33,13 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-12 col-sm-6 col-md-3 left">
+							<div class="col-xs-12 col-sm-6 col-md-3">
 								<div class="thumbnail thumbnail-content-phones">
 									<p class="text-align-center">${produSele.descripcion}</p>
 								</div>
 							</div>
 
-							<div class="col-xs-12 col-sm-6 col-md-3 left">
+							<div class="col-xs-12 col-sm-6 col-md-3">
 								<div class="thumbnail thumbnail-content-phones">
 									<p class="text-align-center">
 										<b>Precio<br></b>
@@ -52,7 +52,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12">
+					<div class="col-xs-12 text-center">
 						<div class="container">
 							<div class="col-xs-12 col-sm-6 col-md-3 left">
 								<div class="thumbnail thumbnail-content-phones">
@@ -89,7 +89,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12">
+					<div class="col-xs-12 text-center">
 						<div class="container">
 
 							<div class="col-xs-12 col-sm-6 col-md-3 left">
@@ -126,7 +126,7 @@
 						</div>
 					</div>
 
-					<div class="col-xs-12">
+					<div class="col-xs-12 text-center">
 						<div class="col-xs-12 col-sm-6 col-md-3 center">
 							<div class="thumbnail thumbnail-content-phones">
 								<p class="text-justify center">
@@ -157,4 +157,7 @@
 	</div>
 
 	<jsp:include page="../includes/footer.jsp"></jsp:include>
+	
+		<!-- JavaScript -->
+	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 </body>

@@ -9,7 +9,6 @@
 <spring:url value="/" var="urlRoot" />
 
 <body>
-
 	<div class="page-container">
 
 		<jsp:include page="../includes/menu.jsp"></jsp:include>
@@ -20,9 +19,11 @@
 				<p class="tittles-pages">Listado de marcas</p>
 			</div>
 
-			<c:if test="${msg !=null }">
-				<div class='alert alert-success' role='alert'>${msg}</div>
-			</c:if>
+			<div class="col-xs-12">
+				<c:if test="${msg !=null }">
+					<div class='alert alert-success' role='alert'>${msg}</div>
+				</c:if>
+			</div>
 
 			<spring:url value="/marcas/editar" var="urlEdit" />
 			<spring:url value="/marcas/eliminar" var="urlDelete" />
@@ -58,4 +59,7 @@
 
 
 	</div>
+	
+		<!-- JavaScript -->
+	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 </body>

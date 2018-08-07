@@ -30,6 +30,13 @@ public class PerfilController {
 		return "perfil/mostrarPerfil";
 	}
 	
+	@RequestMapping(value = "/password/{username}")
+	public String editarPassword( @PathVariable("username") String UserLog, Model model) {
+		Usuario usuarioLog = (Usuario) serviceUsuarios.buscarPorUsuario(UserLog);
+		model.addAttribute("usuarioLogueado", usuarioLog);
+		return "perfil/cambiarPass";
+	}
+	
 	@InitBinder
 	public void initBinder(WebDataBinder webDataBinder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

@@ -155,5 +155,7 @@
 		<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 	</div>
+	
+		<!-- JavaScript -->
+	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
 </body>
-</html>
