@@ -1,6 +1,9 @@
 package unae.lp3.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import unae.lp3.model.Producto;
@@ -13,5 +16,6 @@ import unae.lp3.model.Producto;
  */
 @Repository
 public interface ProductosRepository extends JpaRepository<Producto, Integer> {
-
+	@Query(value = "SELECT * FROM `Productos` WHERE 1 ORDER BY `prod_id` DESC", nativeQuery = true)
+	public List<Producto> findByNewProd();
 }

@@ -14,10 +14,12 @@ import org.springframework.web.bind.annotation.*;
 import unae.lp3.model.Carrito;
 import unae.lp3.model.Pedido;
 import unae.lp3.model.Pedido_Detalle;
+import unae.lp3.model.Producto;
 import unae.lp3.model.Usuario;
 import unae.lp3.service.ICarritosService;
 import unae.lp3.service.IPedidosDetalleService;
 import unae.lp3.service.IPedidosService;
+import unae.lp3.service.IProductosService;
 import unae.lp3.service.IUsuariosService;
 
 @Controller
@@ -26,6 +28,9 @@ public class PedidosController {
 
 	@Autowired
 	private IPedidosService servicePedidos;
+	
+	@Autowired
+	private IProductosService serviceProductos;
 	
 	@Autowired
 	private IUsuariosService serviceUsuarios;
@@ -69,7 +74,13 @@ public class PedidosController {
 			peddet.setPeddet_id(id_peddet + 1);
 			peddet.setPedido(pedido);
 			peddet.setPrecio(p.getPrecio());
-			peddet.setProducto(p.getProducto());
+			
+			//Actualizamos el stock del producto
+			Producto prodPed =  p.getProducto();
+			prodPed.setStock(prodPed.getStock() - 1);
+			serviceProductos.guardar(prodPed);
+			
+			peddet.setProducto(prodPed);
 			servicePedidosDetalle.guardar(peddet);
 			serviceCarritos.eliminar(p.getCarrito_id());
 		}

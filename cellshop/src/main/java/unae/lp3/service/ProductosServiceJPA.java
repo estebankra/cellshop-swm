@@ -37,7 +37,7 @@ public class ProductosServiceJPA implements IProductosService {
 	public List<Producto> buscarPorStock() {
 		List<Producto> productos = null;
 		productos = new LinkedList<>();
-		List<Producto> listaProductos = productosRepo.findAll();
+		List<Producto> listaProductos = productosRepo.findByNewProd();
 		for (Producto p : listaProductos) {
 			if (p.getStock() != 0) {
 				productos.add(p);

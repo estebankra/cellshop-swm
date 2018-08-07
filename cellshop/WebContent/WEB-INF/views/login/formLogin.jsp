@@ -51,10 +51,12 @@
 
 			<form class="form-signin" action="j_security_check" method="post">
 				<h3 class="form-signin-heading">CellShop</h3>
+				
 				<label for="j_username" class="sr-only">Usuario</label> <input
 					type="text" id="j_username" name="j_username" class="form-control"
-					placeholder="Usuario" required autofocus> <label
-					for="j_password" class="sr-only">Contraseña</label> <input
+					placeholder="Usuario" required autofocus> 
+					
+				<label for="j_password" class="sr-only">Contraseña</label> <input
 					type="password" id="j_password" name="j_password"
 					class="form-control" placeholder="Password" required>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>

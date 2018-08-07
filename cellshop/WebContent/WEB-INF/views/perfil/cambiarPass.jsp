@@ -19,59 +19,45 @@
 
 			<div class="content-page">
 					<p class="tittles-pages">Editar datos de su cuenta</p>
-
+		
+				<h3>Usuario: ${usuarioLogueado.usuario}</h3>
 				
 				<div class="col-xs-12">
 					<c:if test="${msg !=null }">
 						<div class='alert alert-warning' role='alert'>${msg}</div>
 					</c:if>
 				</div>
-		
 
-				<h1>Usuario: ${usuarioLogueado.usuario}</h1>
+				<form:form action="${urlForm}" method="POST" modelAttribute="usuarioLogueado">
 
-				<form:form action="${urlForm}" method="POST"
-					modelAttribute="usuarioLogueado">
-					
-					<hr class="featurette-divider">
-
-					<h3>Nueva contraseña</h3>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="row">
-								<form:hidden path="usuario_id" />
-								<form:hidden path="apellidos" />
-								<form:hidden path="nombre" />
-								<form:hidden path="fechanac" />
-								<form:hidden path="docunum" />
-								<form:hidden path="direccion" />
-								<form:hidden path="ciudad" />
-								<form:hidden path="pais" />
-								<form:hidden path="telefono" />
-								<form:hidden path="email" />
-								<form:hidden path="usuario" />
-								<form:input type="password" class="form-control"
-									path="contrasena" id="contrasena" required="required" />
-							</div>
-						</div>
+					<div class="form-group">
+						<label for="inputEmail4">Contraseña</label>
+						<form:hidden path="usuario_id" />
+						<form:hidden path="apellidos" />
+						<form:hidden path="nombre" />
+						<form:hidden path="fechanac" />
+						<form:hidden path="docunum" />
+						<form:hidden path="direccion" />
+						<form:hidden path="ciudad" />
+						<form:hidden path="pais" />
+						<form:hidden path="telefono" />
+						<form:hidden path="email" />
+						<form:hidden path="usuario" />
+						<form:input type="password" class="form-control" path="contrasena" id="contrasena" required="required" />
 					</div>
-					
-					<h3>Confirmar contraseña</h3>
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="row">
-								<form:input type="password" class="form-control"
-									path="perfil" id="perfil" required="required" />
-							</div>
-						</div>
+				
+					<div class="form-group">
+						<label for="inputZip">Confirmar contraseña</label> 
+						<form:input type="password" class="form-control" path="perfil" id="perfil" required="required" />
 					</div>
 
+
 					<hr class="featurette-divider">
-
-					<button type="submit" class="btn btn-danger">Guardar
-						cambios</button>
-				</form:form><br /><br />
-
+	
+					<button type="submit" class="btn btn-primary">Guardar cambios</button>
+				
+				</form:form>
+				<br /><br />
 
 			</div>
 		</div>

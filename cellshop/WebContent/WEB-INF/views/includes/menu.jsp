@@ -44,10 +44,9 @@
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-
+	
 	<c:choose>
 		<c:when test="${usuario.hasRole('admin')}">
-			<i class="fa fa-bars visible-xs btn-mobile"></i>
 		
 			<div class="collapse navbar-collapse right" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
@@ -67,7 +66,7 @@
 							
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="${urlRoot}perfil/${usuario.name}">Perfil</a> <a
-									class="dropdown-item" href="#">Contraseña</a>
+									class="dropdown-item" href="${urlRoot}perfil/password/${usuario.name}">Contraseña</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="${urlRoot}logout/${usuario.name}">Cerrar Sesión</a>
 							</div>
@@ -78,14 +77,13 @@
 		</c:when>
 	
 		<c:when test="${usuario.hasRole('cliente')}">
-			<i class="fa fa-bars visible-xs btn-mobile"></i>
 		
 			<div class="collapse navbar-collapse right" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}">Inicio</a></li>
 					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}modelos/lists">Telefónos</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}carrito/${usuario.name}/list">Carrito de compra</a></li>
-					<li class="nav-item active"><a class="nav-link" href="${urlRoot}pedidos/${usuario.name}">Historial de compras</a></li>
+					<li class="nav-item active"><a class="nav-link" href="${urlRoot}pedidos/${usuario.name}">Historial de pedidos</a></li>
 				</ul>
 				
 				<div class="form-inline my-2 my-lg-0">
@@ -106,9 +104,6 @@
 		</c:when>
 	
 		<c:otherwise>
-		
-		<i class="fa fa-bars visible-xs btn-mobile"></i>
-		
 			<div class="collapse navbar-collapse right" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}">Inicio</a></li>

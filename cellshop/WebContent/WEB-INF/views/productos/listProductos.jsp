@@ -57,105 +57,105 @@
 		</div>-->
 
 			<section id="prod-container section">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-xs-12 text-center">
-						<p class="tittles-pages">Teléfonos</p>
-					</div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 text-center">
+							<p class="tittles-pages">Teléfonos</p>
+						</div>
 
-					<div class="col-xs-12">
-						<div class="container">
+						<div class="col-xs-12">
+							<div class="container">
 
-							<ul class="nav nav-tabs">
-								<li class="nav-item"><a class="nav-link active"
-									href="${urlRoot}modelos/lists">Todos</a></li>
-								<c:forEach var="marca" items="${marcas}">
-									<li class="nav-item"><a class="nav-link"
-										href="${urlRoot}modelos/lists/${marca.marca_id}">${marca.descripcion}</a>
-									</li>
-								</c:forEach>
-							</ul>
+								<ul class="nav nav-tabs" id="myTab">
+									<li class="nav-item"><a class="nav-link active"
+										href="${urlRoot}modelos/lists">Todos</a></li>
+									<c:forEach var="marca" items="${marcas}">
+										<li class="nav-item"><a class="nav-link active"
+											href="${urlRoot}modelos/lists/${marca.marca_id}">${marca.descripcion}</a>
+										</li>
+									</c:forEach>
+								</ul>
 
 
-							<div class="tab-content">
-								<!-- ===================================== Todas las categorias ============================================= -->
-								<div class="tab-pane active" id="all-categories">
-									<p class="tittles-pages">Todos los productos
-										${marcaSele.descripcion}</p>
+								<div class="tab-content">
+									<div class="tab-pane active" id="all-categories">
+										<p class="tittles-pages">Todos los productos
+											${marcaSele.descripcion}</p>
 
-									<c:forEach var="producto" items="${productos}">
+										<c:forEach var="producto" items="${productos}">
 
-										<div class="col-xs-12 col-sm-6 col-md-3">
-											<div class="thumbnail thumbnail-content-phones">
-												<div class="img-products">
-													<img
-														src="${urlPublic}/assets/img/celulares/${producto.imagen}"
-														alt="prod-icon" class="img-responsive">
-												</div>
-												<div class="caption" role="menu" id="producto"
-													name="producto">
-													<h3 class=" text-center">${producto.modelo.nombre}</h3>
-													<p class="text-justify">${producto.descripcion}</p>
-													<p class="text-justify">
-														<b>Memoria Ram:</b> ${producto.memoria.descripcion}
-													</p>
-													<p class="text-justify">
-														<b>Almacenamiento:</b>
-														${producto.almacenamiento.descripcion}
-													</p>
-													<p class="text-justify">
-														<b>Color:</b> ${producto.color.nombre}
-													</p>
-													<p class="text-justify">
-														<b>Precio:</b>
-														<fmt:formatNumber value="${producto.precio}"
-															minFractionDigits="0" maxFractionDigits="0" />
-														gs
-													</p>
-													<p class="text-center">
-														<a href="${urlRoot}modelos/detalle/${producto.prod_id}"
-															class="btn btn-danger" role="button">Ver más</a>
-													</p>
-													
-													<c:if test="${usuario == null }">
-														<p class="text-center">
-															<a href="${urlRoot}login/index"
-																class="btn btn-success" role="button"
-																title="Agregar al carrito"><span
-																class="glyphicon glyphicon-shopping-cart"></span></a>
+											<div class="col-xs-12 col-sm-6 col-md-3">
+												<div class="thumbnail thumbnail-content-phones">
+													<div class="img-products">
+														<img
+															src="${urlPublic}/assets/img/celulares/${producto.imagen}"
+															alt="prod-icon" class="img-responsive">
+													</div>
+													<div class="caption" role="menu" id="producto"
+														name="producto">
+														<h4 class=" text-center">${producto.modelo.nombre}</h4>
+														<p class="text-justify">${producto.descripcion}</p>
+														<p class="text-justify">
+															<b>Memoria Ram:</b> ${producto.memoria.descripcion}
 														</p>
-													</c:if>
-													
-													<c:if test="${usuario != null }">
-														<p class="text-center">
-															<a href="${urlRoot}carrito/${usuario.name}/agregar/${producto.prod_id}"
-																class="btn btn-success" role="button"
-																title="Agregar al carrito"><span
-																class="glyphicon glyphicon-shopping-cart"></span></a>
+														<p class="text-justify">
+															<b>Almacenamiento:</b>
+															${producto.almacenamiento.descripcion}
 														</p>
-													</c:if>
+														<p class="text-justify">
+															<b>Color:</b> ${producto.color.nombre}
+														</p>
+														<p class="text-justify">
+															<b>Precio:</b>
+															<fmt:formatNumber value="${producto.precio}"
+																minFractionDigits="0" maxFractionDigits="0" />
+															gs
+														</p>
+														<p class="text-center">
+															<a href="${urlRoot}modelos/detalle/${producto.prod_id}"
+																class="btn btn-danger" role="button">Ver más</a>
+														</p>
+
+														<c:if test="${usuario == null }">
+															<p class="text-center">
+																<a href="${urlRoot}login/index" class="btn btn-success"
+																	role="button" title="Agregar al carrito"><span
+																	class="glyphicon glyphicon-shopping-cart"></span></a>
+															</p>
+														</c:if>
+
+														<c:if test="${usuario != null }">
+															<p class="text-center">
+																<a
+																	href="${urlRoot}carrito/${usuario.name}/agregar/${producto.prod_id}"
+																	class="btn btn-success" role="button"
+																	title="Agregar al carrito"><span
+																	class="glyphicon glyphicon-shopping-cart"></span></a>
+															</p>
+														</c:if>
 
 
+													</div>
 												</div>
 											</div>
-										</div>
 
-									</c:forEach>
+										</c:forEach>
 
+									</div>
+									<!-- ===================================== SmartPhones ============================================= -->
 								</div>
-								<!-- ===================================== SmartPhones ============================================= -->
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			</section>
 		</div>
 
 		<jsp:include page="../includes/footer.jsp"></jsp:include>
 
 	</div>
-	
-		<!-- JavaScript -->
+
+	<!-- JavaScript -->
 	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
