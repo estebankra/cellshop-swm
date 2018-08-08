@@ -31,6 +31,9 @@
 						<th>Modelo</th>
 						<th>Descripción</th>
 						<th>Precio</th>
+						<th>Memoria</th>
+						<th>Almacenamiento</th>
+						<th>Color</th>
 					</tr>
 
 					<c:forEach var="pedidoDetalle" items="${pedidoDetalles}">
@@ -38,6 +41,9 @@
 							<td>${pedidoDetalle.producto.modelo.nombre}</td>
 							<td>${pedidoDetalle.producto.descripcion}</td>
 							<td><fmt:formatNumber value="${pedidoDetalle.precio}" minFractionDigits="0" maxFractionDigits="0"/>gs</td>
+							<td>${pedidoDetalle.producto.memoria.descripcion}</td>
+							<td>${pedidoDetalle.producto.almacenamiento.descripcion}</td>
+							<td>${pedidoDetalle.producto.color.nombre}</td>
 						
 						</tr>
 					</c:forEach>

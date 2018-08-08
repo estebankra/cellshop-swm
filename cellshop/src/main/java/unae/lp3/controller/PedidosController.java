@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import unae.lp3.model.Carrito;
 import unae.lp3.model.Pedido;
@@ -40,6 +41,13 @@ public class PedidosController {
 	
 	@Autowired
 	private ICarritosService serviceCarritos;
+	
+	@RequestMapping(value = "/list")
+	public String obtenerPedidos( Model model) {
+		List<Pedido> listaPedidos = servicePedidos.buscarTodas();
+		model.addAttribute("pedidos", listaPedidos);
+		return "pedidos/admListPedidos";
+	}
 
 	@RequestMapping(value = "/{usu_name}")
 	public String obtenerPedidosPorUsuario(@PathVariable("usu_name") String Usu_Name, Model model) {
@@ -54,6 +62,17 @@ public class PedidosController {
 		List<Pedido_Detalle> listaDetallesPedido = servicePedidosDetalle.buscarPorIdPedido(IdPedido);
 		model.addAttribute("pedidoDetalles", listaDetallesPedido);
 		return "pedidos/listDetallesPed";
+	}
+	
+	@RequestMapping(value = "/entrega/{id_pedido}")
+	public String completarEntregaPedido(@PathVariable("id_pedido") int idPedido, Model model, RedirectAttributes attributes) {
+		
+		Pedido pedido = servicePedidos.buscarPorId(idPedido);
+		pedido.setFecha_entrega(new Date());
+		servicePedidos.guardar(pedido);
+		
+		attributes.addFlashAttribute("msg", "Entrega confirmada!");
+		return "redirect:/pedidos/list";
 	}
 	
 	@RequestMapping(value = "/carrito/{username}/completar")

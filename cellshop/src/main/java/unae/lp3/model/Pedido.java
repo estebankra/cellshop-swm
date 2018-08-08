@@ -18,6 +18,7 @@ public class Pedido {
 	private int pedido_id;
 	private Date fecha;
 	private float monto;
+	private Date fecha_entrega;
 	
 	@OneToOne
 	@JoinColumn(name = "usuario_id")
@@ -43,6 +44,14 @@ public class Pedido {
 		this.fecha = fecha;
 	}
 
+	public Date getFecha_entrega() {
+		return fecha_entrega;
+	}
+
+	public void setFecha_entrega(Date fecha_entrega) {
+		this.fecha_entrega = fecha_entrega;
+	}
+
 	public float getMonto() {
 		return monto;
 	}
@@ -61,8 +70,8 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido [pedido_id=" + pedido_id + ", fecha=" + fecha + ", monto=" + monto + ", usuario=" + usuario
-				+ "]";
+		return "Pedido [pedido_id=" + pedido_id + ", fecha=" + fecha + ", monto=" + monto + ", fecha_entrega="
+				+ fecha_entrega + ", usuario=" + usuario + "]";
 	}
 	
 }

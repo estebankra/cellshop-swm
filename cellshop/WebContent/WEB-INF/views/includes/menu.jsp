@@ -51,12 +51,13 @@
 			<div class="collapse navbar-collapse right" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Inicio</a></li>
+					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}pedidos/list">Pedidos recibidos</a></li>
 					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}usuarios/cuentas">Usuarios</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Productos</a></li>
-					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Colores</a></li>
-					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Ram</a></li>
+					<li class="nav-item active"><a class="nav-link" href="${urlRoot}colores/index">Colores</a></li>
+					<li class="nav-item active"><a class="nav-link" href="${urlRoot}memorias/index">Memorias</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}marcas/index">Marcas</a></li>
-					<li class="nav-item active"><a class="nav-link" href="${urlRoot}almacenamientos/index">Almacenamiento</a></li>
+					<li class="nav-item active"><a class="nav-link" href="${urlRoot}almacenamientos/index">Almacenamientos</a></li>
 				</ul>
 				
 				<div class="form-inline my-2 my-lg-0">
