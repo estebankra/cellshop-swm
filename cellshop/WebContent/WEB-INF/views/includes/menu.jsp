@@ -54,6 +54,7 @@
 					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}pedidos/list">Pedidos recibidos</a></li>
 					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}usuarios/cuentas">Usuarios</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Productos</a></li>
+					<li class="nav-item active"><a class="nav-link" href="${urlRoot}stock/index">Stock</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}colores/index">Colores</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}memorias/index">Memorias</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}marcas/index">Marcas</a></li>
