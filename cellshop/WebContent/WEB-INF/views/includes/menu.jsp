@@ -53,7 +53,8 @@
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Inicio</a></li>
 					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}pedidos/list">Pedidos recibidos</a></li>
 					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}usuarios/cuentas">Usuarios</a></li>
-					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Productos</a></li>
+					<li class="nav-item active"><a class="nav-link" href="${urlRoot}modelos/index">Modelos</a></li>
+					<li class="nav-item active"><a class="nav-link" href="${urlRoot}productos/index">Productos</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}stock/index">Stock</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}colores/index">Colores</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}memorias/index">Memorias</a></li>
@@ -83,7 +84,7 @@
 			<div class="collapse navbar-collapse right" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}">Inicio</a></li>
-					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}modelos/lists">Telefónos</a></li>
+					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}productos/lists">Telefónos</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}carrito/${usuario.name}/list">Carrito de compra</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}pedidos/${usuario.name}">Historial de pedidos</a></li>
 				</ul>
@@ -109,7 +110,7 @@
 			<div class="collapse navbar-collapse right" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}">Inicio</a></li>
-					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}modelos/lists">Telefónos</a></li>
+					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}productos/lists">Telefónos</a></li>
 				</ul>
 			
 				<div class="form-inline my-2 my-lg-0">

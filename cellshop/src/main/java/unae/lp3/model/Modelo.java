@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +14,6 @@ public class Modelo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment MySQL
 	private int model_id;
-	private int marca_id;
 	private String nombre;
 	private String resolucion;
 	private String pantalla;
@@ -20,22 +21,12 @@ public class Modelo {
 	private String dimensiones;
 	private String bateria;
 	
+	@OneToOne
+	@JoinColumn(name = "marca_id")
+	private Marca marca;
 	
 	public Modelo() {
 
-	}
-	
-	public Modelo(int model_id, int marca_id, String nombre, String resolucion, String pantalla, String peso,
-			String dimensiones, String bateria) {
-		super();
-		this.model_id = model_id;
-		this.marca_id = marca_id;
-		this.nombre = nombre;
-		this.resolucion = resolucion;
-		this.pantalla = pantalla;
-		this.peso = peso;
-		this.dimensiones = dimensiones;
-		this.bateria = bateria;
 	}
 
 	public int getModel_id() {
@@ -46,12 +37,12 @@ public class Modelo {
 		this.model_id = model_id;
 	}
 
-	public int getMarca_id() {
-		return marca_id;
+	public Marca getMarca() {
+		return marca;
 	}
 
-	public void setMarca_id(int marca_id) {
-		this.marca_id = marca_id;
+	public void setMarca(Marca marca) {
+		this.marca = marca;
 	}
 
 	public String getNombre() {
@@ -105,9 +96,8 @@ public class Modelo {
 
 	@Override
 	public String toString() {
-		return "Modelo [model_id=" + model_id + ", marca_id=" + marca_id + ", nombre=" + nombre + ", resolucion="
-				+ resolucion + ", pantalla=" + pantalla + ", peso=" + peso + ", dimensiones=" + dimensiones
-				+ ", bateria=" + bateria + "]";
+		return "Modelo [model_id=" + model_id + ", nombre=" + nombre + ", resolucion=" + resolucion + ", pantalla="
+				+ pantalla + ", peso=" + peso + ", dimensiones=" + dimensiones + ", bateria=" + bateria + ", marca="
+				+ marca + "]";
 	}
-	
 }

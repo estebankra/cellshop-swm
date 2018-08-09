@@ -112,7 +112,7 @@
 															gs
 														</p>
 														<p class="text-center">
-															<a href="${urlRoot}modelos/detalle/${producto.prod_id}"
+															<a href="${urlRoot}productos/detalle/${producto.prod_id}"
 																class="btn btn-danger" role="button">Ver más</a>
 														</p>
 
