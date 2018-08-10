@@ -14,10 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import unae.lp3.model.Almacenamiento;
+import unae.lp3.model.Color;
 import unae.lp3.model.Marca;
+import unae.lp3.model.Memoria;
 import unae.lp3.model.Modelo;
 import unae.lp3.model.Producto;
+import unae.lp3.service.IAlmacenamientosService;
+import unae.lp3.service.IColoresService;
 import unae.lp3.service.IMarcasService;
+import unae.lp3.service.IMemoriasService;
 import unae.lp3.service.IModelosService;
 import unae.lp3.service.IProductosService;
 
@@ -30,6 +36,18 @@ public class ProductosController {
 	
 	@Autowired
 	private IProductosService serviceProductos;
+	
+	@Autowired
+	private IModelosService serviceModelos;
+	
+	@Autowired
+	private IMemoriasService serviceMemorias;
+	
+	@Autowired
+	private IColoresService serviceColores;
+	
+	@Autowired
+	private IAlmacenamientosService serviceAlmacenamientos;
 	
 	@RequestMapping(value = "/lists", method=RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {	
@@ -71,6 +89,14 @@ public class ProductosController {
 	
 	@GetMapping(value = "/nuevo")
 	public String crear(@ModelAttribute Producto producto, Model model) {
+		List<Modelo> listaModelos = serviceModelos.buscarTodas();
+		model.addAttribute("modelos", listaModelos);
+		List<Almacenamiento> listaAlmacenamientos = serviceAlmacenamientos.buscarTodas();
+		model.addAttribute("almacenamientos", listaAlmacenamientos);
+		List<Color> listaColores = serviceColores.buscarTodas();
+		model.addAttribute("colores", listaColores);
+		List<Memoria> listaMemorias = serviceMemorias.buscarTodas();
+		model.addAttribute("memorias", listaMemorias);
 		return "productos/formProducto";
 	}
 	
@@ -80,18 +106,26 @@ public class ProductosController {
 		// Insertamos el producto
 		serviceProductos.guardar(producto);
 		attributes.addFlashAttribute("msg", "Los datos del producto fueron guardados!");
-		return "redirect:/modelos/index";
+		return "redirect:/productos/index";
 	}
 	
 	@GetMapping(value = "/eliminar/{id}")
 	public String eliminar(@PathVariable("id") int idProducto, RedirectAttributes attributes) {
 		serviceProductos.eliminar(idProducto);
 		attributes.addFlashAttribute("msg", "El producto fue eliminado!.");
-		return "redirect:/modelos/index";
+		return "redirect:/productos/index";
 	}
 
 	@GetMapping(value = "/editar/{id}")
 	public String editar(@PathVariable("id") int idProducto, Model model) {
+		List<Modelo> listaModelos = serviceModelos.buscarTodas();
+		model.addAttribute("modelos", listaModelos);
+		List<Almacenamiento> listaAlmacenamientos = serviceAlmacenamientos.buscarTodas();
+		model.addAttribute("almacenamientos", listaAlmacenamientos);
+		List<Color> listaColores = serviceColores.buscarTodas();
+		model.addAttribute("colores", listaColores);
+		List<Memoria> listaMemorias = serviceMemorias.buscarTodas();
+		model.addAttribute("memorias", listaMemorias);
 		Producto producto = serviceProductos.buscarPorId(idProducto);
 		model.addAttribute("producto", producto);
 		return "productos/formProducto";

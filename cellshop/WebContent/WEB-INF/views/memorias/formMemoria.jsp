@@ -9,6 +9,40 @@
 <spring:url value="/resources" var="urlPublic" />
 <spring:url value="/" var="urlRoot" />
 
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<title>CellShop | Bienvenido</title>
+	<spring:url value="/memorias/guardar" var="urlForm" />
+	<spring:url value="/resources" var="urlPublic" />
+	<spring:url value="/" var="urlRoot" />
+	
+	<!-- Bootstrap 2014 -->
+	<link rel="stylesheet" href="${urlPublic}/css/normalize.css">
+	<link rel="stylesheet" href="${urlPublic}/css/bootstrap.min.css">
+	<link rel="stylesheet" href="${urlPublic}/css/font-awesome.min.css">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="${urlPublic}/css/style.css">
+	
+	<!-- Icon -->
+	<link rel="Shortcut Icon" type="image/x-icon"
+		href="${urlPublic}/assets/icons/shortcut-icon.ico" />
+	
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Dosis"
+		rel="stylesheet">
+	
+	<!-- Social Icons -->
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
 <body>
 	<div class="page-container">
 		
