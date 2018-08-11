@@ -11,5 +11,6 @@ public interface IPedidosDetalleService {
 	Pedido_Detalle buscarPorId(int idPedido_Detalle);
 	void eliminar(int idPedido_Detalle);
 	List<Pedido_Detalle> buscarPorIdPedido(int idPedido);
+	int obtenerMayorId();
 
 }

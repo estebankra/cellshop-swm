@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 12, 2018 at 10:18 PM
+-- Generation Time: Aug 11, 2018 at 08:17 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -152,8 +152,18 @@ CREATE TABLE `Pedidos` (
   `pedido_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `monto` float NOT NULL
+  `monto` float NOT NULL,
+  `fecha_entrega` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `Pedidos`
+--
+
+INSERT INTO `Pedidos` (`pedido_id`, `usuario_id`, `fecha`, `monto`, `fecha_entrega`) VALUES
+(10, 5, '2018-08-11', 11700000, NULL),
+(11, 8, '2018-08-11', 18600000, NULL),
+(12, 8, '2018-08-11', 18600000, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,6 +177,17 @@ CREATE TABLE `Pedidos_Detalle` (
   `prod_id` int(11) NOT NULL,
   `precio` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `Pedidos_Detalle`
+--
+
+INSERT INTO `Pedidos_Detalle` (`peddet_id`, `pedido_id`, `prod_id`, `precio`) VALUES
+(4, 10, 3, 6900000),
+(5, 10, 2, 4800000),
+(6, 12, 3, 6900000),
+(7, 12, 3, 6900000),
+(8, 12, 2, 4800000);
 
 -- --------------------------------------------------------
 
@@ -191,8 +212,8 @@ CREATE TABLE `Productos` (
 --
 
 INSERT INTO `Productos` (`prod_id`, `almacen_id`, `color_id`, `mem_id`, `model_id`, `descripcion`, `imagen`, `stock`, `precio`) VALUES
-(2, 1, 1, 1, 1, '<b>Velocidad CPU:</b> 2.7GHz, 1.7GHz.<br>\r\n<b>Tipo CPU:</b> Octa-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> Android', 'samsungs9plus.jpg', 6, 4800000),
-(3, 1, 4, 2, 2, '<b>Velocidad CPU:</b> 2.1 GHZ.<br>\r\n<b>Tipo CPU:</b> Six-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> iOS 11', 'iphonex.png', 1, 6900000);
+(2, 1, 1, 1, 1, '<b>Velocidad CPU:</b> 2.7GHz, 1.7GHz.<br><b>Tipo CPU:</b> Octa-Core.<br> <b>Cámara principal:</b> 12.0 MP<br> <b>Cámara frontal:</b> 8.0 MP.<br><b>Sistema Operativo:</b> Android', 'samsungs9plus.jpg', 0, 4800000),
+(3, 1, 4, 2, 2, '<b>Velocidad CPU:</b> 2.1 GHZ.<br>\r\n<b>Tipo CPU:</b> Six-Core.<br> \r\n<b>Cámara principal:</b> 12.0 MP<br> \r\n<b>Cámara frontal:</b> 8.0 MP.<br>\r\n<b>Sistema Operativo:</b> iOS 11', 'iphonex.png', -6, 6900000);
 
 -- --------------------------------------------------------
 
@@ -222,7 +243,7 @@ CREATE TABLE `Usuarios` (
 
 INSERT INTO `Usuarios` (`usuario_id`, `perfil`, `apellidos`, `nombre`, `fechanac`, `docunum`, `direccion`, `ciudad`, `pais`, `telefono`, `email`, `usuario`, `contrasena`) VALUES
 (1, 'cliente', 'fesfse', 'fsefse', '0015-10-09', '435453', 'fsfes', 'esfesf', 'sefsef', '3245235', 'e564ro@gmail.com', 'afwf', '827ccb0eea8a706c4c34a16891f84e7b'),
-(2, 'cliente', 'Krauwezuk Powszuk}', 'Esteban', '0011-05-21', '4364888', 'CapitÃ¡n Miranda Calle \"C\" 12', 'CapitÃ¡n Miranda', 'Paraguay', '0983813404', 'esteban98alejandro@gmail.com', 'estebank98', '827ccb0eea8a706c4c34a16891f84e7b'),
+(2, 'admin', 'Krauwezuk Powszuk}', 'Esteban', '0011-05-21', '4364888', 'CapitÃ¡n Miranda Calle \"C\" 12', 'CapitÃ¡n Miranda', 'Paraguay', '0983813404', 'esteban98alejandro@gmail.com', 'estebank98', '827ccb0eea8a706c4c34a16891f84e7b'),
 (3, 'cliente', 'Rodriguez', 'Fernando', '0008-12-08', '3214341', 'Encarnacion', 'Encarnacion', 'Paraguay', '0987685766', 'rodri45@gmail.com', 'rodri12', '827ccb0eea8a706c4c34a16891f84e7b'),
 (4, 'cliente', 'htrh', 'hrthrt', '0010-12-15', '354534', 'grg', 'gdrg', 'drgrdg', '3545', 'fesfsef@gmail.com', 'awfdwaf', '827ccb0eea8a706c4c34a16891f84e7b'),
 (5, 'cliente', 'grgreg', 'rgergre', '2016-12-09', '354543', 'fesrfe', 'esfgsef', 'esff', '3255', 'daeda@gmail.com', 'eaff', '827ccb0eea8a706c4c34a16891f84e7b'),
@@ -326,7 +347,7 @@ ALTER TABLE `Almacenamiento`
 -- AUTO_INCREMENT for table `Carrito`
 --
 ALTER TABLE `Carrito`
-  MODIFY `carrito_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `carrito_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `Colores`
@@ -356,13 +377,13 @@ ALTER TABLE `Modelo`
 -- AUTO_INCREMENT for table `Pedidos`
 --
 ALTER TABLE `Pedidos`
-  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `Pedidos_Detalle`
 --
 ALTER TABLE `Pedidos_Detalle`
-  MODIFY `peddet_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `peddet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `Productos`

@@ -57,4 +57,10 @@ public class PedidosDetalleServiceJPA implements IPedidosDetalleService {
 		}
 		return listaPedDetPorId;
 	}
+
+	@Override
+	public int obtenerMayorId() {
+		int mayorId =  pedidosDetalleRepo.findByPeddetId();
+		return mayorId;
+	}
 }

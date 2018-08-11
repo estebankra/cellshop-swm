@@ -62,7 +62,7 @@
 
 				<spring:url value="carrito/${usuario.name}/eliminar" var="urlDelete" />
 
-				<a href="${urlRoot}modelos/lists" class="btn btn-success"
+				<a href="${urlRoot}productos/lists" class="btn btn-success"
 					role="button" title="Nueva marca">Agregar más</a><br> <br>
 
 				<div class="table-responsive text-center">

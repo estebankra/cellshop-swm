@@ -74,9 +74,9 @@ public class PedidosController {
 		attributes.addFlashAttribute("msg", "Entrega confirmada!");
 		return "redirect:/pedidos/list";
 	}
-	
+
 	@RequestMapping(value = "/carrito/{username}/completar")
-	public String completarPedido(@ModelAttribute Pedido pedido, @PathVariable("username") String Usu_Name, @ModelAttribute Pedido_Detalle peddet, Model model) {
+	public String completarPedido(@ModelAttribute Pedido pedido, @PathVariable("username") String Usu_Name, Model model) {
 		pedido.setFecha(new Date());
 		Usuario usuario = serviceUsuarios.buscarPorUsuario(Usu_Name);
 		pedido.setUsuario(usuario);
@@ -87,10 +87,11 @@ public class PedidosController {
 
 		
 		List<Carrito> listaProdCarrito = serviceCarritos.buscarCarritoPorUsuario(usuario.getUsuario());
-		int id_peddet = peddet.getPeddet_id();
 
 		for (Carrito p : listaProdCarrito) {
-			peddet.setPeddet_id(id_peddet + 1);
+			int mayorId = servicePedidosDetalle.obtenerMayorId();
+			Pedido_Detalle peddet= new Pedido_Detalle();
+			peddet.setPeddet_id(mayorId + 1);
 			peddet.setPedido(pedido);
 			peddet.setPrecio(p.getPrecio());
 			
