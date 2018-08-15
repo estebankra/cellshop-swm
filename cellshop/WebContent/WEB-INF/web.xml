@@ -85,8 +85,17 @@
 			<web-resource-name>URLs protegidas solo para el rol Admin</web-resource-name>
 			<!-- Define the context-relative URL(s) to be protected -->
 			<url-pattern>/login/*</url-pattern>
-			<url-pattern>/cuentas/*</url-pattern>
+			<url-pattern>/pedidos/*</url-pattern>
+			<url-pattern>/pedidos/adm/*</url-pattern>
+			<url-pattern>/productos/index/*</url-pattern>
+			<url-pattern>/productos/edit/*</url-pattern>
+			<url-pattern>/usuarios/cuentas/*</url-pattern>
+			<url-pattern>/usuarios/eliminar/*</url-pattern>
 			<url-pattern>/marcas/*</url-pattern>
+			<url-pattern>/modelos/*</url-pattern>
+			<url-pattern>/stock/*</url-pattern>
+			<url-pattern>/colores/*</url-pattern>
+			<url-pattern>/memorias/*</url-pattern>
 			<url-pattern>/almacenamientos/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
@@ -101,6 +110,7 @@
 			<!-- Define the context-relative URL(s) to be protected -->
 			<url-pattern>/login/*</url-pattern>
 			<url-pattern>/carrito/*</url-pattern>
+			<url-pattern>/pedidos/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<!-- Anyone with this role may access this area -->

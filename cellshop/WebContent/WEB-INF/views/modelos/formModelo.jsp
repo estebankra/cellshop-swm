@@ -116,9 +116,9 @@
 		
 					</div>
 					
+					<button type="submit" class="btn btn-primary">Guardar</button><br>
+					
 					<hr class="featurette-divider">
-
-					<button type="submit" class="btn btn-primary">Guardar</button>
 				</form:form>
 
 			</div>

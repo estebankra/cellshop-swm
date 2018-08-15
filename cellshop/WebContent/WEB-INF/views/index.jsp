@@ -23,9 +23,6 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
-	<!-- Style CSS -->
-	<link rel="stylesheet" href="${urlPublic}/css/style.css">
-	
 	<!-- Icon -->
 	<link rel="Shortcut Icon" type="image/x-icon"
 		href="${urlPublic}/assets/icons/shortcut-icon.ico" />
@@ -37,6 +34,9 @@
 	<!-- Social Icons -->
 	<script
 		src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="${urlPublic}/css/style.css">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
         <div class="content-page cover-background font-content-index">
             <div class="jumbotron">
               <h1 class="tittles-pages">Bienvenido a CellShop</h1>
-              <p> Compra el smartphone que más te guste en CellShop tienda en línea. Contamos con diversos tipos de celulares y modelos como un celular Samsung, iPhone,Xperia, Moto G o LG Nexus y más.<br>
+              <p id="infoCabecera"> Compra el smartphone que más te guste en CellShop tienda en línea. Contamos con diversos tipos de celulares y modelos como un celular Samsung, iPhone,Xperia, Moto G o LG Nexus y más.<br>
 				Compra un celular que cubra tus necesidades ya sea un samsung galaxy s7, un iPhone 7, o un celular desbloqueado, el que desees se encuentra aquí. Adquiere el teléfono móvil de tu preferencia a precio bajo, seguro encontrarás celulares baratos o con la mejor tecnología. Aprovecha los beneficios que tenemos en nuestra tienda de celulares en línea.
 
               </p>
@@ -99,8 +99,6 @@
                             <div class="content-dest">
                                 <img src="${urlPublic}/assets/img/home-news.png" alt="news-icon" class="img-responsive center-box-content">
                                 <h3>Noticias</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vitae similique quos veritatis numquam fugiat fugit ea vel consectetur deserunt, provident hic nesciunt, natus soluta voluptate laudantium a possimus suscipit.
-                                </p>
                                 <a href="#" class="btn btn-success">Más información</a>
                                 <hr class="visible-xs">
                             </div>
@@ -119,9 +117,7 @@
                             <div class="content-dest">
                                 <img src="${urlPublic}/assets/img/home-phones.png" alt="phone-icon" class="img-responsive center-box-content">
                                 <h3>Teléfonos</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa delectus deserunt eveniet beatae repudiandae asperiores! Et facere beatae ea inventore similique molestiae fugiat ad, quos, tenetur natus est libero ducimus.
-                                </p>
-                                <a href="${urlRoot}modelos/lists" class="btn btn-success">Más información</a>
+                                <a href="${urlRoot}productos/lists" class="btn btn-success">Más información</a>
                                 <hr class="visible-xs">
                             </div>
                         </div>

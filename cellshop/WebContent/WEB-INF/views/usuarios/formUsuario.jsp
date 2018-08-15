@@ -60,7 +60,7 @@
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item active"><a class="nav-link" href="${urlRoot}">Inicio</a></li>
 		<li class="nav-item active"><a class="nav-link"
-			href="${urlRoot}modelos/lists">Telefónos</a></li>
+			href="${urlRoot}productos/lists">Telefónos</a></li>
 	</ul>
 
 	<div class="form-inline my-2 my-lg-0">

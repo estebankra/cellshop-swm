@@ -52,14 +52,8 @@
 			<hr class="featurette-divider">
 
 			<div class="jumbotron">
-				<br>
-				<h3>Administración del Sistema</h3>
-				<p>
-					<br> Bienvenido(a) ${usuario.name}
-				</p>
+				<h3>Bienvenido(a) ${usuario.name}</h3>
 			</div>
-
-
 		</div>
 		<!-- /container -->
 

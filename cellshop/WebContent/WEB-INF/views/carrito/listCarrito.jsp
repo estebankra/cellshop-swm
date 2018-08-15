@@ -84,7 +84,7 @@
 								<td><fmt:formatNumber value="${prodCarrito.precio}"
 										minFractionDigits="0" maxFractionDigits="0" />gs
 								</td>
-								<td><a href="${urlRoot}modelos/detalle/${prodCarrito.producto.prod_id}"
+								<td><a href="${urlRoot}productos/detalle/${prodCarrito.producto.prod_id}"
 									class="btn btn-success btn-sm" role="button" title="Detalles"><span
 										class="glyphicon glyphicon-info-sign"></span>
 									</a> 

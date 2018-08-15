@@ -340,12 +340,63 @@ html, body {
 .input-form-contact:-ms-input-placeholder { color:#fff;  opacity: .5;}
 .input-form-contact::-webkit-input-placeholder { color:#fff; opacity: .5;}
 /* ======================================= MediaQueries bootstrap =======================================*/
-/* col-xs */
-@media (max-width: 767px) {
-	.jumbotron{
+
+
+/*Mayores*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .principal-container-services > a{
+        width: 48%;
+    }
+    .jumbotron > div{
 		background-color: rgb(255,255,255);
 		color: #333;
 		padding-bottom: 60px;
+	}
+    .jumbotron > p{
+		font-size: 18px;
+	}
+	
+	 .jumbotron > p{
+		font-size: 18px;
+	}
+	
+	.navbar-collapse.collapse{
+   		 display: flex!important;
+	}
+	
+	.navbar-toggler{
+		display: none!important;
+	}
+	
+	.navbar-brand{
+		margin-right: 44%;
+	}
+	
+	.btn-block {
+	}
+	
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /*Estilos css aquí*/
+}
+
+@media (min-width: 1200px) {  
+    /*Estilos css aquí*/
+}
+
+
+/*Medianos*/
+@media (min-width: 200px) and (max-width: 767px) {
+	.jumbotron > div{
+		background-color: rgb(255,255,255);
+		color: #333;
+		padding-bottom: 60px;
+	}
+	
+	.btn-block {
+		width: 90%;
+		margin-left: 5%;
 	}
     .jumbotron > p{
 		font-size: 16px;
@@ -396,21 +447,45 @@ html, body {
    		font-family: 'Dosis', sans-serif;
 		font-size: 30px;
 	}
-}
-/* col-sm */
-@media (min-width: 768px) and (max-width: 991px) {
-    .principal-container-services > a{
-        width: 48%;
-    }
-    .jumbotron{
-		padding-bottom: 70px;
+	
+	.navbar-collapse.collapse{
+		.collapse.in {
+   		 display: block;
+		}
+	}
+	
+	.form-control {
+		width: 90%;
+		margin-left: 5%;
 	}
 }
-/* col-md */
-@media (min-width: 992px) and (max-width: 1199px) {
-    /*Estilos css aquí*/
-}
-/* col-lg */
-@media (min-width: 1200px) {  
-    /*Estilos css aquí*/
+
+/*Pequeños*/
+@media (max-width: 468px){
+	.jumbotron {
+	    padding-bottom: 350px;
+	}
+	
+	.jumbotron > p{
+		font-size: 14px;
+	}
+	
+	.navbar-collapse.collapse{
+		.collapse.in {
+   		 display: block;
+		}
+	}
+	
+	.form-control {
+		width: 90%;
+		margin-left: 5%;
+	}
+	
+	.center {
+		margin-left: 0px;
+	}
+	
+	.text-justify{
+		text-align: unset!important;
+	}
 }

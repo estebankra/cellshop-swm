@@ -18,7 +18,8 @@
 			<div class="collapse navbar-collapse right" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}login/index">Inicio</a></li>
-					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}pedidos/list">Pedidos recibidos</a></li>
+					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}productos/lists">Telefónos</a></li>
+					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}pedidos/list">Pedidos</a></li>
 					<li class="nav-item active"><a  class="nav-link" href="${urlRoot}usuarios/cuentas">Usuarios</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}modelos/index">Modelos</a></li>
 					<li class="nav-item active"><a class="nav-link" href="${urlRoot}productos/index">Productos</a></li>

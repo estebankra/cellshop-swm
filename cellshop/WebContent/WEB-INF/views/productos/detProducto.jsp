@@ -40,12 +40,15 @@
 </head>
 
 <body>
+
 	<div class="page-container">
-
+	
 		<jsp:include page="../includes/menu.jsp"></jsp:include>
-
-		<div class="content-page">
-			<div class="container-fluid">
+	
+		<div class="container theme-showcase" role="main">
+	
+			<div class="content-page">
+			   <div class="container-fluid">
 				<div class="row">
 					<div class="col-xs-12 text-center">
 						<p class="tittles-pages">Detalles del producto</p>
@@ -185,10 +188,13 @@
 					</div>
 				</div>
 			</div>
+			</div>
+	
 		</div>
+	
+		<jsp:include page="../includes/footer.jsp"></jsp:include>
+	
 	</div>
-
-	<jsp:include page="../includes/footer.jsp"></jsp:include>
 	
 		<!-- JavaScript -->
 	<script src="${urlPublic}/bootstrap/js/bootstrap.min.js"></script>

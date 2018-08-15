@@ -51,7 +51,7 @@
 
 			<div class="content-page">
 				<div class="col-xs-12">
-					<p class="tittles-pages">Agregar modelos</p>
+					<p class="tittles-pages">Agregar productos</p>
 				</div>
 
 				<c:if test="${msg !=null }">
@@ -123,9 +123,11 @@
 		
 					</div>
 					
-					<hr class="featurette-divider">
 
 					<button type="submit" class="btn btn-primary">Guardar</button>
+					
+					<hr class="featurette-divider">
+										
 				</form:form>
 
 			</div>

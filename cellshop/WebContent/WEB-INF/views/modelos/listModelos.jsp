@@ -41,13 +41,15 @@
 </head>
 
 <body>
+
 	<div class="page-container">
-
+	
 		<jsp:include page="../includes/menu.jsp"></jsp:include>
-
+	
 		<div class="container theme-showcase" role="main">
-
-			<div class="col-xs-12">
+	
+			<div class="content-page">
+			   <div class="col-xs-12">
 				<p class="tittles-pages">Listado de modelos</p>
 			</div>
 
@@ -98,11 +100,12 @@
 					</c:forEach>
 				</table>
 			</div>
+			</div>
+	
 		</div>
-
+	
 		<jsp:include page="../includes/footer.jsp"></jsp:include>
-
-
+	
 	</div>
 	
 		<!-- JavaScript -->

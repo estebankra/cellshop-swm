@@ -64,7 +64,7 @@ public class PedidosController {
 		return "pedidos/listDetallesPed";
 	}
 	
-	@RequestMapping(value = "/entrega/{id_pedido}")
+	@RequestMapping(value = "/adm/entrega/{id_pedido}")
 	public String completarEntregaPedido(@PathVariable("id_pedido") int idPedido, Model model, RedirectAttributes attributes) {
 		
 		Pedido pedido = servicePedidos.buscarPorId(idPedido);
@@ -90,6 +90,7 @@ public class PedidosController {
 
 		for (Carrito p : listaProdCarrito) {
 			int mayorId = servicePedidosDetalle.obtenerMayorId();
+			System.out.println(mayorId);
 			Pedido_Detalle peddet= new Pedido_Detalle();
 			peddet.setPeddet_id(mayorId + 1);
 			peddet.setPedido(pedido);
