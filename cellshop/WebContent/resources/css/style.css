@@ -37,7 +37,7 @@ html, body {
 }
 .cover-background{
 	background-attachment: fixed;
-	background-color: #fff;
+	background-color: #fcaf3e;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -145,7 +145,7 @@ html, body {
 }
 .navigation-list > li a{
 	height: 55px;
-	color: #fff;
+	color: #555753;
 	text-align: center;
 	text-decoration: none;
 	display: block;
@@ -390,7 +390,7 @@ html, body {
 @media (min-width: 200px) and (max-width: 767px) {
 	.jumbotron > div{
 		background-color: #fcaf3e255255255;
-		color: #333;
+		color: #3465a4;
 		padding-bottom: 60px;
 	}
 	
@@ -409,7 +409,7 @@ html, body {
     	top: 55px;
     	border-top: 1px solid rgba(255,255,255,.7);
     	width: 100%;
-    	background-color: #000;
+    	background-color: #555753;
     	height: auto;
     	pointer-events: none;
     	opacity: 0;
